@@ -10,16 +10,65 @@
 <body>
     <header>
         <nav>
-            <a href="../Steckbrief/about_me.html"><img src="../about_me_icon.png" alt="About me" width="50"></a>
-            <a href="../Contact/contact.html"><img src="../contact_icon.png" alt="Contact" width="50"></a>
+            <a href="../Steckbrief/about_me.html"><img src="../Icons/about_me_icon.png" alt="About me" width="50"></a>
+            <a href="../Contact/contact.html"><img src="../Icons/contact_icon.png" alt="Contact" width="50"></a>
         </nav>
     </header>
     <main>
         <h1>Willkommen auf meiner Portfolioseite</h1>
-        <h3>Zeit für ein bisschen Entspannung!</h3>
-        <video src="forest.mp4" controls autoplay loop width=600></video><br>
-        <audio src="wind.mp3" controls autoplay loop></audio>
+        <section id="entspannung">
+            <h3>Zeit für ein bisschen Entspannung!</h3>
+            <video src="forest.mp4" controls autoplay loop width=600></video><br>
+            <audio src="wind.mp3" controls autoplay loop></audio>
+            <p>Hat es funktioniert? Dann machen wir weiter</p>
+        </section>
+        <section id="code">
+            <p>In den folgenden Zeilen möchte ich euch den ersten Java Code zeigen, den ich jemals geschrieben habe</p>
+            <p>
+            <code>
+                public class HalloWelt{<br>
+                    public static void main(String[]args){<br>
+                        System.out.println("Hallo Nachbar!");<br>
+                    } <br>
+                }
 
+            </code>
+            </p>
+
+
+
+        </section>
+        <section id="youtubevideo">
+            <h3></h3>
+            <p> <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/rTKpYJ80OVQ"
+                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </p>
+        </section>
+        <section id="umfragen">
+            <fieldset>
+                <legend>Umfrage</legend>
+                <h4>Wie gut war diese Seite?</h4>
+                <p>
+                    sehr gut
+                    <input type="range" id="range" min="0" max="100" step="1">
+                    sehr schlecht
+                </p>
+                <h4>Wüdest du sie nochmal besuchen?</h4>
+
+                <p>
+                    <input type="radio" name="input1" id="rel1"><label for="nochmalbesuchen">Ja</label>
+                    <input type="radio" name="input1" id="rel2"><label for="nochmalbesuchen">Eher ja</label>
+                    <input type="radio" name="input1" id="rel3"><label for="nochmalbesuchen">Unentschlosen</label>
+                    <input type="radio" name="input1" id="rel4"><label for="nochmalbesuchen">Eher nein</label>
+                    <input type="radio" name="input1" id="rel5"><label for="nochmalbesuchen">Nein</label>
+                </p>
+            </fieldset>
+            <button type="submit">Antworten senden</button>
+            <p>Danke für das Feedback.</p>
+
+
+        </section>
 
     </main>
 
