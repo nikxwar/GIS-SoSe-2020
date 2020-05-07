@@ -8,14 +8,16 @@
 </head>
 
 <body>
-    <header>
+    <header id="start">
         <nav>
             <a href="../Steckbrief/about_me.html"><img src="../Icons/about_me_icon.png" alt="About me" width="50"></a>
             <a href="../Contact/contact.html"><img src="../Icons/contact_icon.png" alt="Contact" width="50"></a>
         </nav>
     </header>
     <main>
-        <h1>Willkommen auf meiner Portfolioseite</h1>
+
+
+        <h1 id=>Willkommen auf meiner Portfolioseite</h1>
         <section id="entspannung">
             <h3>Zeit für ein bisschen Entspannung!</h3>
             <video src="forest.mp4" controls autoplay loop width=600></video><br>
@@ -23,9 +25,11 @@
             <p>Hat es funktioniert? Dann machen wir weiter</p>
         </section>
         <section id="code">
-            <p>In den folgenden Zeilen möchte ich euch den ersten Java Code zeigen, den ich jemals geschrieben habe</p>
+            <h3>Meine allerersten Zeilen Code </h3>
+            <p>In den folgenden Zeilen möchte ich euch den ersten Java Code zeigen, den ich jemals geschrieben habe. Es
+                handelt sich dabei natürlich um die klassische Hello World Klasse</p>
             <p>
-            <code>
+                <code>
                 public class HalloWelt{<br>
                     public static void main(String[]args){<br>
                         System.out.println("Hallo Nachbar!");<br>
@@ -34,27 +38,37 @@
 
             </code>
             </p>
+        </section>
+        <section id=blender>
+            <h3>Meine Blender Modellierungen</h3>
+            <p>
+                Hier findet ihr meine bisherigen Blender Arbeiten, die ich im Computergrafik Praktikum erstellt habe.
+            </p>
+            <p>
+                <img src="u-boot.png" alt="Ein U-Boot" width="500">
+                <img src="truhe.png" alt="Eine Schatztruhe" width="500">
+                <img src="korallen.png" alt="Verschiedene Korallen" width="500">
 
-
-
+            </p>
         </section>
         <section id="youtubevideo">
-            <h3></h3>
+            <h3>Hier noch einer meiner Lieblings Hip Hop Songs:</h3>
             <p> <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/rTKpYJ80OVQ"
                     frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
             </p>
         </section>
+
         <section id="umfragen">
             <fieldset>
-                <legend>Umfrage</legend>
+                <legend><b>Umfrage</b></legend>
                 <h4>Wie gut war diese Seite?</h4>
                 <p>
                     sehr gut
                     <input type="range" id="range" min="0" max="100" step="1">
                     sehr schlecht
                 </p>
-                <h4>Wüdest du sie nochmal besuchen?</h4>
+                <h4>Würdest du sie nochmal besuchen?</h4>
 
                 <p>
                     <input type="radio" name="input1" id="rel1"><label for="nochmalbesuchen">Ja</label>
@@ -66,12 +80,17 @@
             </fieldset>
             <button type="submit">Antworten senden</button>
             <p>Danke für das Feedback.</p>
-
-
         </section>
 
     </main>
 
+<footer>
+    <nav>
+        <form>
+            <button type="submit" formaction="#start">Hier geht es wieder zum Anfang</button>
+         </form>
+    </nav>
+</footer>
 </body>
 
 </html>
