@@ -17,7 +17,7 @@
     <main>
 
 
-        <h1 id=>Willkommen auf meiner Portfolioseite</h1>
+        <h1>Willkommen auf meiner Portfolioseite</h1>
         <section id="entspannung">
             <h3>Zeit für ein bisschen Entspannung!</h3>
             <video src="forest.mp4" controls autoplay loop width=600></video><br>
@@ -64,18 +64,17 @@
                 <legend><b>Umfrage</b></legend>
                 <h4>Wie gut war diese Seite?</h4>
                 <p>
-                    sehr gut
+                    <label for="range">sehr gut</label>
                     <input type="range" id="range" min="0" max="100" step="1">
-                    sehr schlecht
+                    <label for="range">sehr schlecht</label>
                 </p>
                 <h4>Würdest du sie nochmal besuchen?</h4>
-
                 <p>
-                    <input type="radio" name="input1" id="rel1"><label for="nochmalbesuchen">Ja</label>
-                    <input type="radio" name="input1" id="rel2"><label for="nochmalbesuchen">Eher ja</label>
-                    <input type="radio" name="input1" id="rel3"><label for="nochmalbesuchen">Unentschlosen</label>
-                    <input type="radio" name="input1" id="rel4"><label for="nochmalbesuchen">Eher nein</label>
-                    <input type="radio" name="input1" id="rel5"><label for="nochmalbesuchen">Nein</label>
+                    <input type="radio" name="input1" id="revisit1"><label for="revisit1">Ja</label>
+                    <input type="radio" name="input1" id="revisit2"><label for="revisit2">Eher ja</label>
+                    <input type="radio" name="input1" id="revisit3"><label for="revisit3">Unentschlosen</label>
+                    <input type="radio" name="input1" id="revisit4"><label for="revisit4">Eher nein</label>
+                    <input type="radio" name="input1" id="revisit5"><label for="revisit5">Nein</label>
                 </p>
             </fieldset>
             <button type="submit">Antworten senden</button>
@@ -84,13 +83,13 @@
 
     </main>
 
-<footer>
-    <nav>
-        <form>
-            <button type="submit" formaction="#start">Hier geht es wieder nach oben</button>
-         </form>
-    </nav>
-</footer>
+    <footer>
+        <nav>
+            <form>
+                <button type="submit" formaction="#start">Hier geht es wieder nach oben</button>
+            </form>
+        </nav>
+    </footer>
 </body>
 
 </html>
