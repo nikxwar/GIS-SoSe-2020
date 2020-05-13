@@ -5,21 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
     <header>
         <nav>
-            <a href="../Portfolio/portfolio.html"><img src="../../Aufgabe02/Icons/home_icon.png"  alt="Portfolio" width="50"></a>
-            <a href="../Steckbrief/about_me.html"><img src="../../Aufgabe02/Icons/about_me_icon.png" alt="About Me" width="50"></a>
+            <ul>
+                <li><a href="../Portfolio/portfolio.html">portfolio</a></li>
+                <li><a href="../Steckbrief/about_me.html">about me</a>
+                <li></li>
+                <li><a href="../Contact/contact.html" class="nav_current">contact</a></li>
+            </ul>
         </nav>
     </header>
     <main>
         <div>
             <h1>Contact:</h1>
             <p>
-                <a href="mailto:niklas.dominik.krieg@hs-furtwangen.de"><img src="../../Aufgabe02/Icons/email_icon.png" alt="E-Mail"
-                        width=50></a>
+                <a href="mailto:niklas.dominik.krieg@hs-furtwangen.de"><img src="../../Aufgabe02/Icons/email_icon.png"
+                        alt="E-Mail" width=50></a>
             </p>
             <p>
                 <a href="https://open.spotify.com/user/maeccy?si=2uY_h4d1RG6i8EoXMWUTXg" target="blank_"><img
@@ -36,7 +41,7 @@
             <h2>Tja, machste nix ¯\_(ツ)_/¯</h2>
         </div>
         <hr>
-       <div>
+        <div>
             <fieldset>
                 <legend>Schreibt mir doch eine Nachricht, die auch <em>ganz sicher</em> bei mir ankommen wird!</legend>
                 <label for="entername">Name:</label>
@@ -46,7 +51,7 @@
                 <textarea name="message" id="entermessage" cols="30" rows="10"
                     placeholder="Gib deine Nachricht ein"></textarea>
             </fieldset>
-                <button type="submit">Senden</button>
+            <button type="submit">Senden</button>
         </div>
     </main>
 </body>
