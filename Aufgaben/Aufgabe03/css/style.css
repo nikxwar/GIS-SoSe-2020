@@ -98,8 +98,13 @@ b {
     border: 5px double lightslategray;
     padding: 5px;
     margin: 5px;
+    text-align: left;
     
- }  
+ } 
+
+ #infos{
+    text-align: left;
+  }
 
  #datenschutz{
     color: gray;
@@ -119,7 +124,10 @@ b {
      
  }
 
- #backtotop{
+ .buttoncoloring{
      margin-bottom:25px;
+     background-color: grey;
+     color: white;
+     border: 5px double lightslategray;
  }
 
