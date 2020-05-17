@@ -5,23 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Niklas</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 
 <body>
     <header id="start">
         <nav>
-            <ul>
-                <li><a href="../Portfolio/portfolio.html">portfolio</a></li>
-                <li><a href="../Steckbrief/about_me.html" class="nav_current">about me</a>
-                <li></li>
-                <li><a href="../Contact/contact.html">contact</a></li>
-            </ul>
+            <a href="../Portfolio/portfolio.html" class="border">PORTFOLIO &nbsp;</a>
+            <a href="../Steckbrief/about_me.html" id="active" class="border">&nbsp; ABOUT ME &nbsp;</a>
+            <a href="../Contact/contact.html">&nbsp; CONTACT</a>
         </nav>
+        <h1>Über mich</h1>
+        <div>
+            <a href="mailto:niklas.dominik.krieg@hs-furtwangen.de"><img src="../../Aufgabe02/Icons/email_icon.png"
+                    alt="E-Mail" width=50></a>
+            <a href="https://open.spotify.com/user/maeccy?si=2uY_h4d1RG6i8EoXMWUTXg" target="blank_"><img
+                    src="../../Aufgabe02/Icons/spotify_icon.png" alt="Spotify" width=50> </a>
+        </div>
     </header>
     <main>
         <div>
-            <h1>Willkommen zu meinem Steckbrief!</h1>
+
             <h2>Inhalt:</h2>
             <ul>
                 <li><a href="#übermich">Über mich</a></li>
@@ -77,11 +81,9 @@
         </div>
     </main>
     <footer>
-        <nav>
-            <form>
-                <button type="submit" formaction="#start">Hier geht es wieder nach oben</button>
-            </form>
-        </nav>
+        <form>
+            <button type="submit" formaction="#start" id="backtotop">Hier geht es wieder nach oben</button>
+        </form>
     </footer>
 </body>
 

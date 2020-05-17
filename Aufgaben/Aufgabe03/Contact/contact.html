@@ -5,33 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 
 <body>
     <header>
         <nav>
-            <ul>
-                <li><a href="../Portfolio/portfolio.html">portfolio</a></li>
-                <li><a href="../Steckbrief/about_me.html">about me</a>
-                <li></li>
-                <li><a href="../Contact/contact.html" class="nav_current">contact</a></li>
-            </ul>
+            <a href="../Portfolio/portfolio.html" class="border">PORTFOLIO &nbsp;</a>
+            <a href="../Steckbrief/about_me.html" class="border">&nbsp; ABOUT ME &nbsp;</a>
+            <a href="../Contact/contact.html" id="active">&nbsp; CONTACT</a>
         </nav>
+        <h1>Contact</h1>
+        <div>
+            <a href="mailto:niklas.dominik.krieg@hs-furtwangen.de" class="icons"><img src="../../Aufgabe02/Icons/email_icon.png"
+                    alt="E-Mail" width=50></a>
+            <a href="https://open.spotify.com/user/maeccy?si=2uY_h4d1RG6i8EoXMWUTXg" target="blank_" class="icons"><img
+                    src="../../Aufgabe02/Icons/spotify_icon.png" alt="Spotify" width=50> </a>
+        </div>
     </header>
     <main>
-        <div>
-            <h1>Contact:</h1>
-            <p>
-                <a href="mailto:niklas.dominik.krieg@hs-furtwangen.de"><img src="../../Aufgabe02/Icons/email_icon.png"
-                        alt="E-Mail" width=50></a>
-            </p>
-            <p>
-                <a href="https://open.spotify.com/user/maeccy?si=2uY_h4d1RG6i8EoXMWUTXg" target="blank_"><img
-                        src="../../Aufgabe02/Icons/spotify_icon.png" alt="Spotify" width=50> </a>
-            </p>
-        </div>
-        <hr>
         <div id="contact_list">
             <ul>
                 <li><b>Instagram: </b><i>nicht vorhanden</i></li>
@@ -42,15 +34,12 @@
         </div>
         <hr>
         <div>
-            <fieldset>
-                <legend>Schreibt mir doch eine Nachricht, die auch <em>ganz sicher</em> bei mir ankommen wird!</legend>
-                <label for="entername">Name:</label>
-                <input type="text" name="message" id="entername"><br>
-                <label for="enteremail">E-Mail:</label>
-                <input type="text" name="message" id="enteremail"><br>
-                <textarea name="message" id="entermessage" cols="30" rows="10"
-                    placeholder="Gib deine Nachricht ein"></textarea>
-            </fieldset>
+            <h3>Schreib mir eine Nachricht, die <em>ganz sicher</em> bei mir ankommen wird!</h3>
+            <input type="text" name="message" id="enterfirstname" placeholder="Vorname" class="form"><br>
+            <input type="text" name="message" id="entername" placeholder="Name" class="form"><br>
+            <input type="text" name="message" id="enteremail" placeholder="E-Mail" class="form"><br>
+            <textarea name="message" id="entermessage" cols="30" rows="1" placeholder="Nachricht"
+                class="form"></textarea><br>
             <button type="submit">Senden</button>
         </div>
     </main>
