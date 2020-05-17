@@ -54,6 +54,10 @@ body a{
     color: gray;
 }
 
+body a:hover{
+    color: #990033
+}
+
 #active{
     color: #990033;
 
