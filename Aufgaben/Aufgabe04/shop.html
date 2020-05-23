@@ -11,16 +11,22 @@
 
 <body>
     <header>
-        <h1>Willkommen in der Boulderbude!</h1>
-        <!--<input type="text" name="search" placeholder="Suche" id="suche">-->
+        <div id="titlebar">
+            <h1>Willkommen in der Boulderbude!</h1>
+        </div>
         <img src="Artikelbilder/shoppingcart.png" alt="Warenkorb" id="cart">
-        <ul id="navigation">
-            <li><a href="#schuhe">Boulderschuhe</a></li>
-            <li><a href="#gear">Boulderausrüstung</a></li>
-        </ul>
+        <nav>
+            <div class="navigation">
+                <ul>
+                    <li><img src="Artikelbilder/menu-icon.png" alt="Menü" id="nav-icon"></li>
+                    <li><a href="#schuhe">Boulderschuhe</a></li>
+                    <li><a href="#gear">Boulderausrüstung</a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
     <main>
-        <h2 id="schuhe">Boulderschuhe</h2>
+        <h2 id="schuhe">Boulderschuhe:</h2>
         <div class="artikel">
             <div>
                 <img src="Artikelbilder/kletterschuhe-beginner.jpg" alt="Schuhe Anfänger">
@@ -66,7 +72,7 @@
                 <button type="button">In den Warenkorb</button>
             </div>
         </div>
-        <h2 id="gear">Boulderausrüstung</h2>
+        <h2 id="gear">Boulderausrüstung:</h2>
         <div class="artikel">
             <div>
                 <img src="Artikelbilder/boulderbucket-moon.jpg" alt="Boulderbucket Moon">

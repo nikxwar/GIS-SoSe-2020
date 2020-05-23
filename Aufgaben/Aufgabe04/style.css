@@ -2,23 +2,40 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     margin: auto;
-    background-color: lightgray;
+    /*background-color: burlywood;*/
+    background-image: linear-gradient(beige, brown);
+
     
 }
 
-/*#titlebar{
-    width: 50%;
-    background-image: url(Artikelbilder/bg-wide.jpg);
-    height: 750px;
-    background-size: cover;
-    align-items: center;
-}*/
+header{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly ;
 
-img[src$=".png"]{
+}
+
+#titlebar {
+    order: 1;
+  }
+
+
+  
+h1{
+    margin-top: 50px;
+}
+
+#nav-icon {
+    width: 40px;
+    margin-top:33px;
+    }
+
+img[alt="Warenkorb"]{
     float: right;
-    height: 30px;
-    width: 30px;
+    height: 40px;
     margin-right: 25px;
+    order: 2;
+    margin-top: 50px;
     
 }
 
@@ -26,6 +43,38 @@ img[src$=".jpg"]{
     height: 250px;
     margin: auto;
     margin-top: 20px;
+}
+
+
+
+header{
+    margin-bottom: 25px;
+}
+
+ul{
+    text-align: center;
+    list-style-type: none;
+    width: auto;
+}
+
+
+
+.navigation  li a{
+    display: block;
+    visibility: hidden;
+
+}
+
+.navigation:hover li a {
+    visibility: visible;
+    transition: visibility;
+    transition-delay: 0.4s;
+  
+}
+
+a:link{
+    text-decoration: none;
+    color: black;
 }
 
 .artikel{
@@ -36,7 +85,6 @@ img[src$=".jpg"]{
     text-align: center;
     grid-template-columns: repeat(3, 33.3%);
     
-      
 }
 
 .artikel > div{  
@@ -53,8 +101,6 @@ img[src$=".jpg"]{
 .artikel + p{
     margin: 50px;
 }
-
-
 
 div button{
     color: whitesmoke;
@@ -73,12 +119,12 @@ div > button:hover{
     .artikel{
         grid-template-columns: repeat(2, 50%);
     }
+
     img[src$=".jpg"]{
         height: 200px;
     }
 
 }
-
 
 @media screen and (max-width: 600px){
     .artikel{
@@ -87,13 +133,7 @@ div > button:hover{
 
     img[src$=".jpg"]{
         height: 150px;
-        
+    
     }
 
 }
-
-
-
-
-
-
