@@ -25,7 +25,7 @@ img[src$=".jpg"]{
     gap: 10px;
     text-align: center;
     grid-template-columns: repeat(6, 16.6%);
-    grid-template-rows: repeat(2, 50%);
+      
 }
 
 .artikel > div{  
