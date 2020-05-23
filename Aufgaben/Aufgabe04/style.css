@@ -2,9 +2,6 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     margin: auto;
-    
-
-  
 }
 
 img[src$=".png"]{
@@ -12,11 +9,13 @@ img[src$=".png"]{
     height: 30px;
     width: 30px;
     margin-right: 25px;
+    
 }
 
 img[src$=".jpg"]{
     height: 150px;
     margin: auto;
+    margin-top: 20px;
 }
 
 .artikel{
@@ -25,25 +24,29 @@ img[src$=".jpg"]{
     gap: 10px;
     text-align: center;
     grid-template-columns: repeat(6, 16.6%);
+    
       
 }
 
 .artikel > div{  
     margin: 10px;
+    background-color: white;
     border: 2px;
-    border-style: solid;
-    border-color: navy;
+    border-style: solid ;
+    border-color: cornflowerblue;
+    border-radius: 5px;
     
 }
 
-.artikel  p{
+.artikel + p{
     margin: 50px;
 }
 
 
 
 div  button{
-    background-color: grey;
+    color: whitesmoke;
+    background-color: #2a2a2e;
     margin: auto;
     margin-bottom: 25px;
 }
@@ -51,6 +54,7 @@ div  button{
 div > button:hover{
     opacity: 0.6;
     cursor: pointer;
+    transform: scale(1.1);
 }
 
 @media screen and (max-width: 1024px){
@@ -63,7 +67,7 @@ div > button:hover{
 
 @media screen and (max-width: 600px){
     .artikel{
-        grid-template-columns: repeat(1, 100%);
+        grid-template-columns: 100%;
     }
 
 }
