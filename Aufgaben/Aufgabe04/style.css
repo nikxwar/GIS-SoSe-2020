@@ -1,44 +1,73 @@
-body *{
+body{
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    /*background-color: #191919;*/
-}
-
-main img{
-    width: 150px;
     margin: auto;
-    background-color: #191919;
-}
-
-
-#schuhe{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    /*color: white;*/
     
+
+  
 }
 
-#schuhe .artikel{  
+img[src$=".png"]{
+    float: right;
+    height: 30px;
+    width: 30px;
+    margin-right: 25px;
+}
+
+img[src$=".jpg"]{
+    height: 250px;
+    margin: auto;
+}
+
+.artikel{
+    display: grid; 
+    padding: 10px;
+    gap: 10px;
+    text-align: center;
+    grid-template-columns: repeat(3, 33%);
+    grid-template-rows: repeat(2, 50%);
+}
+
+.artikel > div{  
     margin: 10px;
     border: 2px;
     border-style: solid;
-    border-color: black;
-    width: 220px;
-
-}
-
-#gear{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-}
-
-#gear .artikel{  
-    margin: 10px;
-    border: 2px;
-    border-style: solid;
-    border-color: black;
-    width: 220px;
+    border-color: navy;
     
 }
+
+.artikel  p{
+    margin: 50px;
+}
+
+
+
+div  button{
+    background-color: grey;
+    margin: auto;
+    margin-bottom: 25px;
+}
+
+div > button:hover{
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1024px){
+    .artikel{
+        grid-template-columns: repeat(2, 50%);
+    }
+
+}
+
+
+@media screen and (max-width: 600px){
+    .artikel{
+        grid-template-columns: repeat(1, 100%);
+    }
+
+}
+
+
+
+
