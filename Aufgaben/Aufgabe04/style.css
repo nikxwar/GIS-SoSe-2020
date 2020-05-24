@@ -1,81 +1,49 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-image: linear-gradient(beige, #C46210);
     text-align: center;
-    margin: auto;
-    /*background-color: burlywood;*/
-    background-image: linear-gradient(beige, brown);
-
     
 }
 
-header{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly ;
+/*Header Elemente*/
 
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #C46210;
+  }
+  
+  ul.topnav li {
+      float: left;
 }
-
-#titlebar {
-    order: 1;
+  
+  ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
   }
 
-
-  
-h1{
-    margin-top: 50px;
+.topnav a:hover {
+    background: beige;
+    color: black;
 }
 
-#nav-icon {
-    width: 40px;
-    margin-top:33px;
-    }
+.navtext:hover{
+    padding-bottom: 1.535em;
+}
 
 img[alt="Warenkorb"]{
-    float: right;
-    height: 40px;
-    margin-right: 25px;
-    order: 2;
-    margin-top: 50px;
+    height: 25px;
     
 }
 
-img[src$=".jpg"]{
-    height: 250px;
-    margin: auto;
-    margin-top: 20px;
-}
-
-
-
-header{
-    margin-bottom: 25px;
-}
-
-ul{
-    text-align: center;
-    list-style-type: none;
-    width: auto;
-}
-
-
-
-.navigation  li a{
-    display: block;
-    visibility: hidden;
-
-}
-
-.navigation:hover li a {
-    visibility: visible;
-    transition: visibility;
-    transition-delay: 0.4s;
-  
-}
-
-a:link{
-    text-decoration: none;
-    color: black;
-}
+/*Main Elemente*/
 
 .artikel{
     margin: 25px;
@@ -110,11 +78,16 @@ div button{
 }
 
 div > button:hover{
-    opacity: 0.6;
+    opacity: 0.75;
     cursor: pointer;
     transform: scale(1.1);
 }
 
+img[src$=".jpg"]{
+    height: 250px;
+    margin: auto;
+    margin-top: 20px;
+}
 @media screen and (max-width: 1024px){
     .artikel{
         grid-template-columns: repeat(2, 50%);
@@ -134,6 +107,10 @@ div > button:hover{
     img[src$=".jpg"]{
         height: 150px;
     
+    }
+
+    ul.topnav li {
+        float: none;
     }
 
 }
