@@ -5,10 +5,12 @@ body{
     text-align: center;
     
 }
-
 /*Header Elemente*/
+ 
+header *{
+    text-align: center;
 
-
+}
 ul.topnav {
     list-style-type: none;
     margin: 0;
@@ -20,11 +22,10 @@ ul.topnav {
   ul.topnav li {
       float: left;
 }
-  
+
   ul.topnav li a {
     display: block;
     color: white;
-    text-align: center;
     padding: 14px 16px;
     text-decoration: none;
   }
@@ -32,17 +33,18 @@ ul.topnav {
 .topnav a:hover {
     background: beige;
     color: black;
+    cursor: pointer;
 }
 
 .navtext:hover{
     padding-bottom: 1.535em;
+    cursor: pointer;
 }
 
 img[alt="Warenkorb"]{
     height: 25px;
     
 }
-
 /*Main Elemente*/
 
 .artikel{
@@ -97,6 +99,8 @@ img[src$=".jpg"]{
         height: 200px;
     }
 
+
+
 }
 
 @media screen and (max-width: 600px){
@@ -114,3 +118,6 @@ img[src$=".jpg"]{
     }
 
 }
+
+
+
