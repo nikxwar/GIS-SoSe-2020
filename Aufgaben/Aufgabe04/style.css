@@ -3,14 +3,13 @@ body{
     margin: 0;
     background-image: linear-gradient(beige, #C46210);
     text-align: center;
-    
 }
 /*Header Elemente*/
  
 header *{
     text-align: center;
-
 }
+
 ul.topnav {
     list-style-type: none;
     margin: 0;
@@ -43,7 +42,6 @@ ul.topnav {
 
 img[alt="Warenkorb"]{
     height: 25px;
-    
 }
 /*Main Elemente*/
 
@@ -54,7 +52,6 @@ img[alt="Warenkorb"]{
     gap: 10px;
     text-align: center;
     grid-template-columns: repeat(3, 33.3%);
-    
 }
 
 .artikel > div{  
@@ -65,7 +62,6 @@ img[alt="Warenkorb"]{
     border-style: solid ;
     border-color: cornflowerblue;
     border-radius: 5px;
-    
 }
 
 .artikel + p{
@@ -90,6 +86,7 @@ img[src$=".jpg"]{
     margin: auto;
     margin-top: 20px;
 }
+
 @media screen and (max-width: 1024px){
     .artikel{
         grid-template-columns: repeat(2, 50%);
@@ -98,9 +95,6 @@ img[src$=".jpg"]{
     img[src$=".jpg"]{
         height: 200px;
     }
-
-
-
 }
 
 @media screen and (max-width: 600px){
@@ -110,13 +104,11 @@ img[src$=".jpg"]{
 
     img[src$=".jpg"]{
         height: 150px;
-    
     }
 
     ul.topnav li {
         float: none;
     }
-
 }
 
 
