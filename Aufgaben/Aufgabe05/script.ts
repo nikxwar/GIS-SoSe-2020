@@ -134,7 +134,7 @@ namespace Aufgabe05 {
         setPrice.innerHTML = alleSchuhe[i].price;
         document.getElementById("artikelID" + i)?.appendChild(setPrice);
 
-        
+
 
 
     }
@@ -146,7 +146,6 @@ namespace Aufgabe05 {
         setDiv.id = "artikelID" + i;
 
         document.getElementById("katgear")?.appendChild(setDiv);
-
 
         let setH2: HTMLHeadingElement = document.createElement("h2");
         setH2.innerHTML = alleGear[i].name;
@@ -161,16 +160,15 @@ namespace Aufgabe05 {
         setDesc.innerHTML = alleGear[i].desc;
         document.getElementById("artikelID" + i)?.appendChild(setIMG);
 
-
         let setPrice: HTMLParagraphElement = document.createElement("p");
         setDesc.setAttribute("class", "preis");
         setPrice.innerHTML = alleGear[i].price;
 
-        
+
 
 
     }
 
 
-    
+
 }
