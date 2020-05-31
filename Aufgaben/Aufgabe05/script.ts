@@ -11,7 +11,7 @@ namespace Aufgabe05 {
     //#region Schuhe
 
     let schuh1: ArtikelBouldern = {
-        image: "Artikelbilder/kletterschuhe-beginner.jpg",
+        image: "../Aufgabe04/Artikelbilder/kletterschuhe-beginner.jpg",
         name: "La Sportiva Tarantula",
         desc: "Ideal als erster Kletterschuh, endlich keine Leihschuhe mehr!",
         price: "79,99€",
@@ -19,7 +19,7 @@ namespace Aufgabe05 {
     };
 
     let schuh2: ArtikelBouldern = {
-        image: "Artikelbilder/kletterschuhe-intermediate.jpg",
+        image: "../Aufgabe04/Artikelbilder/kletterschuhe-intermediate.jpg",
         name: "Scarpa Arpia",
         desc: "Bequemer Einstieg in die Welt der High Performance Schuhe.",
         price: "119,99€",
@@ -27,7 +27,7 @@ namespace Aufgabe05 {
 
     };
     let schuh3: ArtikelBouldern = {
-        image: "Artikelbilder/instinct-kletterschuhe.jpg",
+        image: "../Aufgabe04/Artikelbilder/instinct-kletterschuhe.jpg",
         name: "Scarpa Instinct VS-R",
         desc: "Weichere Version des bewährten Instinct VS in schickem Blau.",
         price: "144,99€<",
@@ -35,7 +35,7 @@ namespace Aufgabe05 {
 
     };
     let schuh4: ArtikelBouldern = {
-        image: "Artikelbilder/kletterschuhe-pro.jpg",
+        image: "../Aufgabe04/Artikelbilder/kletterschuhe-pro.jpg",
         name: "La Sportiva Skwama",
         desc: "La Sportivas erfolgreichster High Performance Schuh.",
         price: "149,99€",
@@ -43,7 +43,7 @@ namespace Aufgabe05 {
 
     };
     let schuh5: ArtikelBouldern = {
-        image: "Artikelbilder/kletterschuhe-pro2.jpg",
+        image: "../Aufgabe04/Artikelbilder/kletterschuhe-pro2.jpg",
         name: "Scarpa Drago",
         desc: "Idealer Schuh für schwere, überhängende Boulder.",
         price: "149,99€",
@@ -51,7 +51,7 @@ namespace Aufgabe05 {
 
     };
     let schuh6: ArtikelBouldern = {
-        image: "Artikelbilder/furia-kletterschuhe.jpg",
+        image: "../Aufgabe04/Artikelbilder/furia-kletterschuhe.jpg",
         name: "Scarpa Furia Air",
         desc: "Starke Vorspannung, hohe Asymmetrie und geringes Gewicht",
         price: "159,99€",
@@ -61,7 +61,7 @@ namespace Aufgabe05 {
     //#endregion
     //#region Ausrüstung
     let gear1: ArtikelBouldern = {
-        image: "Artikelbilder/boulderbucket-moon.jpg",
+        image: "../Aufgabe04/Artikelbilder/boulderbucket-moon.jpg",
         name: "Chalkbag",
         desc: "Geräumiger Chalkbucket von Moon in schlichtem Schwarz.",
         price: "29,99€",
@@ -69,7 +69,7 @@ namespace Aufgabe05 {
 
     };
     let gear2: ArtikelBouldern = {
-        image: "Artikelbilder/block-chalk.jpg",
+        image: "../Aufgabe04/Artikelbilder/block-chalk.jpg",
         name: "Chalk Block",
         desc: "Magnesiumcarbonat in Blockform zum selbst zerkleinern.",
         price: "2,50€",
@@ -77,7 +77,7 @@ namespace Aufgabe05 {
 
     };
     let gear3: ArtikelBouldern = {
-        image: "Artikelbilder/boulderbuerste.jpg",
+        image: "../Aufgabe04/Artikelbilder/boulderbuerste.jpg",
         name: "Boulderbürste",
         desc: "Zur mühelosen und gründlichen Reinigung mittlerer und großer Griffe.",
         price: "5,99€",
@@ -85,7 +85,7 @@ namespace Aufgabe05 {
 
     };
     let gear4: ArtikelBouldern = {
-        image: "Artikelbilder/climb-on.jpg",
+        image: "../Aufgabe04/Artikelbilder/climb-on.jpg",
         name: "Climb On Hautpflege",
         desc: "Hilft bei durchs Klettern strapazierter Haut schnell und effektiv.",
         price: "8,50€",
@@ -93,7 +93,7 @@ namespace Aufgabe05 {
 
     };
     let gear5: ArtikelBouldern = {
-        image: "Artikelbilder/tape.jpg",
+        image: "../Aufgabe04/Artikelbilder/tape.jpg",
         name: "Klettertape",
         desc: "Sehr hilfreich bei Wunden oder zum Stabilisieren der Gelenke.",
         price: "4,99€",
@@ -117,16 +117,13 @@ namespace Aufgabe05 {
     //DOM Manipulation
 
 
-
     for (let i: number = 0; i < alleSchuhe.length; i++) {
 
         let setDiv: HTMLDivElement = document.createElement("div");
         setDiv.setAttribute("class", "artikel");
-        //setDiv.setAttribute("id", "artikelID" + i);
-        setDiv.id = "schuhID" + i;
+        setDiv.setAttribute("id", "schuhID" + i);
 
         document.getElementById("katschuhe")?.appendChild(setDiv);
-
 
         let setH2: HTMLHeadingElement = document.createElement("h2");
         setH2.innerHTML = alleSchuhe[i].name;
@@ -152,16 +149,13 @@ namespace Aufgabe05 {
         setButton.innerHTML = alleSchuhe[i].button;
         document.getElementById("schuhID" + i)?.appendChild(setButton);
 
-
-
-
     }
+
     for (let i: number = 0; i < alleGear.length; i++) {
 
         let setDiv: HTMLDivElement = document.createElement("div");
         setDiv.setAttribute("class", "artikel");
-        //setDiv.setAttribute("id", "artikelID" + i);
-        setDiv.id = "gearID" + i;
+        setDiv.setAttribute("id", "gearID" + i);
 
         document.getElementById("katgear")?.appendChild(setDiv);
 
@@ -186,9 +180,6 @@ namespace Aufgabe05 {
         let setButton: HTMLButtonElement = document.createElement("button");
         setButton.innerHTML = alleGear[i].button;
         document.getElementById("gearID" + i)?.appendChild(setButton);
-
-
-
 
     }
 

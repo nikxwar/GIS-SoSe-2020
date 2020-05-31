@@ -3,42 +3,42 @@ var Aufgabe05;
 (function (Aufgabe05) {
     //#region Schuhe
     let schuh1 = {
-        image: "Artikelbilder/kletterschuhe-beginner.jpg",
+        image: "../Aufgabe04/Artikelbilder/kletterschuhe-beginner.jpg",
         name: "La Sportiva Tarantula",
         desc: "Ideal als erster Kletterschuh, endlich keine Leihschuhe mehr!",
         price: "79,99€",
         button: "In den Warenkorb"
     };
     let schuh2 = {
-        image: "Artikelbilder/kletterschuhe-intermediate.jpg",
+        image: "../Aufgabe04/Artikelbilder/kletterschuhe-intermediate.jpg",
         name: "Scarpa Arpia",
         desc: "Bequemer Einstieg in die Welt der High Performance Schuhe.",
         price: "119,99€",
         button: "In den Warenkorb"
     };
     let schuh3 = {
-        image: "Artikelbilder/instinct-kletterschuhe.jpg",
+        image: "../Aufgabe04/Artikelbilder/instinct-kletterschuhe.jpg",
         name: "Scarpa Instinct VS-R",
         desc: "Weichere Version des bewährten Instinct VS in schickem Blau.",
         price: "144,99€<",
         button: "In den Warenkorb"
     };
     let schuh4 = {
-        image: "Artikelbilder/kletterschuhe-pro.jpg",
+        image: "../Aufgabe04/Artikelbilder/kletterschuhe-pro.jpg",
         name: "La Sportiva Skwama",
         desc: "La Sportivas erfolgreichster High Performance Schuh.",
         price: "149,99€",
         button: "In den Warenkorb"
     };
     let schuh5 = {
-        image: "Artikelbilder/kletterschuhe-pro2.jpg",
+        image: "../Aufgabe04/Artikelbilder/kletterschuhe-pro2.jpg",
         name: "Scarpa Drago",
         desc: "Idealer Schuh für schwere, überhängende Boulder.",
         price: "149,99€",
         button: "In den Warenkorb"
     };
     let schuh6 = {
-        image: "Artikelbilder/furia-kletterschuhe.jpg",
+        image: "../Aufgabe04/Artikelbilder/furia-kletterschuhe.jpg",
         name: "Scarpa Furia Air",
         desc: "Starke Vorspannung, hohe Asymmetrie und geringes Gewicht",
         price: "159,99€",
@@ -47,35 +47,35 @@ var Aufgabe05;
     //#endregion
     //#region Ausrüstung
     let gear1 = {
-        image: "Artikelbilder/boulderbucket-moon.jpg",
+        image: "../Aufgabe04/Artikelbilder/boulderbucket-moon.jpg",
         name: "Chalkbag",
         desc: "Geräumiger Chalkbucket von Moon in schlichtem Schwarz.",
         price: "29,99€",
         button: "In den Warenkorb"
     };
     let gear2 = {
-        image: "Artikelbilder/block-chalk.jpg",
+        image: "../Aufgabe04/Artikelbilder/block-chalk.jpg",
         name: "Chalk Block",
         desc: "Magnesiumcarbonat in Blockform zum selbst zerkleinern.",
         price: "2,50€",
         button: "In den Warenkorb"
     };
     let gear3 = {
-        image: "Artikelbilder/boulderbuerste.jpg",
+        image: "../Aufgabe04/Artikelbilder/boulderbuerste.jpg",
         name: "Boulderbürste",
         desc: "Zur mühelosen und gründlichen Reinigung mittlerer und großer Griffe.",
         price: "5,99€",
         button: "In den Warenkorb"
     };
     let gear4 = {
-        image: "Artikelbilder/climb-on.jpg",
+        image: "../Aufgabe04/Artikelbilder/climb-on.jpg",
         name: "Climb On Hautpflege",
         desc: "Hilft bei durchs Klettern strapazierter Haut schnell und effektiv.",
         price: "8,50€",
         button: "In den Warenkorb"
     };
     let gear5 = {
-        image: "Artikelbilder/tape.jpg",
+        image: "../Aufgabe04/Artikelbilder/tape.jpg",
         name: "Klettertape",
         desc: "Sehr hilfreich bei Wunden oder zum Stabilisieren der Gelenke.",
         price: "4,99€",
@@ -95,8 +95,7 @@ var Aufgabe05;
     for (let i = 0; i < alleSchuhe.length; i++) {
         let setDiv = document.createElement("div");
         setDiv.setAttribute("class", "artikel");
-        //setDiv.setAttribute("id", "artikelID" + i);
-        setDiv.id = "schuhID" + i;
+        setDiv.setAttribute("id", "schuhID" + i);
         document.getElementById("katschuhe")?.appendChild(setDiv);
         let setH2 = document.createElement("h2");
         setH2.innerHTML = alleSchuhe[i].name;
@@ -120,8 +119,7 @@ var Aufgabe05;
     for (let i = 0; i < alleGear.length; i++) {
         let setDiv = document.createElement("div");
         setDiv.setAttribute("class", "artikel");
-        //setDiv.setAttribute("id", "artikelID" + i);
-        setDiv.id = "gearID" + i;
+        setDiv.setAttribute("id", "gearID" + i);
         document.getElementById("katgear")?.appendChild(setDiv);
         let setH2 = document.createElement("h2");
         setH2.innerHTML = alleGear[i].name;
