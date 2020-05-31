@@ -10,14 +10,14 @@ namespace Aufgabe05 {
     //#region Schuhe
 
     let schuh1: ArtikelBouldern = {
-        image: "../Aufgabe04/Artikelbilder/kletterschuhe-beginner.jpg",
+        image: "Artikelbilder/kletterschuhe-beginner.jpg",
         name: "La Sportiva Tarantula",
         desc: "Ideal als erster Kletterschuh, endlich keine Leihschuhe mehr!",
         price: "79,99€"
     };
 
     let schuh2: ArtikelBouldern = {
-        image: "../Aufgabe04/Artikelbilder/kletterschuhe-intermediate.jpg",
+        image: "Artikelbilder/kletterschuhe-intermediate.jpg",
         name: "Scarpa Arpia",
         desc: "Bequemer Einstieg in die Welt der High Performance Schuhe.",
         price: "119,99€"
@@ -133,17 +133,16 @@ namespace Aufgabe05 {
         setDesc.setAttribute("class", "preis");
         setPrice.innerHTML = alleSchuhe[i].price;
 
-        //let setButton: HTMLButtonElement = document.createElement("button");
+        
 
 
     }
-
-
-    for (let i: number = 0; i < alleGear.length; i++) {
+    for (let i: number = 0; i < alleSchuhe.length; i++) {
 
         let setDiv: HTMLDivElement = document.createElement("div");
         setDiv.setAttribute("class", "artikel");
-        setDiv.setAttribute("id", "artikelID" + i);
+        //setDiv.setAttribute("id", "artikelID" + i);
+        setDiv.id = "artikelID" + i;
 
         document.getElementById("katgear")?.appendChild(setDiv);
 
@@ -159,12 +158,18 @@ namespace Aufgabe05 {
         let setDesc: HTMLParagraphElement = document.createElement("p");
         setDesc.setAttribute("class", "beschreibung");
         setDesc.innerHTML = alleGear[i].desc;
+        document.getElementById("artikelID" + i)?.appendChild(setIMG);
+
 
         let setPrice: HTMLParagraphElement = document.createElement("p");
         setDesc.setAttribute("class", "preis");
         setPrice.innerHTML = alleGear[i].price;
 
-        //let setButton: HTMLButtonElement = document.createElement("button");
+        
+
 
     }
+
+
+    
 }
