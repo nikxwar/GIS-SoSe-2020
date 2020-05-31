@@ -5,6 +5,7 @@ namespace Aufgabe05 {
         name: string;
         desc: string;
         price: string;
+        button: string;
     }
 
     //#region Schuhe
@@ -13,42 +14,48 @@ namespace Aufgabe05 {
         image: "Artikelbilder/kletterschuhe-beginner.jpg",
         name: "La Sportiva Tarantula",
         desc: "Ideal als erster Kletterschuh, endlich keine Leihschuhe mehr!",
-        price: "79,99€"
+        price: "79,99€",
+        button: "In den Warenkorb"
     };
 
     let schuh2: ArtikelBouldern = {
         image: "Artikelbilder/kletterschuhe-intermediate.jpg",
         name: "Scarpa Arpia",
         desc: "Bequemer Einstieg in die Welt der High Performance Schuhe.",
-        price: "119,99€"
+        price: "119,99€",
+        button: "In den Warenkorb"
 
     };
     let schuh3: ArtikelBouldern = {
-        image: "Artikelbilder/instinct-kletterschuhe",
+        image: "Artikelbilder/instinct-kletterschuhe.jpg",
         name: "Scarpa Instinct VS-R",
         desc: "Weichere Version des bewährten Instinct VS in schickem Blau.",
-        price: "144,99€<"
+        price: "144,99€<",
+        button: "In den Warenkorb"
 
     };
     let schuh4: ArtikelBouldern = {
         image: "Artikelbilder/kletterschuhe-pro.jpg",
         name: "La Sportiva Skwama",
         desc: "La Sportivas erfolgreichster High Performance Schuh.",
-        price: "149,99€"
+        price: "149,99€",
+        button: "In den Warenkorb"
 
     };
     let schuh5: ArtikelBouldern = {
         image: "Artikelbilder/kletterschuhe-pro2.jpg",
         name: "Scarpa Drago",
         desc: "Idealer Schuh für schwere, überhängende Boulder.",
-        price: "149,99€"
+        price: "149,99€",
+        button: "In den Warenkorb"
 
     };
     let schuh6: ArtikelBouldern = {
         image: "Artikelbilder/furia-kletterschuhe.jpg",
         name: "Scarpa Furia Air",
         desc: "Starke Vorspannung, hohe Asymmetrie und geringes Gewicht",
-        price: "159,99€"
+        price: "159,99€",
+        button: "In den Warenkorb"
 
     };
     //#endregion
@@ -57,42 +64,48 @@ namespace Aufgabe05 {
         image: "Artikelbilder/boulderbucket-moon.jpg",
         name: "Chalkbag",
         desc: "Geräumiger Chalkbucket von Moon in schlichtem Schwarz.",
-        price: "29,99€"
+        price: "29,99€",
+        button: "In den Warenkorb"
 
     };
     let gear2: ArtikelBouldern = {
         image: "Artikelbilder/block-chalk.jpg",
         name: "Chalk Block",
         desc: "Magnesiumcarbonat in Blockform zum selbst zerkleinern.",
-        price: "2,50€"
+        price: "2,50€",
+        button: "In den Warenkorb"
 
     };
     let gear3: ArtikelBouldern = {
         image: "Artikelbilder/boulderbuerste.jpg",
         name: "Boulderbürste",
         desc: "Zur mühelosen und gründlichen Reinigung mittlerer und großer Griffe.",
-        price: "5,99€"
+        price: "5,99€",
+        button: "In den Warenkorb"
 
     };
     let gear4: ArtikelBouldern = {
         image: "Artikelbilder/climb-on.jpg",
         name: "Climb On Hautpflege",
         desc: "Hilft bei durchs Klettern strapazierter Haut schnell und effektiv.",
-        price: "8,50€"
+        price: "8,50€",
+        button: "In den Warenkorb"
 
     };
     let gear5: ArtikelBouldern = {
         image: "Artikelbilder/tape.jpg",
         name: "Klettertape",
         desc: "Sehr hilfreich bei Wunden oder zum Stabilisieren der Gelenke.",
-        price: "4,99€"
+        price: "4,99€",
+        button: "In den Warenkorb"
 
     };
     let gear6: ArtikelBouldern = {
         image: "../Aufgabe04/Artikelbilder/crashpad.jpg",
         name: "Crashpad",
         desc: "Mittelgroßes Crashpad für regelmäßige Outdoorseesions.",
-        price: "219,99€"
+        price: "219,99€",
+        button: "In den Warenkorb"
 
     };
 
@@ -134,6 +147,10 @@ namespace Aufgabe05 {
         setDesc.setAttribute("class", "preis");
         setPrice.innerHTML = alleSchuhe[i].price;
         document.getElementById("schuhID" + i)?.appendChild(setPrice);
+
+        let setButton: HTMLButtonElement = document.createElement("button");
+        setButton.innerHTML = alleSchuhe[i].button;
+        document.getElementById("schuhID" + i)?.appendChild(setButton);
 
 
 

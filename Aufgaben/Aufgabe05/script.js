@@ -6,37 +6,43 @@ var Aufgabe05;
         image: "Artikelbilder/kletterschuhe-beginner.jpg",
         name: "La Sportiva Tarantula",
         desc: "Ideal als erster Kletterschuh, endlich keine Leihschuhe mehr!",
-        price: "79,99€"
+        price: "79,99€",
+        button: "In den Warenkorb"
     };
     let schuh2 = {
         image: "Artikelbilder/kletterschuhe-intermediate.jpg",
         name: "Scarpa Arpia",
         desc: "Bequemer Einstieg in die Welt der High Performance Schuhe.",
-        price: "119,99€"
+        price: "119,99€",
+        button: "In den Warenkorb"
     };
     let schuh3 = {
-        image: "Artikelbilder/instinct-kletterschuhe",
+        image: "Artikelbilder/instinct-kletterschuhe.jpg",
         name: "Scarpa Instinct VS-R",
         desc: "Weichere Version des bewährten Instinct VS in schickem Blau.",
-        price: "144,99€<"
+        price: "144,99€<",
+        button: "In den Warenkorb"
     };
     let schuh4 = {
         image: "Artikelbilder/kletterschuhe-pro.jpg",
         name: "La Sportiva Skwama",
         desc: "La Sportivas erfolgreichster High Performance Schuh.",
-        price: "149,99€"
+        price: "149,99€",
+        button: "In den Warenkorb"
     };
     let schuh5 = {
         image: "Artikelbilder/kletterschuhe-pro2.jpg",
         name: "Scarpa Drago",
         desc: "Idealer Schuh für schwere, überhängende Boulder.",
-        price: "149,99€"
+        price: "149,99€",
+        button: "In den Warenkorb"
     };
     let schuh6 = {
         image: "Artikelbilder/furia-kletterschuhe.jpg",
         name: "Scarpa Furia Air",
         desc: "Starke Vorspannung, hohe Asymmetrie und geringes Gewicht",
-        price: "159,99€"
+        price: "159,99€",
+        button: "In den Warenkorb"
     };
     //#endregion
     //#region Ausrüstung
@@ -44,37 +50,43 @@ var Aufgabe05;
         image: "Artikelbilder/boulderbucket-moon.jpg",
         name: "Chalkbag",
         desc: "Geräumiger Chalkbucket von Moon in schlichtem Schwarz.",
-        price: "29,99€"
+        price: "29,99€",
+        button: "In den Warenkorb"
     };
     let gear2 = {
         image: "Artikelbilder/block-chalk.jpg",
         name: "Chalk Block",
         desc: "Magnesiumcarbonat in Blockform zum selbst zerkleinern.",
-        price: "2,50€"
+        price: "2,50€",
+        button: "In den Warenkorb"
     };
     let gear3 = {
         image: "Artikelbilder/boulderbuerste.jpg",
         name: "Boulderbürste",
         desc: "Zur mühelosen und gründlichen Reinigung mittlerer und großer Griffe.",
-        price: "5,99€"
+        price: "5,99€",
+        button: "In den Warenkorb"
     };
     let gear4 = {
         image: "Artikelbilder/climb-on.jpg",
         name: "Climb On Hautpflege",
         desc: "Hilft bei durchs Klettern strapazierter Haut schnell und effektiv.",
-        price: "8,50€"
+        price: "8,50€",
+        button: "In den Warenkorb"
     };
     let gear5 = {
         image: "Artikelbilder/tape.jpg",
         name: "Klettertape",
         desc: "Sehr hilfreich bei Wunden oder zum Stabilisieren der Gelenke.",
-        price: "4,99€"
+        price: "4,99€",
+        button: "In den Warenkorb"
     };
     let gear6 = {
         image: "../Aufgabe04/Artikelbilder/crashpad.jpg",
         name: "Crashpad",
         desc: "Mittelgroßes Crashpad für regelmäßige Outdoorseesions.",
-        price: "219,99€"
+        price: "219,99€",
+        button: "In den Warenkorb"
     };
     //#endregion 
     let alleSchuhe = [schuh1, schuh2, schuh3, schuh4, schuh5, schuh6];
@@ -101,6 +113,9 @@ var Aufgabe05;
         setDesc.setAttribute("class", "preis");
         setPrice.innerHTML = alleSchuhe[i].price;
         document.getElementById("schuhID" + i)?.appendChild(setPrice);
+        let setButton = document.createElement("button");
+        setButton.innerHTML = alleSchuhe[i].button;
+        document.getElementById("schuhID" + i)?.appendChild(setButton);
     }
     for (let i = 0; i < alleGear.length; i++) {
         let setDiv = document.createElement("div");

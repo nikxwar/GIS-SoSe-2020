@@ -45,7 +45,7 @@ img[alt="Warenkorb"]{
 }
 /*Main Elemente*/
 
-.artikel{
+#katschuhe, #katgear{
     margin: 25px;
     display: grid; 
     padding: 10px;
@@ -54,7 +54,7 @@ img[alt="Warenkorb"]{
     grid-template-columns: repeat(3, 33.3%);
 }
 
-.artikel > div{  
+#katschuhe > div{  
     margin: 10px;
     background-color: white;
     padding: 10px;
@@ -64,7 +64,20 @@ img[alt="Warenkorb"]{
     border-radius: 5px;
 }
 
-.artikel + p{
+#katschuhe + p{
+    margin: 50px;
+}
+#katgear > div{  
+    margin: 10px;
+    background-color: white;
+    padding: 10px;
+    border: 2px;
+    border-style: solid ;
+    border-color: cornflowerblue;
+    border-radius: 5px;
+}
+
+#katgear + p{
     margin: 50px;
 }
 
