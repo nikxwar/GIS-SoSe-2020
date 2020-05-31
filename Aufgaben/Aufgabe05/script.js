@@ -137,6 +137,9 @@ var Aufgabe05;
         let setPrice = document.createElement("p");
         setDesc.setAttribute("class", "preis");
         setPrice.innerHTML = alleGear[i].price;
+        let setButton = document.createElement("button");
+        setButton.innerHTML = alleGear[i].button;
+        document.getElementById("gearID" + i)?.appendChild(setButton);
     }
 })(Aufgabe05 || (Aufgabe05 = {}));
 //# sourceMappingURL=script.js.map

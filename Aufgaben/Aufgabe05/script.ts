@@ -183,6 +183,10 @@ namespace Aufgabe05 {
         setDesc.setAttribute("class", "preis");
         setPrice.innerHTML = alleGear[i].price;
 
+        let setButton: HTMLButtonElement = document.createElement("button");
+        setButton.innerHTML = alleGear[i].button;
+        document.getElementById("gearID" + i)?.appendChild(setButton);
+
 
 
 
