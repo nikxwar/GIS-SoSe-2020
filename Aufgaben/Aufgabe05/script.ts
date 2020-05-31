@@ -98,40 +98,73 @@ namespace Aufgabe05 {
 
     //#endregion 
 
-    let alleArtikel: ArtikelBouldern[] = [schuh1, schuh2, schuh3, schuh4, schuh5, schuh6, gear1, gear2, gear3, gear4, gear5, gear6];
+    let alleSchuhe: ArtikelBouldern[] = [schuh1, schuh2, schuh3, schuh4, schuh5, schuh6];
+    let alleGear: ArtikelBouldern[] = [gear1, gear2, gear3, gear4, gear5, gear6];
 
     //DOM Manipulation
 
 
 
-    for (let i: number = 0; i < alleArtikel.length; i++) {
+    for (let i: number = 0; i < alleSchuhe.length; i++) {
 
         let setDiv: HTMLDivElement = document.createElement("div");
-        //setDiv.setAttribute("class", "artikel");
-        setDiv.setAttribute("id", "artikelID" + i);
+        setDiv.setAttribute("class", "artikel");
+        //setDiv.setAttribute("id", "artikelID" + i);
+        setDiv.id = "artikelID" + i;
 
         document.getElementById("katschuhe")?.appendChild(setDiv);
 
 
         let setH2: HTMLHeadingElement = document.createElement("h2");
-        setH2.innerHTML = alleArtikel[i].name;
+        setH2.innerHTML = alleSchuhe[i].name;
         document.getElementById("artikelID" + i)?.appendChild(setH2);
 
         let setIMG: HTMLImageElement = document.createElement("img");
-        setIMG.setAttribute("alt", alleArtikel[i].name);
+        setIMG.setAttribute("alt", alleSchuhe[i].name);
+        document.getElementById("artikelID" + i)?.appendChild(setIMG);
 
         let setDesc: HTMLParagraphElement = document.createElement("p");
         setDesc.setAttribute("class", "beschreibung");
-        setDesc.innerHTML = alleArtikel[i].desc;
+        setDesc.innerHTML = alleSchuhe[i].desc;
+        document.getElementById("artikelID" + i)?.appendChild(setIMG);
+
 
         let setPrice: HTMLParagraphElement = document.createElement("p");
         setDesc.setAttribute("class", "preis");
-        setPrice.innerHTML = alleArtikel[i].price;
+        setPrice.innerHTML = alleSchuhe[i].price;
 
         //let setButton: HTMLButtonElement = document.createElement("button");
+
 
     }
 
 
+    for (let i: number = 0; i < alleGear.length; i++) {
 
+        let setDiv: HTMLDivElement = document.createElement("div");
+        setDiv.setAttribute("class", "artikel");
+        setDiv.setAttribute("id", "artikelID" + i);
+
+        document.getElementById("katgear")?.appendChild(setDiv);
+
+
+        let setH2: HTMLHeadingElement = document.createElement("h2");
+        setH2.innerHTML = alleGear[i].name;
+        document.getElementById("artikelID" + i)?.appendChild(setH2);
+
+        let setIMG: HTMLImageElement = document.createElement("img");
+        setIMG.setAttribute("alt", alleGear[i].name);
+        document.getElementById("artikelID" + i)?.appendChild(setIMG);
+
+        let setDesc: HTMLParagraphElement = document.createElement("p");
+        setDesc.setAttribute("class", "beschreibung");
+        setDesc.innerHTML = alleGear[i].desc;
+
+        let setPrice: HTMLParagraphElement = document.createElement("p");
+        setDesc.setAttribute("class", "preis");
+        setPrice.innerHTML = alleGear[i].price;
+
+        //let setButton: HTMLButtonElement = document.createElement("button");
+
+    }
 }
