@@ -33,7 +33,7 @@ var Aufgabe05;
         price: "149,99€"
     };
     let schuh6 = {
-        image: "/Artikelbilder/furia-kletterschuhe.jpg",
+        image: "Artikelbilder/furia-kletterschuhe.jpg",
         name: "Scarpa Furia Air",
         desc: "Starke Vorspannung, hohe Asymmetrie und geringes Gewicht",
         price: "159,99€"
@@ -84,39 +84,41 @@ var Aufgabe05;
         let setDiv = document.createElement("div");
         setDiv.setAttribute("class", "artikel");
         //setDiv.setAttribute("id", "artikelID" + i);
-        setDiv.id = "artikelID" + i;
+        setDiv.id = "schuhID" + i;
         document.getElementById("katschuhe")?.appendChild(setDiv);
         let setH2 = document.createElement("h2");
         setH2.innerHTML = alleSchuhe[i].name;
-        document.getElementById("artikelID" + i)?.appendChild(setH2);
+        document.getElementById("schuhID" + i)?.appendChild(setH2);
         let setIMG = document.createElement("img");
         setIMG.setAttribute("alt", alleSchuhe[i].name);
-        document.getElementById("artikelID" + i)?.appendChild(setIMG);
+        setIMG.src = alleSchuhe[i].image;
+        document.getElementById("schuhID" + i)?.appendChild(setIMG);
         let setDesc = document.createElement("p");
         setDesc.setAttribute("class", "beschreibung");
         setDesc.innerHTML = alleSchuhe[i].desc;
-        document.getElementById("artikelID" + i)?.appendChild(setIMG);
+        document.getElementById("schuhID" + i)?.appendChild(setDesc);
         let setPrice = document.createElement("p");
         setDesc.setAttribute("class", "preis");
         setPrice.innerHTML = alleSchuhe[i].price;
-        document.getElementById("artikelID" + i)?.appendChild(setPrice);
+        document.getElementById("schuhID" + i)?.appendChild(setPrice);
     }
-    for (let i = 0; i < alleSchuhe.length; i++) {
+    for (let i = 0; i < alleGear.length; i++) {
         let setDiv = document.createElement("div");
         setDiv.setAttribute("class", "artikel");
         //setDiv.setAttribute("id", "artikelID" + i);
-        setDiv.id = "artikelID" + i;
+        setDiv.id = "gearID" + i;
         document.getElementById("katgear")?.appendChild(setDiv);
         let setH2 = document.createElement("h2");
         setH2.innerHTML = alleGear[i].name;
-        document.getElementById("artikelID" + i)?.appendChild(setH2);
+        document.getElementById("gearID" + i)?.appendChild(setH2);
         let setIMG = document.createElement("img");
         setIMG.setAttribute("alt", alleGear[i].name);
-        document.getElementById("artikelID" + i)?.appendChild(setIMG);
+        setIMG.src = alleGear[i].image;
+        document.getElementById("gearID" + i)?.appendChild(setIMG);
         let setDesc = document.createElement("p");
         setDesc.setAttribute("class", "beschreibung");
         setDesc.innerHTML = alleGear[i].desc;
-        document.getElementById("artikelID" + i)?.appendChild(setIMG);
+        document.getElementById("gearID" + i)?.appendChild(setDesc);
         let setPrice = document.createElement("p");
         setDesc.setAttribute("class", "preis");
         setPrice.innerHTML = alleGear[i].price;
