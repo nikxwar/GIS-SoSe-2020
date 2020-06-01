@@ -105,7 +105,6 @@ namespace Aufgabe05 {
 
     //DOM Manipulation
 
-
     for (let i: number = 0; i < alleSchuhe.length; i++) {
 
         let setDiv: HTMLDivElement = document.createElement("div");
