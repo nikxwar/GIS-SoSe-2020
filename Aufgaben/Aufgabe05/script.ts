@@ -5,7 +5,7 @@ namespace Aufgabe05 {
         name: string;
         desc: string;
         price: number;
-       
+
     }
 
     //#region Schuhe
@@ -15,7 +15,7 @@ namespace Aufgabe05 {
         name: "La Sportiva Tarantula",
         desc: "Ideal als erster Kletterschuh, endlich keine Leihschuhe mehr!",
         price: 79.99
-        
+
     };
 
     let schuh2: ArtikelBouldern = {
@@ -23,35 +23,35 @@ namespace Aufgabe05 {
         name: "Scarpa Arpia",
         desc: "Bequemer Einstieg in die Welt der High Performance Schuhe.",
         price: 119.99
-        
+
     };
     let schuh3: ArtikelBouldern = {
         image: "../Aufgabe04/Artikelbilder/instinct-kletterschuhe.jpg",
         name: "Scarpa Instinct VS-R",
         desc: "Weichere Version des bewährten Instinct VS in schickem Blau.",
         price: 144.99
-        
+
     };
     let schuh4: ArtikelBouldern = {
         image: "../Aufgabe04/Artikelbilder/kletterschuhe-pro.jpg",
         name: "La Sportiva Skwama",
         desc: "La Sportivas erfolgreichster High Performance Schuh.",
         price: 149.99
-        
+
     };
     let schuh5: ArtikelBouldern = {
         image: "../Aufgabe04/Artikelbilder/kletterschuhe-pro2.jpg",
         name: "Scarpa Drago",
         desc: "Idealer Schuh für schwere, überhängende Boulder.",
         price: 149.99
-        
+
     };
     let schuh6: ArtikelBouldern = {
         image: "../Aufgabe04/Artikelbilder/furia-kletterschuhe.jpg",
         name: "Scarpa Furia Air",
         desc: "Starke Vorspannung, hohe Asymmetrie und geringes Gewicht",
         price: 159.99
-        
+
     };
     //#endregion
     //#region Ausrüstung
@@ -60,28 +60,28 @@ namespace Aufgabe05 {
         name: "Chalkbag",
         desc: "Geräumiger Chalkbucket von Moon in schlichtem Schwarz.",
         price: 29.99
-        
+
     };
     let gear2: ArtikelBouldern = {
         image: "../Aufgabe04/Artikelbilder/block-chalk.jpg",
         name: "Chalk Block",
         desc: "Magnesiumcarbonat in Blockform zum selbst zerkleinern.",
         price: 2.49
-        
+
     };
     let gear3: ArtikelBouldern = {
         image: "../Aufgabe04/Artikelbilder/boulderbuerste.jpg",
         name: "Boulderbürste",
         desc: "Zur mühelosen und gründlichen Reinigung mittlerer und großer Griffe.",
         price: 5.99
-        
+
     };
     let gear4: ArtikelBouldern = {
         image: "../Aufgabe04/Artikelbilder/climb-on.jpg",
         name: "Climb On Hautpflege",
         desc: "Hilft bei durchs Klettern strapazierter Haut schnell und effektiv.",
         price: 8.49
-        
+
     };
     let gear5: ArtikelBouldern = {
         image: "../Aufgabe04/Artikelbilder/tape.jpg",
@@ -104,6 +104,11 @@ namespace Aufgabe05 {
     let alleGear: ArtikelBouldern[] = [gear1, gear2, gear3, gear4, gear5, gear6];
 
     //DOM Manipulation
+
+    function formatNumberToEuro(_price: number): string { 
+        return _price.toLocaleString("de-DE", {style: "currency", currency: "EUR"});
+    
+    }
 
     for (let i: number = 0; i < alleSchuhe.length; i++) {
 
@@ -130,7 +135,7 @@ namespace Aufgabe05 {
 
         let setPrice: HTMLParagraphElement = document.createElement("p");
         setDesc.setAttribute("class", "preis");
-        setPrice.innerHTML = alleSchuhe[i].price + "€";
+        setPrice.innerHTML = formatNumberToEuro(alleSchuhe[i].price);
         document.getElementById("schuhID" + i)?.appendChild(setPrice);
 
         let setButton: HTMLButtonElement = document.createElement("button");
@@ -163,7 +168,7 @@ namespace Aufgabe05 {
 
         let setPrice: HTMLParagraphElement = document.createElement("p");
         setDesc.setAttribute("class", "preis");
-        setPrice.innerHTML = alleGear[i].price + "€";
+        setPrice.innerHTML = formatNumberToEuro(alleGear[i].price);
         document.getElementById("gearID" + i)?.appendChild(setPrice);
 
         let setButton: HTMLButtonElement = document.createElement("button");

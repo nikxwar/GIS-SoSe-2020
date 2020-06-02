@@ -80,6 +80,9 @@ var Aufgabe05;
     let alleSchuhe = [schuh1, schuh2, schuh3, schuh4, schuh5, schuh6];
     let alleGear = [gear1, gear2, gear3, gear4, gear5, gear6];
     //DOM Manipulation
+    function formatNumberToEuro(_price) {
+        return _price.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
+    }
     for (let i = 0; i < alleSchuhe.length; i++) {
         let setDiv = document.createElement("div");
         setDiv.setAttribute("class", "artikel");
@@ -98,7 +101,7 @@ var Aufgabe05;
         document.getElementById("schuhID" + i)?.appendChild(setDesc);
         let setPrice = document.createElement("p");
         setDesc.setAttribute("class", "preis");
-        setPrice.innerHTML = alleSchuhe[i].price + "€";
+        setPrice.innerHTML = formatNumberToEuro(alleSchuhe[i].price);
         document.getElementById("schuhID" + i)?.appendChild(setPrice);
         let setButton = document.createElement("button");
         setButton.innerHTML = "In den Einkaufswagen";
@@ -122,7 +125,7 @@ var Aufgabe05;
         document.getElementById("gearID" + i)?.appendChild(setDesc);
         let setPrice = document.createElement("p");
         setDesc.setAttribute("class", "preis");
-        setPrice.innerHTML = alleGear[i].price + "€";
+        setPrice.innerHTML = formatNumberToEuro(alleGear[i].price);
         document.getElementById("gearID" + i)?.appendChild(setPrice);
         let setButton = document.createElement("button");
         setButton.innerHTML = "In den Einkaufswagen";
