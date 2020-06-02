@@ -1,0 +1,128 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-image: linear-gradient(beige, #C46210);
+    text-align: center;
+}
+/*Header Elemente*/
+ 
+header *{
+    text-align: center;
+}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #C46210;
+  }
+  
+  ul.topnav li {
+      float: left;
+}
+
+  ul.topnav li a {
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+.topnav a:hover {
+    background: beige;
+    color: black;
+    cursor: pointer;
+}
+
+.navtext:hover{
+    padding-bottom: 1.535em;
+    cursor: pointer;
+}
+
+img[alt="Warenkorb"]{
+    height: 25px;
+}
+/*Main Elemente*/
+
+#katschuhe, #katgear{
+    margin: 25px;
+    display: grid; 
+    padding: 10px;
+    gap: 10px;
+    text-align: center;
+    grid-template-columns: repeat(3, 33.3%);
+}
+
+#katschuhe > div{  
+    margin: 10px;
+    background-color: white;
+    padding: 10px;
+    border: 2px;
+    border-style: solid ;
+    border-color: cornflowerblue;
+    border-radius: 5px;
+}
+
+#katschuhe + p{
+    margin: 50px;
+}
+#katgear > div{  
+    margin: 10px;
+    background-color: white;
+    padding: 10px;
+    border: 2px;
+    border-style: solid ;
+    border-color: cornflowerblue;
+    border-radius: 5px;
+}
+
+#katgear + p{
+    margin: 50px;
+}
+
+div button{
+    color: whitesmoke;
+    background-color: #2a2a2e;
+    margin: auto;
+    margin-bottom: 25px;
+}
+
+div > button:hover{
+    opacity: 0.75;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+img[src$=".jpg"]{
+    height: 250px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 1024px){
+    #katgear, #katschuhe{
+        grid-template-columns: repeat(2, 50%);
+    }
+
+    img[src$=".jpg"]{
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    #katgear, #katschuhe{
+        grid-template-columns: 100%;
+    }
+
+    img[src$=".jpg"]{
+        height: 150px;
+    }
+
+    ul.topnav li {
+        float: none;
+    }
+}
+
+
+
