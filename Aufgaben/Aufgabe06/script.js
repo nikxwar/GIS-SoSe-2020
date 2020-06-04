@@ -1,6 +1,6 @@
 "use strict";
-var Aufgabe05;
-(function (Aufgabe05) {
+var Aufgabe06;
+(function (Aufgabe06) {
     //#region Schuhe
     let schuh1 = {
         image: "../Aufgabe04/Artikelbilder/kletterschuhe-beginner.jpg",
@@ -79,54 +79,60 @@ var Aufgabe05;
     //#endregion 
     let alleSchuhe = [schuh1, schuh2, schuh3, schuh4, schuh5, schuh6];
     let alleGear = [gear1, gear2, gear3, gear4, gear5, gear6];
+    //formatiert den price von number in die gängige Euro Preis Darstellung um
+    function formatNumberToEuro(_price) {
+        return _price.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
+    }
     //DOM Manipulation
     for (let i = 0; i < alleSchuhe.length; i++) {
-        let setDiv = document.createElement("div");
-        setDiv.setAttribute("class", "artikel");
-        setDiv.setAttribute("id", "schuhID" + i);
-        document.getElementById("katschuhe")?.appendChild(setDiv);
-        let setH2 = document.createElement("h2");
-        setH2.innerHTML = alleSchuhe[i].name;
-        document.getElementById("schuhID" + i)?.appendChild(setH2);
-        let setIMG = document.createElement("img");
-        setIMG.setAttribute("alt", alleSchuhe[i].name);
-        setIMG.src = alleSchuhe[i].image;
-        document.getElementById("schuhID" + i)?.appendChild(setIMG);
-        let setDesc = document.createElement("p");
-        setDesc.setAttribute("class", "beschreibung");
-        setDesc.innerHTML = alleSchuhe[i].desc;
-        document.getElementById("schuhID" + i)?.appendChild(setDesc);
-        let setPrice = document.createElement("p");
-        setDesc.setAttribute("class", "preis");
-        setPrice.innerHTML = alleSchuhe[i].price + "€";
-        document.getElementById("schuhID" + i)?.appendChild(setPrice);
-        let setButton = document.createElement("button");
-        setButton.innerHTML = "In den Einkaufswagen";
-        document.getElementById("schuhID" + i)?.appendChild(setButton);
+        let articleDiv = document.createElement("div");
+        articleDiv.setAttribute("class", "artikel");
+        articleDiv.setAttribute("id", "schuhID" + i);
+        document.getElementById("katschuhe")?.appendChild(articleDiv);
+        let articleH2 = document.createElement("h2");
+        articleH2.innerHTML = alleSchuhe[i].name;
+        document.getElementById("schuhID" + i)?.appendChild(articleH2);
+        let articleIMG = document.createElement("img");
+        articleIMG.setAttribute("alt", alleSchuhe[i].name);
+        articleIMG.src = alleSchuhe[i].image;
+        document.getElementById("schuhID" + i)?.appendChild(articleIMG);
+        let articleDesc = document.createElement("p");
+        articleDesc.setAttribute("class", "beschreibung");
+        articleDesc.innerHTML = alleSchuhe[i].desc;
+        document.getElementById("schuhID" + i)?.appendChild(articleDesc);
+        let articlePrice = document.createElement("p");
+        articlePrice.setAttribute("class", "preis");
+        articlePrice.innerHTML = formatNumberToEuro(alleSchuhe[i].price);
+        document.getElementById("schuhID" + i)?.appendChild(articlePrice);
+        let articleButton = document.createElement("button");
+        articleButton.setAttribute("id", "buttonschuh" + i);
+        articleButton.innerHTML = "In den Einkaufswagen";
+        document.getElementById("schuhID" + i)?.appendChild(articleButton);
     }
     for (let i = 0; i < alleGear.length; i++) {
-        let setDiv = document.createElement("div");
-        setDiv.setAttribute("class", "artikel");
-        setDiv.setAttribute("id", "gearID" + i);
-        document.getElementById("katgear")?.appendChild(setDiv);
-        let setH2 = document.createElement("h2");
-        setH2.innerHTML = alleGear[i].name;
-        document.getElementById("gearID" + i)?.appendChild(setH2);
-        let setIMG = document.createElement("img");
-        setIMG.setAttribute("alt", alleGear[i].name);
-        setIMG.src = alleGear[i].image;
-        document.getElementById("gearID" + i)?.appendChild(setIMG);
-        let setDesc = document.createElement("p");
-        setDesc.setAttribute("class", "beschreibung");
-        setDesc.innerHTML = alleGear[i].desc;
-        document.getElementById("gearID" + i)?.appendChild(setDesc);
-        let setPrice = document.createElement("p");
-        setDesc.setAttribute("class", "preis");
-        setPrice.innerHTML = alleGear[i].price + "€";
-        document.getElementById("gearID" + i)?.appendChild(setPrice);
-        let setButton = document.createElement("button");
-        setButton.innerHTML = "In den Einkaufswagen";
-        document.getElementById("gearID" + i)?.appendChild(setButton);
+        let articleDiv = document.createElement("div");
+        articleDiv.setAttribute("class", "artikel");
+        articleDiv.setAttribute("id", "gearID" + i);
+        document.getElementById("katgear")?.appendChild(articleDiv);
+        let articleH2 = document.createElement("h2");
+        articleH2.innerHTML = alleGear[i].name;
+        document.getElementById("gearID" + i)?.appendChild(articleH2);
+        let articleIMG = document.createElement("img");
+        articleIMG.setAttribute("alt", alleGear[i].name);
+        articleIMG.src = alleGear[i].image;
+        document.getElementById("gearID" + i)?.appendChild(articleIMG);
+        let articleDesc = document.createElement("p");
+        articleDesc.setAttribute("class", "beschreibung");
+        articleDesc.innerHTML = alleGear[i].desc;
+        document.getElementById("gearID" + i)?.appendChild(articleDesc);
+        let articlePrice = document.createElement("p");
+        articlePrice.setAttribute("class", "preis");
+        articlePrice.innerHTML = formatNumberToEuro(alleGear[i].price);
+        document.getElementById("gearID" + i)?.appendChild(articlePrice);
+        let articleButton = document.createElement("button");
+        articleButton.setAttribute("id", "buttongear" + i);
+        articleButton.innerHTML = "In den Einkaufswagen";
+        document.getElementById("gearID" + i)?.appendChild(articleButton);
     }
-})(Aufgabe05 || (Aufgabe05 = {}));
+})(Aufgabe06 || (Aufgabe06 = {}));
 //# sourceMappingURL=script.js.map
