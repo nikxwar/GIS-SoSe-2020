@@ -45,7 +45,7 @@ img[alt="Warenkorb"]{
 }
 /*Main Elemente*/
 
-#katschuhe, #katgear{
+#shoes-cat, #gear-cat{
     margin: 25px;
     display: grid; 
     padding: 10px;
@@ -54,7 +54,7 @@ img[alt="Warenkorb"]{
     grid-template-columns: repeat(3, 33.3%);
 }
 
-#katschuhe > div{  
+#shoes-cat > div{  
     margin: 10px;
     background-color: white;
     padding: 10px;
@@ -64,10 +64,10 @@ img[alt="Warenkorb"]{
     border-radius: 5px;
 }
 
-#katschuhe + p{
+#shoes-cat + p{
     margin: 50px;
 }
-#katgear > div{  
+#gear-cat > div{  
     margin: 10px;
     background-color: white;
     padding: 10px;
@@ -77,7 +77,7 @@ img[alt="Warenkorb"]{
     border-radius: 5px;
 }
 
-#katgear + p{
+#gear-cat + p{
     margin: 50px;
 }
 
@@ -111,7 +111,7 @@ img[src$=".jpg"]{
 }
 
 @media screen and (max-width: 600px){
-    #katgear, #katschuhe{
+    #gear-cat,#shoes-cat{
         grid-template-columns: 100%;
     }
 

@@ -124,7 +124,7 @@ namespace Aufgabe06 {
         let articleDesc: HTMLParagraphElement = document.createElement("p");
         articleDesc.innerText = articles[i].desc;
         articleDesc.classList.add("article-desc");
-        articleDesc.appendChild(articleDesc);
+        articleDiv.appendChild(articleDesc);
 
         let articlePrice: HTMLParagraphElement = document.createElement("p");
         articlePrice.innerText = formatNumberToEuro(articles[i].price);

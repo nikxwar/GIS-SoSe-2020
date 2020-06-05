@@ -108,7 +108,7 @@ var Aufgabe06;
         let articleDesc = document.createElement("p");
         articleDesc.innerText = articles[i].desc;
         articleDesc.classList.add("article-desc");
-        articleDesc.appendChild(articleDesc);
+        articleDiv.appendChild(articleDesc);
         let articlePrice = document.createElement("p");
         articlePrice.innerText = formatNumberToEuro(articles[i].price);
         articlePrice.classList.add("article-price");
