@@ -1,6 +1,5 @@
 namespace Aufgabe06 {
 
-    //#region Artikel Interface
     interface ArtikelBouldern {
         image: string;
         name: string;
