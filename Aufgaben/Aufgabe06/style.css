@@ -101,7 +101,7 @@ img[src$=".jpg"]{
 }
 
 @media screen and (max-width: 1024px){
-    #katgear, #katschuhe{
+    #gear-cat, #shoes-cat{
         grid-template-columns: repeat(2, 50%);
     }
 
