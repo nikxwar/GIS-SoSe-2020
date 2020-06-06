@@ -4,13 +4,14 @@ body{
     background-image: linear-gradient(beige, #C46210);
     text-align: center;
 }
-/*Header Elemente*/
+/*Header/Navbar Elemente*/
  
 header *{
     text-align: center;
 }
 
 ul.topnav {
+    position: relative;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -19,6 +20,7 @@ ul.topnav {
   }
   
   ul.topnav li {
+     
       float: left;
 }
 
@@ -40,8 +42,21 @@ ul.topnav {
     cursor: pointer;
 }
 
+span{
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border-radius: 35%;
+    visibility: hidden;
+}
+
+#counter{
+    visibility: visible;
+}
+
 img[alt="Warenkorb"]{
     height: 25px;
+   
 }
 /*Main Elemente*/
 
