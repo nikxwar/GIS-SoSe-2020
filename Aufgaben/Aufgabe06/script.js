@@ -48,24 +48,9 @@ var Aufgabe06;
     }
     //#endregion
     //#region Eventhandling Artikel über Navbar aus/einblenden
-    let anchorShowAll = document.createElement("a");
-    anchorShowAll.innerText = "Alle";
-    anchorShowAll.setAttribute("id", "showall");
-    anchorShowAll.classList.add("navtext");
-    anchorShowAll.addEventListener("click", showSelectedCategory);
-    document.getElementById("navall")?.appendChild(anchorShowAll);
-    let anchorShowShoes = document.createElement("a");
-    anchorShowShoes.innerText = "Schuhe";
-    anchorShowShoes.setAttribute("id", "showshoes");
-    anchorShowShoes.classList.add("navtext");
-    anchorShowShoes.addEventListener("click", showSelectedCategory);
-    document.getElementById("navshoes")?.appendChild(anchorShowShoes);
-    let anchorShowGear = document.createElement("a");
-    anchorShowGear.innerText = "Ausrüstung";
-    anchorShowGear.setAttribute("id", "showgear");
-    anchorShowGear.classList.add("navtext");
-    anchorShowGear.addEventListener("click", showSelectedCategory);
-    document.getElementById("navgear")?.appendChild(anchorShowGear);
+    Aufgabe06.anchorShowAll.addEventListener("click", showSelectedCategory);
+    Aufgabe06.anchorShowShoes.addEventListener("click", showSelectedCategory);
+    Aufgabe06.anchorShowGear.addEventListener("click", showSelectedCategory);
     function showSelectedCategory(_event) {
         if (_event.target.getAttribute("id") == "showall") {
             document.getElementById("shoes-cat").style.display = "grid";

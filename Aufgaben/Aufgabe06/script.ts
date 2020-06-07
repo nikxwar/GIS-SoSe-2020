@@ -66,26 +66,9 @@ namespace Aufgabe06 {
     //#endregion
 
     //#region Eventhandling Artikel über Navbar aus/einblenden
-    let anchorShowAll: HTMLAnchorElement = document.createElement("a");
-    anchorShowAll.innerText = "Alle";
-    anchorShowAll.setAttribute("id", "showall");
-    anchorShowAll.classList.add("navtext");
     anchorShowAll.addEventListener("click", showSelectedCategory);
-    document.getElementById("navall")?.appendChild(anchorShowAll);
-
-    let anchorShowShoes: HTMLAnchorElement = document.createElement("a");
-    anchorShowShoes.innerText = "Schuhe";
-    anchorShowShoes.setAttribute("id", "showshoes");
-    anchorShowShoes.classList.add("navtext");
     anchorShowShoes.addEventListener("click", showSelectedCategory);
-    document.getElementById("navshoes")?.appendChild(anchorShowShoes);
-
-    let anchorShowGear: HTMLAnchorElement = document.createElement("a");
-    anchorShowGear.innerText = "Ausrüstung";
-    anchorShowGear.setAttribute("id", "showgear");
-    anchorShowGear.classList.add("navtext");
     anchorShowGear.addEventListener("click", showSelectedCategory);
-    document.getElementById("navgear")?.appendChild(anchorShowGear);
 
     function showSelectedCategory(_event: Event): void {
         if ((<HTMLDivElement>_event.target).getAttribute("id") == "showall") {

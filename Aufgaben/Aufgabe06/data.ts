@@ -93,4 +93,22 @@ namespace Aufgabe06 {
         }
     ];
 
+    export let anchorShowAll: HTMLAnchorElement = document.createElement("a");
+    anchorShowAll.innerText = "Alle";
+    anchorShowAll.setAttribute("id", "showall");
+    anchorShowAll.classList.add("navtext");
+    document.getElementById("navall")?.appendChild(anchorShowAll);
+
+    export let anchorShowShoes: HTMLAnchorElement = document.createElement("a");
+    anchorShowShoes.innerText = "Schuhe";
+    anchorShowShoes.setAttribute("id", "showshoes");
+    anchorShowShoes.classList.add("navtext");
+    document.getElementById("navshoes")?.appendChild(anchorShowShoes);
+
+    export let anchorShowGear: HTMLAnchorElement = document.createElement("a");
+    anchorShowGear.innerText = "Ausrüstung";
+    anchorShowGear.setAttribute("id", "showgear");
+    anchorShowGear.classList.add("navtext");
+    document.getElementById("navgear")?.appendChild(anchorShowGear);
+
 }

@@ -87,5 +87,20 @@ var Aufgabe06;
             category: "gear"
         }
     ];
+    Aufgabe06.anchorShowAll = document.createElement("a");
+    Aufgabe06.anchorShowAll.innerText = "Alle";
+    Aufgabe06.anchorShowAll.setAttribute("id", "showall");
+    Aufgabe06.anchorShowAll.classList.add("navtext");
+    document.getElementById("navall")?.appendChild(Aufgabe06.anchorShowAll);
+    Aufgabe06.anchorShowShoes = document.createElement("a");
+    Aufgabe06.anchorShowShoes.innerText = "Schuhe";
+    Aufgabe06.anchorShowShoes.setAttribute("id", "showshoes");
+    Aufgabe06.anchorShowShoes.classList.add("navtext");
+    document.getElementById("navshoes")?.appendChild(Aufgabe06.anchorShowShoes);
+    Aufgabe06.anchorShowGear = document.createElement("a");
+    Aufgabe06.anchorShowGear.innerText = "Ausrüstung";
+    Aufgabe06.anchorShowGear.setAttribute("id", "showgear");
+    Aufgabe06.anchorShowGear.classList.add("navtext");
+    document.getElementById("navgear")?.appendChild(Aufgabe06.anchorShowGear);
 })(Aufgabe06 || (Aufgabe06 = {}));
 //# sourceMappingURL=data.js.map
