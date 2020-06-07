@@ -62,7 +62,7 @@ img[alt="Warenkorb"]{
 
 #shoes-cat, #gear-cat{
     margin: 25px;
-    display: grid; 
+    display: grid;
     padding: 10px;
     gap: 10px;
     text-align: center;

@@ -37,6 +37,7 @@ namespace Aufgabe06 {
 
     }
 
+    //#region Eventhandling für "in den Einkaufswagen" Button
     let cartCounter: number = 0;
 
     let priceSum: number = 0;
@@ -54,30 +55,64 @@ namespace Aufgabe06 {
 
         priceSum += priceFloat;
         console.log("Gesamtwert des Warenkorbs: " + priceSum.toLocaleString("de-DE", { style: "currency", currency: "EUR" }));
-        
-        if (cartCounter == 0){
+
+        if (cartCounter == 0) {
             cartSpan.setAttribute("id", "counter");
         }
         cartCounter++;
-        console.log(cartCounter);
         cartSpan.innerText = cartCounter.toString();
 
     }
+    //#endregion
+
+    //#region Eventhandling Artikel über Navbar aus/einblenden
+    let anchorShowAll: HTMLAnchorElement = document.createElement("a");
+    anchorShowAll.innerText = "Alle";
+    anchorShowAll.setAttribute("id", "showall");
+    anchorShowAll.classList.add("navtext");
+    anchorShowAll.addEventListener("click", showSelectedCategory);
+    document.getElementById("navall")?.appendChild(anchorShowAll);
+
+    let anchorShowShoes: HTMLAnchorElement = document.createElement("a");
+    anchorShowShoes.innerText = "Schuhe";
+    anchorShowShoes.setAttribute("id", "showshoes");
+    anchorShowShoes.classList.add("navtext");
+    anchorShowShoes.addEventListener("click", showSelectedCategory);
+    document.getElementById("navshoes")?.appendChild(anchorShowShoes);
+
+    let anchorShowGear: HTMLAnchorElement = document.createElement("a");
+    anchorShowGear.innerText = "Ausrüstung";
+    anchorShowGear.setAttribute("id", "showgear");
+    anchorShowGear.classList.add("navtext");
+    anchorShowGear.addEventListener("click", showSelectedCategory);
+    document.getElementById("navgear")?.appendChild(anchorShowGear);
+
+    function showSelectedCategory(_event: Event): void {
+        if ((<HTMLDivElement>_event.currentTarget).getAttribute("id") == "showall") {
+            (<HTMLDivElement>document.getElementById("shoes-cat")).style.display = "grid";
+            (<HTMLDivElement>document.getElementById("gear-cat")).style.display = "grid";
+            (<HTMLHeadingElement>document.getElementById("hgear")).style.visibility = "visible";
+            (<HTMLHeadingElement>document.getElementById("hshoes")).style.visibility = "visible";
+            
+        }
+        else if ((<HTMLDivElement>_event.currentTarget).getAttribute("id") == "showshoes") {
+            (<HTMLDivElement>document.getElementById("shoes-cat")).style.display = "grid";
+            (<HTMLDivElement>document.getElementById("gear-cat")).style.display = "none";
+            (<HTMLHeadingElement>document.getElementById("hgear")).style.visibility = "hidden";
+            (<HTMLHeadingElement>document.getElementById("hshoes")).style.visibility = "visible";
+
+        }
+        else if ((<HTMLDivElement>_event.currentTarget).getAttribute("id") == "showgear") {
+            (<HTMLDivElement>document.getElementById("shoes-cat")).style.display = "none";
+            (<HTMLDivElement>document.getElementById("gear-cat")).style.display = "grid";
+            (<HTMLHeadingElement>document.getElementById("hshoes")).style.visibility = "hidden";
+            (<HTMLHeadingElement>document.getElementById("hgear")).style.visibility = "visible";
 
 
-   
-        
-    
 
+        }
+    }
 
-
-
-
-
-
-
-
-
-
+    //#endregion 
 
 }
