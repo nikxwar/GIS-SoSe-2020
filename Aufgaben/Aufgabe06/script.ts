@@ -91,28 +91,25 @@ namespace Aufgabe06 {
         if ((<HTMLDivElement>_event.currentTarget).getAttribute("id") == "showall") {
             (<HTMLDivElement>document.getElementById("shoes-cat")).style.display = "grid";
             (<HTMLDivElement>document.getElementById("gear-cat")).style.display = "grid";
-            (<HTMLHeadingElement>document.getElementById("hgear")).style.visibility = "visible";
-            (<HTMLHeadingElement>document.getElementById("hshoes")).style.visibility = "visible";
-            
+            (<HTMLHeadingElement>document.getElementById("hgear")).style.display = "block";
+            (<HTMLHeadingElement>document.getElementById("hshoes")).style.display = "block";
+
         }
         else if ((<HTMLDivElement>_event.currentTarget).getAttribute("id") == "showshoes") {
             (<HTMLDivElement>document.getElementById("shoes-cat")).style.display = "grid";
             (<HTMLDivElement>document.getElementById("gear-cat")).style.display = "none";
-            (<HTMLHeadingElement>document.getElementById("hgear")).style.visibility = "hidden";
-            (<HTMLHeadingElement>document.getElementById("hshoes")).style.visibility = "visible";
+            (<HTMLHeadingElement>document.getElementById("hshoes")).style.display = "block";
+            (<HTMLHeadingElement>document.getElementById("hgear")).style.display = "none";
 
         }
         else if ((<HTMLDivElement>_event.currentTarget).getAttribute("id") == "showgear") {
             (<HTMLDivElement>document.getElementById("shoes-cat")).style.display = "none";
             (<HTMLDivElement>document.getElementById("gear-cat")).style.display = "grid";
-            (<HTMLHeadingElement>document.getElementById("hshoes")).style.visibility = "hidden";
-            (<HTMLHeadingElement>document.getElementById("hgear")).style.visibility = "visible";
-
-
+            (<HTMLHeadingElement>document.getElementById("hshoes")).style.display = "none";
+            (<HTMLHeadingElement>document.getElementById("hgear")).style.display = "block";
 
         }
     }
-
     //#endregion 
 
 }

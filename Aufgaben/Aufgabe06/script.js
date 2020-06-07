@@ -70,20 +70,20 @@ var Aufgabe06;
         if (_event.currentTarget.getAttribute("id") == "showall") {
             document.getElementById("shoes-cat").style.display = "grid";
             document.getElementById("gear-cat").style.display = "grid";
-            document.getElementById("hgear").style.visibility = "visible";
-            document.getElementById("hshoes").style.visibility = "visible";
+            document.getElementById("hgear").style.display = "block";
+            document.getElementById("hshoes").style.display = "block";
         }
         else if (_event.currentTarget.getAttribute("id") == "showshoes") {
             document.getElementById("shoes-cat").style.display = "grid";
             document.getElementById("gear-cat").style.display = "none";
-            document.getElementById("hgear").style.visibility = "hidden";
-            document.getElementById("hshoes").style.visibility = "visible";
+            document.getElementById("hshoes").style.display = "block";
+            document.getElementById("hgear").style.display = "none";
         }
         else if (_event.currentTarget.getAttribute("id") == "showgear") {
             document.getElementById("shoes-cat").style.display = "none";
             document.getElementById("gear-cat").style.display = "grid";
-            document.getElementById("hshoes").style.visibility = "hidden";
-            document.getElementById("hgear").style.visibility = "visible";
+            document.getElementById("hshoes").style.display = "none";
+            document.getElementById("hgear").style.display = "block";
         }
     }
     //#endregion 
