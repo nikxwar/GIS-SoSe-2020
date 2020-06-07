@@ -67,19 +67,19 @@ var Aufgabe06;
     anchorShowGear.addEventListener("click", showSelectedCategory);
     document.getElementById("navgear")?.appendChild(anchorShowGear);
     function showSelectedCategory(_event) {
-        if (_event.currentTarget.getAttribute("id") == "showall") {
+        if (_event.target.getAttribute("id") == "showall") {
             document.getElementById("shoes-cat").style.display = "grid";
             document.getElementById("gear-cat").style.display = "grid";
             document.getElementById("hgear").style.display = "block";
             document.getElementById("hshoes").style.display = "block";
         }
-        else if (_event.currentTarget.getAttribute("id") == "showshoes") {
+        else if (_event.target.getAttribute("id") == "showshoes") {
             document.getElementById("shoes-cat").style.display = "grid";
             document.getElementById("gear-cat").style.display = "none";
             document.getElementById("hshoes").style.display = "block";
             document.getElementById("hgear").style.display = "none";
         }
-        else if (_event.currentTarget.getAttribute("id") == "showgear") {
+        else if (_event.target.getAttribute("id") == "showgear") {
             document.getElementById("shoes-cat").style.display = "none";
             document.getElementById("gear-cat").style.display = "grid";
             document.getElementById("hshoes").style.display = "none";

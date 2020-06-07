@@ -88,21 +88,21 @@ namespace Aufgabe06 {
     document.getElementById("navgear")?.appendChild(anchorShowGear);
 
     function showSelectedCategory(_event: Event): void {
-        if ((<HTMLDivElement>_event.currentTarget).getAttribute("id") == "showall") {
+        if ((<HTMLDivElement>_event.target).getAttribute("id") == "showall") {
             (<HTMLDivElement>document.getElementById("shoes-cat")).style.display = "grid";
             (<HTMLDivElement>document.getElementById("gear-cat")).style.display = "grid";
             (<HTMLHeadingElement>document.getElementById("hgear")).style.display = "block";
             (<HTMLHeadingElement>document.getElementById("hshoes")).style.display = "block";
 
         }
-        else if ((<HTMLDivElement>_event.currentTarget).getAttribute("id") == "showshoes") {
+        else if ((<HTMLDivElement>_event.target).getAttribute("id") == "showshoes") {
             (<HTMLDivElement>document.getElementById("shoes-cat")).style.display = "grid";
             (<HTMLDivElement>document.getElementById("gear-cat")).style.display = "none";
             (<HTMLHeadingElement>document.getElementById("hshoes")).style.display = "block";
             (<HTMLHeadingElement>document.getElementById("hgear")).style.display = "none";
 
         }
-        else if ((<HTMLDivElement>_event.currentTarget).getAttribute("id") == "showgear") {
+        else if ((<HTMLDivElement>_event.target).getAttribute("id") == "showgear") {
             (<HTMLDivElement>document.getElementById("shoes-cat")).style.display = "none";
             (<HTMLDivElement>document.getElementById("gear-cat")).style.display = "grid";
             (<HTMLHeadingElement>document.getElementById("hshoes")).style.display = "none";
