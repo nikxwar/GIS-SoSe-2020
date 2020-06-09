@@ -1,0 +1,143 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-image: linear-gradient(beige, #C46210);
+    text-align: center;
+}
+/*Header/Navbar Elemente*/
+ 
+header *{
+    text-align: center;
+}
+
+ul.topnav {
+    position: relative;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #C46210;
+  }
+  
+  ul.topnav li {
+     
+      float: left;
+}
+
+  ul.topnav li a {
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+.topnav a:hover {
+    background: beige;
+    color: black;
+    cursor: pointer;
+}
+
+.navtext:hover{
+    padding-bottom: 1.535em;
+    cursor: pointer;
+}
+
+span{
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border-radius: 35%;
+    visibility: hidden;
+}
+
+#counter{
+    visibility: visible;
+}
+
+img[alt="Warenkorb"]{
+    height: 25px;
+   
+}
+/*Main Elemente*/
+
+#shoes-cat, #gear-cat{
+    margin: 25px;
+    display: grid;
+    padding: 10px;
+    gap: 10px;
+    text-align: center;
+    grid-template-columns: repeat(3, 33.3%);
+}
+
+#shoes-cat > div{  
+    margin: 10px;
+    background-color: white;
+    padding: 10px;
+    border: 2px;
+    border-style: solid ;
+    border-color: cornflowerblue;
+    border-radius: 5px;
+}
+
+#shoes-cat + p{
+    margin: 50px;
+}
+#gear-cat > div{  
+    margin: 10px;
+    background-color: white;
+    padding: 10px;
+    border: 2px;
+    border-style: solid ;
+    border-color: cornflowerblue;
+    border-radius: 5px;
+}
+
+#gear-cat + p{
+    margin: 50px;
+}
+
+div button{
+    color: whitesmoke;
+    background-color: #2a2a2e;
+    margin: auto;
+    margin-bottom: 25px;
+}
+
+div > button:hover{
+    opacity: 0.75;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+img[src$=".jpg"]{
+    height: 250px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 1024px){
+    #gear-cat, #shoes-cat{
+        grid-template-columns: repeat(2, 50%);
+    }
+
+    img[src$=".jpg"]{
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    #gear-cat,#shoes-cat{
+        grid-template-columns: 100%;
+    }
+
+    img[src$=".jpg"]{
+        height: 150px;
+    }
+
+    ul.topnav li {
+        float: none;
+    }
+}
+
+
+
