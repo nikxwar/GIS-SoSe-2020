@@ -1,34 +1,41 @@
 "use strict";
 var Aufgabe07;
 (function (Aufgabe07) {
-    for (let i = 0; i < Aufgabe07.articles.length; i++) {
-        let articleDiv = document.createElement("div");
-        articleDiv.classList.add("article");
-        let articleName = document.createElement("h2");
-        articleName.innerText = Aufgabe07.articles[i].name;
-        articleName.classList.add("article-name");
-        articleDiv.appendChild(articleName);
-        let articleIMG = document.createElement("img");
-        articleIMG.setAttribute("alt", Aufgabe07.articles[i].name);
-        articleIMG.setAttribute("src", Aufgabe07.articles[i].image);
-        articleIMG.classList.add("article-img");
-        articleDiv.appendChild(articleIMG);
-        let articleDesc = document.createElement("p");
-        articleDesc.innerText = Aufgabe07.articles[i].desc;
-        articleDesc.classList.add("article-desc");
-        articleDiv.appendChild(articleDesc);
-        let articlePrice = document.createElement("p");
-        articlePrice.innerText = Aufgabe07.articles[i].price.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
-        articlePrice.classList.add("article-price");
-        articleDiv.appendChild(articlePrice);
-        let articleButton = document.createElement("button");
-        articleButton.innerText = "In den Einkaufswagen";
-        articleButton.classList.add("article-button");
-        articleButton.setAttribute("article_price", Aufgabe07.articles[i].price.toString());
-        articleButton.addEventListener("click", handleAddToCartClick);
-        articleDiv.appendChild(articleButton);
-        document.getElementById(Aufgabe07.articles[i].category + "-cat")?.appendChild(articleDiv);
+    //#region Artikel erstellen
+    Aufgabe07.getArticlesFromJSON("articles.json");
+    function createArticles() {
+        for (let i = 0; i < Aufgabe07.articles.length; i++) {
+            let articleDiv = document.createElement("div");
+            articleDiv.classList.add("article");
+            articleDiv.setAttribute("id", "article" + i);
+            let articleName = document.createElement("h2");
+            articleName.innerText = Aufgabe07.articles[i].name;
+            articleName.classList.add("article-name");
+            articleDiv.appendChild(articleName);
+            let articleIMG = document.createElement("img");
+            articleIMG.setAttribute("alt", Aufgabe07.articles[i].name);
+            articleIMG.setAttribute("src", Aufgabe07.articles[i].image);
+            articleIMG.classList.add("article-img");
+            articleDiv.appendChild(articleIMG);
+            let articleDesc = document.createElement("p");
+            articleDesc.innerText = Aufgabe07.articles[i].desc;
+            articleDesc.classList.add("article-desc");
+            articleDiv.appendChild(articleDesc);
+            let articlePrice = document.createElement("p");
+            articlePrice.innerText = Aufgabe07.articles[i].price.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
+            articlePrice.classList.add("article-price");
+            articleDiv.appendChild(articlePrice);
+            let articleButton = document.createElement("button");
+            articleButton.innerText = "In den Einkaufswagen";
+            articleButton.classList.add("article-button");
+            articleButton.setAttribute("article_price", Aufgabe07.articles[i].price.toString());
+            articleButton.addEventListener("click", handleAddToCartClick);
+            articleDiv.appendChild(articleButton);
+            document.getElementById(Aufgabe07.articles[i].category + "-cat")?.appendChild(articleDiv);
+        }
     }
+    Aufgabe07.createArticles = createArticles;
+    //#endregion
     //#region Eventhandling für "in den Einkaufswagen" Button
     let cartCounter = 0;
     let priceSum = 0;
@@ -48,9 +55,24 @@ var Aufgabe07;
     }
     //#endregion
     //#region Eventhandling Artikel über Navbar aus/einblenden
-    Aufgabe07.anchorShowAll.addEventListener("click", showSelectedCategory);
-    Aufgabe07.anchorShowShoes.addEventListener("click", showSelectedCategory);
-    Aufgabe07.anchorShowGear.addEventListener("click", showSelectedCategory);
+    let anchorShowAll = document.createElement("a");
+    anchorShowAll.innerText = "Alle";
+    anchorShowAll.setAttribute("id", "showall");
+    anchorShowAll.classList.add("navtext");
+    document.getElementById("navall")?.appendChild(anchorShowAll);
+    anchorShowAll.addEventListener("click", showSelectedCategory);
+    let anchorShowShoes = document.createElement("a");
+    anchorShowShoes.innerText = "Schuhe";
+    anchorShowShoes.setAttribute("id", "showshoes");
+    anchorShowShoes.classList.add("navtext");
+    document.getElementById("navshoes")?.appendChild(anchorShowShoes);
+    anchorShowShoes.addEventListener("click", showSelectedCategory);
+    let anchorShowGear = document.createElement("a");
+    anchorShowGear.innerText = "Ausrüstung";
+    anchorShowGear.setAttribute("id", "showgear");
+    anchorShowGear.classList.add("navtext");
+    document.getElementById("navgear")?.appendChild(anchorShowGear);
+    anchorShowGear.addEventListener("click", showSelectedCategory);
     function showSelectedCategory(_event) {
         if (_event.target.getAttribute("id") == "showall") {
             document.getElementById("shoes-cat").style.display = "grid";

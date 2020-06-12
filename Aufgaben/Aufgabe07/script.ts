@@ -1,41 +1,49 @@
 namespace Aufgabe07 {
 
-    for (let i: number = 0; i < articles.length; i++) {
+    //#region Artikel erstellen
+    getArticlesFromJSON("articles.json");
 
-        let articleDiv: HTMLDivElement = document.createElement("div");
-        articleDiv.classList.add("article");
+    export function createArticles(): void {
+        for (let i: number = 0; i < articles.length; i++) {
 
-        let articleName: HTMLHeadingElement = document.createElement("h2");
-        articleName.innerText = articles[i].name;
-        articleName.classList.add("article-name");
-        articleDiv.appendChild(articleName);
+            let articleDiv: HTMLDivElement = document.createElement("div");
+            articleDiv.classList.add("article");
+            articleDiv.setAttribute("id", "article" + i);
 
-        let articleIMG: HTMLImageElement = document.createElement("img");
-        articleIMG.setAttribute("alt", articles[i].name);
-        articleIMG.setAttribute("src", articles[i].image);
-        articleIMG.classList.add("article-img");
-        articleDiv.appendChild(articleIMG);
+            let articleName: HTMLHeadingElement = document.createElement("h2");
+            articleName.innerText = articles[i].name;
+            articleName.classList.add("article-name");
+            articleDiv.appendChild(articleName);
 
-        let articleDesc: HTMLParagraphElement = document.createElement("p");
-        articleDesc.innerText = articles[i].desc;
-        articleDesc.classList.add("article-desc");
-        articleDiv.appendChild(articleDesc);
+            let articleIMG: HTMLImageElement = document.createElement("img");
+            articleIMG.setAttribute("alt", articles[i].name);
+            articleIMG.setAttribute("src", articles[i].image);
+            articleIMG.classList.add("article-img");
+            articleDiv.appendChild(articleIMG);
 
-        let articlePrice: HTMLParagraphElement = document.createElement("p");
-        articlePrice.innerText = articles[i].price.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
-        articlePrice.classList.add("article-price");
-        articleDiv.appendChild(articlePrice);
+            let articleDesc: HTMLParagraphElement = document.createElement("p");
+            articleDesc.innerText = articles[i].desc;
+            articleDesc.classList.add("article-desc");
+            articleDiv.appendChild(articleDesc);
 
-        let articleButton: HTMLButtonElement = document.createElement("button");
-        articleButton.innerText = "In den Einkaufswagen";
-        articleButton.classList.add("article-button");
-        articleButton.setAttribute("article_price", articles[i].price.toString());
-        articleButton.addEventListener("click", handleAddToCartClick);
-        articleDiv.appendChild(articleButton);
+            let articlePrice: HTMLParagraphElement = document.createElement("p");
+            articlePrice.innerText = articles[i].price.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
+            articlePrice.classList.add("article-price");
+            articleDiv.appendChild(articlePrice);
 
-        document.getElementById(articles[i].category + "-cat")?.appendChild(articleDiv);
+            let articleButton: HTMLButtonElement = document.createElement("button");
+            articleButton.innerText = "In den Einkaufswagen";
+            articleButton.classList.add("article-button");
+            articleButton.setAttribute("article_price", articles[i].price.toString());
+            articleButton.addEventListener("click", handleAddToCartClick);
+            articleDiv.appendChild(articleButton);
 
+            document.getElementById(articles[i].category + "-cat")?.appendChild(articleDiv);
+
+        }
     }
+
+    //#endregion
 
     //#region Eventhandling für "in den Einkaufswagen" Button
     let cartCounter: number = 0;
@@ -66,9 +74,29 @@ namespace Aufgabe07 {
     //#endregion
 
     //#region Eventhandling Artikel über Navbar aus/einblenden
+
+    let anchorShowAll: HTMLAnchorElement = document.createElement("a");
+    anchorShowAll.innerText = "Alle";
+    anchorShowAll.setAttribute("id", "showall");
+    anchorShowAll.classList.add("navtext");
+    document.getElementById("navall")?.appendChild(anchorShowAll);
     anchorShowAll.addEventListener("click", showSelectedCategory);
+
+    let anchorShowShoes: HTMLAnchorElement = document.createElement("a");
+    anchorShowShoes.innerText = "Schuhe";
+    anchorShowShoes.setAttribute("id", "showshoes");
+    anchorShowShoes.classList.add("navtext");
+    document.getElementById("navshoes")?.appendChild(anchorShowShoes);
     anchorShowShoes.addEventListener("click", showSelectedCategory);
+
+    let anchorShowGear: HTMLAnchorElement = document.createElement("a");
+    anchorShowGear.innerText = "Ausrüstung";
+    anchorShowGear.setAttribute("id", "showgear");
+    anchorShowGear.classList.add("navtext");
+    document.getElementById("navgear")?.appendChild(anchorShowGear);
     anchorShowGear.addEventListener("click", showSelectedCategory);
+
+
 
     function showSelectedCategory(_event: Event): void {
         if ((<HTMLDivElement>_event.target).getAttribute("id") == "showall") {
