@@ -35,6 +35,7 @@ namespace Aufgabe07 {
             articleButton.innerText = "In den Einkaufswagen";
             articleButton.classList.add("article-button");
             articleButton.setAttribute("article_price", articles[i].price.toString());
+            articleButton.setAttribute("currentindex", i.toString());
             articleButton.addEventListener("click", handleAddToCartClick);
             articleDiv.appendChild(articleButton);
 
@@ -54,6 +55,9 @@ namespace Aufgabe07 {
     document.getElementById("cart")?.appendChild(cartSpan);
 
 
+    let cartContent: ArtikelBouldern[] = [];
+
+
     function handleAddToCartClick(_event: Event): void {
         let pressButton: HTMLButtonElement = <HTMLButtonElement>_event.target;
 
@@ -70,6 +74,8 @@ namespace Aufgabe07 {
         cartCounter++;
         cartSpan.innerText = cartCounter.toString();
 
+        //localStorage.setItem("name" + (articles.length - 1), articles[pressButton.parseInt()]);
+        localStorage.setItem("name" + (articles.length - 1), articles[parseInt(articleButton.getAttribute("currentindex"))]);
     }
     //#endregion
 

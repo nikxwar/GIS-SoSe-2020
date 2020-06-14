@@ -29,6 +29,7 @@ var Aufgabe07;
             articleButton.innerText = "In den Einkaufswagen";
             articleButton.classList.add("article-button");
             articleButton.setAttribute("article_price", Aufgabe07.articles[i].price.toString());
+            articleButton.setAttribute("currentindex", i.toString());
             articleButton.addEventListener("click", handleAddToCartClick);
             articleDiv.appendChild(articleButton);
             document.getElementById(Aufgabe07.articles[i].category + "-cat")?.appendChild(articleDiv);
@@ -41,6 +42,7 @@ var Aufgabe07;
     let priceSum = 0;
     let cartSpan = document.createElement("span");
     document.getElementById("cart")?.appendChild(cartSpan);
+    let cartContent = [];
     function handleAddToCartClick(_event) {
         let pressButton = _event.target;
         let buttonPrice = pressButton.getAttribute("article_price");
@@ -52,6 +54,8 @@ var Aufgabe07;
         }
         cartCounter++;
         cartSpan.innerText = cartCounter.toString();
+        //localStorage.setItem("name" + (articles.length - 1), articles[pressButton.parseInt()]);
+        localStorage.setItem("name" + (Aufgabe07.articles.length - 1), Aufgabe07.articles[parseInt(articleButton.getAttribute("currentindex"))]);
     }
     //#endregion
     //#region Eventhandling Artikel über Navbar aus/einblenden

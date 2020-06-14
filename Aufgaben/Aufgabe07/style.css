@@ -1,8 +1,15 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-    background-image: linear-gradient(beige, #C46210);
     text-align: center;
+}
+
+#shopbody{
+    background-image: linear-gradient(beige, #C46210);
+}
+
+#cartbody{
+    background-color: beige;
 }
 /*Header/Navbar Elemente*/
  

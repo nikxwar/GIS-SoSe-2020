@@ -7,11 +7,11 @@ namespace Aufgabe07 {
         category: string;
     }
     export let articles: ArtikelBouldern[] = [];
-  
+
     export async function getArticlesFromJSON(_url: RequestInfo): Promise<void> {
-            let response: Response = await fetch(_url);
-            let jsonObj: string = await response.json();
-            articles = JSON.parse(JSON.stringify(jsonObj));
-            createArticles();
-        }
+        let response: Response = await fetch(_url);
+        let jsonObj: string = await response.json();
+        articles = JSON.parse(JSON.stringify(jsonObj));
+        createArticles();
+    }
 }
