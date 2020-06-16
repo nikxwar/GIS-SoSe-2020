@@ -9,6 +9,7 @@ namespace Aufgabe07 {
             let articleDiv: HTMLDivElement = document.createElement("div");
             articleDiv.classList.add("article");
             articleDiv.setAttribute("id", "article" + i);
+            articleDiv.setAttribute("currentindex", i.toString());
 
             let articleName: HTMLHeadingElement = document.createElement("h2");
             articleName.innerText = articles[i].name;
@@ -58,7 +59,7 @@ namespace Aufgabe07 {
     let cartContent: ArtikelBouldern[] = [];
 
 
-    function handleAddToCartClick(_event: Event): void {
+    export function handleAddToCartClick(_event: Event): void {
         let pressButton: HTMLButtonElement = <HTMLButtonElement>_event.target;
 
         let buttonPrice: string = <string>pressButton.getAttribute("article_price");
@@ -74,8 +75,14 @@ namespace Aufgabe07 {
         cartCounter++;
         cartSpan.innerText = cartCounter.toString();
 
-        //localStorage.setItem("name" + (articles.length - 1), articles[pressButton.parseInt()]);
-        localStorage.setItem("name" + (articles.length - 1), articles[parseInt(articleButton.getAttribute("currentindex"))]);
+        let indexCart: number = parseInt((<HTMLDivElement>(<HTMLElement>_event.target).parentElement).getAttribute("currentindex")!);
+
+        cartContent.push(articles[indexCart]);
+        localStorage.setItem("articleIMG" + (cartContent.length - 1), articles[indexCart].image);
+        localStorage.setItem("articleName" + (cartContent.length - 1), articles[indexCart].name);
+        localStorage.setItem("articleDescription" + (cartContent.length - 1), articles[indexCart].desc);
+        localStorage.setItem("articlePrice" + (cartContent.length - 1), articles[indexCart].price.toLocaleString("de-DE", { style: "currency", currency: "EUR" }));
+        localStorage.setItem("articleAmount" , cartContent.length.toString());
     }
     //#endregion
 

@@ -8,6 +8,7 @@ var Aufgabe07;
             let articleDiv = document.createElement("div");
             articleDiv.classList.add("article");
             articleDiv.setAttribute("id", "article" + i);
+            articleDiv.setAttribute("currentindex", i.toString());
             let articleName = document.createElement("h2");
             articleName.innerText = Aufgabe07.articles[i].name;
             articleName.classList.add("article-name");
@@ -54,9 +55,15 @@ var Aufgabe07;
         }
         cartCounter++;
         cartSpan.innerText = cartCounter.toString();
-        //localStorage.setItem("name" + (articles.length - 1), articles[pressButton.parseInt()]);
-        localStorage.setItem("name" + (Aufgabe07.articles.length - 1), Aufgabe07.articles[parseInt(articleButton.getAttribute("currentindex"))]);
+        let indexCart = parseInt(_event.target.parentElement.getAttribute("currentindex"));
+        cartContent.push(Aufgabe07.articles[indexCart]);
+        localStorage.setItem("articleIMG" + (cartContent.length - 1), Aufgabe07.articles[indexCart].image);
+        localStorage.setItem("articleName" + (cartContent.length - 1), Aufgabe07.articles[indexCart].name);
+        localStorage.setItem("articleDescription" + (cartContent.length - 1), Aufgabe07.articles[indexCart].desc);
+        localStorage.setItem("articlePrice" + (cartContent.length - 1), Aufgabe07.articles[indexCart].price.toLocaleString("de-DE", { style: "currency", currency: "EUR" }));
+        localStorage.setItem("articleAmount", cartContent.length.toString());
     }
+    Aufgabe07.handleAddToCartClick = handleAddToCartClick;
     //#endregion
     //#region Eventhandling Artikel über Navbar aus/einblenden
     let anchorShowAll = document.createElement("a");

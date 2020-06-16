@@ -67,7 +67,7 @@ img[alt="Warenkorb"]{
 }
 /*Main Elemente*/
 
-#shoes-cat, #gear-cat{
+.sortiment{
     margin: 25px;
     display: grid;
     padding: 10px;
@@ -76,7 +76,7 @@ img[alt="Warenkorb"]{
     grid-template-columns: repeat(3, 33.3%);
 }
 
-#shoes-cat > div{  
+.sortiment > div{  
     margin: 10px;
     background-color: white;
     padding: 10px;
@@ -86,20 +86,7 @@ img[alt="Warenkorb"]{
     border-radius: 5px;
 }
 
-#shoes-cat + p{
-    margin: 50px;
-}
-#gear-cat > div{  
-    margin: 10px;
-    background-color: white;
-    padding: 10px;
-    border: 2px;
-    border-style: solid ;
-    border-color: cornflowerblue;
-    border-radius: 5px;
-}
-
-#gear-cat + p{
+.sortiment + p{
     margin: 50px;
 }
 
