@@ -1,6 +1,7 @@
 namespace Aufgabe07 {
 
     //#region Artikel erstellen
+    
     getArticlesFromJSON("articles.json");
 
     export function createArticles(): void {
@@ -78,11 +79,12 @@ namespace Aufgabe07 {
         let indexCart: number = parseInt((<HTMLDivElement>(<HTMLElement>_event.target).parentElement).getAttribute("currentindex")!);
 
         cartContent.push(articles[indexCart]);
-        localStorage.setItem("articleIMG" + (cartContent.length - 1), articles[indexCart].image);
+        localStorage.setItem("cart", JSON.stringify(cartContent));
+       /* localStorage.setItem("articleIMG" + (cartContent.length - 1), articles[indexCart].image);
         localStorage.setItem("articleName" + (cartContent.length - 1), articles[indexCart].name);
         localStorage.setItem("articleDescription" + (cartContent.length - 1), articles[indexCart].desc);
-        localStorage.setItem("articlePrice" + (cartContent.length - 1), articles[indexCart].price.toLocaleString("de-DE", { style: "currency", currency: "EUR" }));
-        localStorage.setItem("articleAmount" , cartContent.length.toString());
+        localStorage.setItem("articlePrice" + (cartContent.length - 1), articles[indexCart].price.toString());
+        localStorage.setItem("articleAmount" , cartContent.length.toString());*/
     }
     //#endregion
 
