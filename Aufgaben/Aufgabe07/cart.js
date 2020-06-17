@@ -2,6 +2,7 @@
 var Aufgabe07;
 (function (Aufgabe07) {
     let cartarticles = JSON.parse(localStorage.getItem("cart"));
+    console.log(cartarticles[0].price);
     let cartPriceSum = 0;
     let totalPrice = document.createElement("h2");
     for (let i = 0; i < cartarticles.length; i++) {
@@ -27,9 +28,9 @@ var Aufgabe07;
         cartButton.setAttribute("currentindex", i.toString());
         cartButton.addEventListener("click", handleRemoveArticle);
         cartPriceSum += parseFloat(cartPrice.innerText);
-        totalPrice.innerText = "Summe: " +
-            //cartPriceSum.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
-            document.getElementById("cartsum")?.appendChild(totalPrice);
+        totalPrice.innerText = "Summe: " + cartPriceSum.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
+        document.getElementById("cartsum")?.appendChild(totalPrice);
+        console.log(cartPriceSum);
     }
     let clearCartButton = document.createElement("button");
     document.getElementById("clearcart").appendChild(clearCartButton);
@@ -38,7 +39,6 @@ var Aufgabe07;
     function handleRemoveArticle(_event) {
         let currentIndex = _event.target.getAttribute("currentindex");
         let indexToSubtract = parseInt(currentIndex);
-        console.log(indexToSubtract);
         cartPriceSum = cartPriceSum - cartarticles[indexToSubtract].price;
         totalPrice.innerText = "Summe: " + cartPriceSum.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
         (_event.target.parentElement).remove();
