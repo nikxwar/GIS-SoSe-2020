@@ -1,8 +1,12 @@
 namespace Aufgabe07 {
 
     //#region Artikel erstellen
-    
-    getArticlesFromJSON("articles.json");
+    window.addEventListener("load", init);
+
+    function init(): void {
+        getArticlesFromJSON("articles.json");
+
+    }
 
     export function createArticles(): void {
         for (let i: number = 0; i < articles.length; i++) {
@@ -80,11 +84,6 @@ namespace Aufgabe07 {
 
         cartContent.push(articles[indexCart]);
         localStorage.setItem("cart", JSON.stringify(cartContent));
-       /* localStorage.setItem("articleIMG" + (cartContent.length - 1), articles[indexCart].image);
-        localStorage.setItem("articleName" + (cartContent.length - 1), articles[indexCart].name);
-        localStorage.setItem("articleDescription" + (cartContent.length - 1), articles[indexCart].desc);
-        localStorage.setItem("articlePrice" + (cartContent.length - 1), articles[indexCart].price.toString());
-        localStorage.setItem("articleAmount" , cartContent.length.toString());*/
     }
     //#endregion
 

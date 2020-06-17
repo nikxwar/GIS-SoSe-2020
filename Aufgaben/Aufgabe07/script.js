@@ -2,7 +2,10 @@
 var Aufgabe07;
 (function (Aufgabe07) {
     //#region Artikel erstellen
-    Aufgabe07.getArticlesFromJSON("articles.json");
+    window.addEventListener("load", init);
+    function init() {
+        Aufgabe07.getArticlesFromJSON("articles.json");
+    }
     function createArticles() {
         for (let i = 0; i < Aufgabe07.articles.length; i++) {
             let articleDiv = document.createElement("div");
@@ -58,11 +61,6 @@ var Aufgabe07;
         let indexCart = parseInt(_event.target.parentElement.getAttribute("currentindex"));
         cartContent.push(Aufgabe07.articles[indexCart]);
         localStorage.setItem("cart", JSON.stringify(cartContent));
-        /* localStorage.setItem("articleIMG" + (cartContent.length - 1), articles[indexCart].image);
-         localStorage.setItem("articleName" + (cartContent.length - 1), articles[indexCart].name);
-         localStorage.setItem("articleDescription" + (cartContent.length - 1), articles[indexCart].desc);
-         localStorage.setItem("articlePrice" + (cartContent.length - 1), articles[indexCart].price.toString());
-         localStorage.setItem("articleAmount" , cartContent.length.toString());*/
     }
     Aufgabe07.handleAddToCartClick = handleAddToCartClick;
     //#endregion
