@@ -34,7 +34,7 @@ namespace Aufgabe07 {
         cartButton.setAttribute("currentindex", i.toString());
         cartButton.addEventListener("click", handleRemoveArticle);
 
-        cartPriceSum += parseFloat(cartPrice.innerText);
+        cartPriceSum += cartarticles[i].price;
         totalPrice.innerText = "Summe: " + cartPriceSum.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
         document.getElementById("cartsum")?.appendChild(totalPrice);
         console.log(cartPriceSum);

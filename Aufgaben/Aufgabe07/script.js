@@ -32,7 +32,6 @@ var Aufgabe07;
             let articleButton = document.createElement("button");
             articleButton.innerText = "In den Einkaufswagen";
             articleButton.classList.add("article-button");
-            articleButton.setAttribute("article_price", Aufgabe07.articles[i].price.toString());
             articleButton.setAttribute("currentindex", i.toString());
             articleButton.addEventListener("click", handleAddToCartClick);
             articleDiv.appendChild(articleButton);
@@ -49,8 +48,8 @@ var Aufgabe07;
     let cartContent = [];
     function handleAddToCartClick(_event) {
         let pressButton = _event.target;
-        let buttonPrice = pressButton.getAttribute("article_price");
-        let priceFloat = parseFloat(buttonPrice);
+        let index = parseInt(pressButton.getAttribute("currentindex"));
+        let priceFloat = Aufgabe07.articles[index].price;
         priceSum += priceFloat;
         console.log("Gesamtwert des Warenkorbs: " + priceSum.toLocaleString("de-DE", { style: "currency", currency: "EUR" }));
         if (cartCounter == 0) {

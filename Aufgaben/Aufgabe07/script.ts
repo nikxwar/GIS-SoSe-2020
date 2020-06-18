@@ -39,7 +39,6 @@ namespace Aufgabe07 {
             let articleButton: HTMLButtonElement = document.createElement("button");
             articleButton.innerText = "In den Einkaufswagen";
             articleButton.classList.add("article-button");
-            articleButton.setAttribute("article_price", articles[i].price.toString());
             articleButton.setAttribute("currentindex", i.toString());
             articleButton.addEventListener("click", handleAddToCartClick);
             articleDiv.appendChild(articleButton);
@@ -66,9 +65,9 @@ namespace Aufgabe07 {
     export function handleAddToCartClick(_event: Event): void {
         let pressButton: HTMLButtonElement = <HTMLButtonElement>_event.target;
 
-        let buttonPrice: string = <string>pressButton.getAttribute("article_price");
+        let index: number = parseInt(<string>pressButton.getAttribute("currentindex"));
 
-        let priceFloat: number = parseFloat(buttonPrice);
+        let priceFloat: number = articles[index].price;
 
         priceSum += priceFloat;
         console.log("Gesamtwert des Warenkorbs: " + priceSum.toLocaleString("de-DE", { style: "currency", currency: "EUR" }));
