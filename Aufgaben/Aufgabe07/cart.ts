@@ -46,17 +46,13 @@ namespace Aufgabe07 {
     clearCartButton.innerText = "Warenkorb leeren";
     clearCartButton.addEventListener("click", handleClearCart);
 
-
-
-
     function handleRemoveArticle(_event: Event): void {
         let currentIndex: string = (<string>(<HTMLElement>_event.target).getAttribute("currentindex"))!;
         let indexToSubtract: number = parseInt(currentIndex);
         cartPriceSum = cartPriceSum - cartarticles[indexToSubtract].price;
         totalPrice.innerText = "Summe: " + cartPriceSum.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
         ((<HTMLDivElement>_event.target).parentElement!).remove();
-
-
+        
     }
 
     function handleClearCart(_event: Event): void {
@@ -66,7 +62,7 @@ namespace Aufgabe07 {
         cartPriceSum = 0;
         totalPrice.innerText = "Summe: " + cartPriceSum.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
         localStorage.clear();
-    }
 
+    }
 
 }

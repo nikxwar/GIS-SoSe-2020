@@ -5,7 +5,6 @@ namespace Aufgabe07 {
 
     function init(): void {
         getArticlesFromJSON("articles.json");
-
     }
 
     export function createArticles(): void {
@@ -132,7 +131,7 @@ namespace Aufgabe07 {
             (<HTMLDivElement>document.getElementById("gear-cat")).style.display = "grid";
             (<HTMLHeadingElement>document.getElementById("hshoes")).style.display = "none";
             (<HTMLHeadingElement>document.getElementById("hgear")).style.display = "block";
-
+            
         }
     }
     //#endregion 
