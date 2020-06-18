@@ -39,6 +39,7 @@ var Aufgabe07;
         }
     }
     Aufgabe07.createArticles = createArticles;
+    console.log(Aufgabe07.articles[12]);
     //#endregion
     //#region Eventhandling für "in den Einkaufswagen" Button
     let cartCounter = 0;

@@ -48,6 +48,7 @@ namespace Aufgabe07 {
         }
     }
 
+    console.log(articles[12]);
     //#endregion
 
     //#region Eventhandling für "in den Einkaufswagen" Button
@@ -79,7 +80,6 @@ namespace Aufgabe07 {
         cartSpan.innerText = cartCounter.toString();
 
         let indexCart: number = parseInt((<HTMLDivElement>(<HTMLElement>_event.target).parentElement).getAttribute("currentindex")!);
-
         cartContent.push(articles[indexCart]);
         localStorage.setItem("cart", JSON.stringify(cartContent));
     }

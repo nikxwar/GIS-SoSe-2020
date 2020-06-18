@@ -1,27 +1,28 @@
 "use strict";
 var Aufgabe07;
 (function (Aufgabe07) {
-    let cartarticles = JSON.parse(localStorage.getItem("cart"));
-    console.log(cartarticles);
+    Aufgabe07.cartarticles = JSON.parse(localStorage.getItem("cart"));
     let cartPriceSum = 0;
     let totalPrice = document.createElement("h2");
-    createCartArticles();
+    if (Aufgabe07.cartarticles[0] !== undefined) {
+        createCartArticles();
+    }
     function createCartArticles() {
-        for (let i = 0; i < cartarticles.length; i++) {
+        for (let i = 0; i < Aufgabe07.cartarticles.length; i++) {
             let cartDiv = document.createElement("div");
             document.getElementById("cartcontent").appendChild(cartDiv);
             cartDiv.setAttribute("id", "div" + i);
             let cartName = document.createElement("p");
-            cartName.innerText = cartarticles[i].name;
+            cartName.innerText = Aufgabe07.cartarticles[i].name;
             cartDiv.appendChild(cartName);
             let cartIMG = document.createElement("img");
-            cartIMG.setAttribute("src", cartarticles[i].image);
+            cartIMG.setAttribute("src", Aufgabe07.cartarticles[i].image);
             cartDiv.appendChild(cartIMG);
             let cartDesc = document.createElement("p");
-            cartDesc.innerText = cartarticles[i].desc;
+            cartDesc.innerText = Aufgabe07.cartarticles[i].desc;
             cartDiv.appendChild(cartDesc);
             let cartPrice = document.createElement("p");
-            cartPrice.innerText = cartarticles[i].price.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
+            cartPrice.innerText = Aufgabe07.cartarticles[i].price.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
             cartPrice.setAttribute("article_price", cartPrice.innerText);
             cartDiv.appendChild(cartPrice);
             let cartButton = document.createElement("button");
@@ -29,10 +30,10 @@ var Aufgabe07;
             cartDiv.appendChild(cartButton);
             cartButton.setAttribute("currentindex", i.toString());
             cartButton.addEventListener("click", handleRemoveArticle);
-            cartPriceSum += cartarticles[i].price;
+            cartPriceSum += Aufgabe07.cartarticles[i].price;
             totalPrice.innerText = "Summe: " + cartPriceSum.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
             document.getElementById("cartsum")?.appendChild(totalPrice);
-            console.log(cartarticles);
+            console.log(Aufgabe07.cartarticles);
         }
     }
     let clearCartButton = document.createElement("button");
@@ -40,18 +41,18 @@ var Aufgabe07;
     clearCartButton.innerText = "Warenkorb leeren";
     clearCartButton.addEventListener("click", handleClearCart);
     function handleRemoveArticle(_event) {
-        console.log(cartarticles);
         let currentIndex = _event.target.getAttribute("currentindex");
         let indexToSubtract = parseInt(currentIndex);
-        cartPriceSum = cartPriceSum - cartarticles[indexToSubtract].price;
+        cartPriceSum = cartPriceSum - Aufgabe07.cartarticles[indexToSubtract].price;
         totalPrice.innerText = "Summe: " + cartPriceSum.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
         (_event.target.parentElement).remove();
-        cartarticles.splice(indexToSubtract, 1);
-        localStorage.setItem("cart", JSON.stringify(cartarticles));
-        console.log(localStorage);
+        Aufgabe07.cartarticles.splice(indexToSubtract, 1);
+        localStorage.setItem("cart", JSON.stringify(Aufgabe07.cartarticles));
+        location.reload();
+        createCartArticles();
     }
     function handleClearCart(_event) {
-        for (let i = 0; i < cartarticles.length; i++) {
+        for (let i = 0; i < Aufgabe07.cartarticles.length; i++) {
             document.getElementById("div" + i).remove();
         }
         cartPriceSum = 0;

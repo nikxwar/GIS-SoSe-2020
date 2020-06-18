@@ -1,10 +1,12 @@
 namespace Aufgabe07 {
 
-    let cartarticles: ArtikelBouldern[] = JSON.parse(localStorage.getItem("cart")!);
-    console.log(cartarticles);
+    export let cartarticles: ArtikelBouldern[] = JSON.parse(localStorage.getItem("cart")!);
     let cartPriceSum: number = 0;
     let totalPrice: HTMLHeadingElement = document.createElement("h2");
-    createCartArticles();
+    if (cartarticles[0] !== undefined) {
+        createCartArticles();
+    }
+
     function createCartArticles(): void {
         for (let i: number = 0; i < cartarticles.length; i++) {
 
@@ -49,7 +51,6 @@ namespace Aufgabe07 {
     clearCartButton.addEventListener("click", handleClearCart);
 
     function handleRemoveArticle(_event: Event): void {
-        console.log(cartarticles);
         let currentIndex: string = (<string>(<HTMLElement>_event.target).getAttribute("currentindex"))!;
         let indexToSubtract: number = parseInt(currentIndex);
         cartPriceSum = cartPriceSum - cartarticles[indexToSubtract].price;
@@ -57,8 +58,8 @@ namespace Aufgabe07 {
         ((<HTMLDivElement>_event.target).parentElement!).remove();
         cartarticles.splice(indexToSubtract, 1);
         localStorage.setItem("cart", JSON.stringify(cartarticles));
-        console.log(localStorage);
-
+        location.reload();
+        createCartArticles();
     }
 
     function handleClearCart(_event: Event): void {
