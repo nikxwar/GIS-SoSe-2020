@@ -2,7 +2,7 @@
 var Aufgabe07;
 (function (Aufgabe07) {
     let cartarticles = JSON.parse(localStorage.getItem("cart"));
-    console.log(cartarticles[0].price);
+    console.log(cartarticles);
     let cartPriceSum = 0;
     let totalPrice = document.createElement("h2");
     for (let i = 0; i < cartarticles.length; i++) {
@@ -30,18 +30,21 @@ var Aufgabe07;
         cartPriceSum += cartarticles[i].price;
         totalPrice.innerText = "Summe: " + cartPriceSum.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
         document.getElementById("cartsum")?.appendChild(totalPrice);
-        console.log(cartPriceSum);
+        console.log(cartarticles);
     }
     let clearCartButton = document.createElement("button");
     document.getElementById("clearcart").appendChild(clearCartButton);
     clearCartButton.innerText = "Warenkorb leeren";
     clearCartButton.addEventListener("click", handleClearCart);
     function handleRemoveArticle(_event) {
+        console.log(cartarticles);
         let currentIndex = _event.target.getAttribute("currentindex");
         let indexToSubtract = parseInt(currentIndex);
         cartPriceSum = cartPriceSum - cartarticles[indexToSubtract].price;
         totalPrice.innerText = "Summe: " + cartPriceSum.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
         (_event.target.parentElement).remove();
+        cartarticles.splice(indexToSubtract, 1);
+        console.log(cartarticles);
     }
     function handleClearCart(_event) {
         for (let i = 0; i < cartarticles.length; i++) {

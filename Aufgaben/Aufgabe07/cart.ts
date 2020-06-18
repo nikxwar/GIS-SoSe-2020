@@ -1,7 +1,7 @@
 namespace Aufgabe07 {
 
     let cartarticles: ArtikelBouldern[] = JSON.parse(localStorage.getItem("cart")!);
-    console.log(cartarticles[0].price);
+    console.log(cartarticles);
     let cartPriceSum: number = 0;
     let totalPrice: HTMLHeadingElement = document.createElement("h2");
 
@@ -37,7 +37,7 @@ namespace Aufgabe07 {
         cartPriceSum += cartarticles[i].price;
         totalPrice.innerText = "Summe: " + cartPriceSum.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
         document.getElementById("cartsum")?.appendChild(totalPrice);
-        console.log(cartPriceSum);
+        console.log(cartarticles);
 
     }
 
@@ -47,11 +47,15 @@ namespace Aufgabe07 {
     clearCartButton.addEventListener("click", handleClearCart);
 
     function handleRemoveArticle(_event: Event): void {
+        console.log(cartarticles);
         let currentIndex: string = (<string>(<HTMLElement>_event.target).getAttribute("currentindex"))!;
         let indexToSubtract: number = parseInt(currentIndex);
         cartPriceSum = cartPriceSum - cartarticles[indexToSubtract].price;
         totalPrice.innerText = "Summe: " + cartPriceSum.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
         ((<HTMLDivElement>_event.target).parentElement!).remove();
+        cartarticles.splice(indexToSubtract, 1);
+        console.log(cartarticles);
+
         
     }
 
