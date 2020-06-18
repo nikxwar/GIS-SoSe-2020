@@ -4,41 +4,43 @@ namespace Aufgabe07 {
     console.log(cartarticles);
     let cartPriceSum: number = 0;
     let totalPrice: HTMLHeadingElement = document.createElement("h2");
+    createCartArticles();
+    function createCartArticles(): void {
+        for (let i: number = 0; i < cartarticles.length; i++) {
 
-    for (let i: number = 0; i < cartarticles.length; i++) {
+            let cartDiv: HTMLDivElement = document.createElement("div");
+            (<HTMLElement>document.getElementById("cartcontent")).appendChild(cartDiv);
+            cartDiv.setAttribute("id", "div" + i);
 
-        let cartDiv: HTMLDivElement = document.createElement("div");
-        (<HTMLElement>document.getElementById("cartcontent")).appendChild(cartDiv);
-        cartDiv.setAttribute("id", "div" + i);
+            let cartName: HTMLParagraphElement = document.createElement("p");
+            cartName.innerText = cartarticles[i].name;
+            cartDiv.appendChild(cartName);
 
-        let cartName: HTMLParagraphElement = document.createElement("p");
-        cartName.innerText = cartarticles[i].name;
-        cartDiv.appendChild(cartName);
+            let cartIMG: HTMLImageElement = document.createElement("img");
+            cartIMG.setAttribute("src", cartarticles[i].image);
+            cartDiv.appendChild(cartIMG);
 
-        let cartIMG: HTMLImageElement = document.createElement("img");
-        cartIMG.setAttribute("src", cartarticles[i].image);
-        cartDiv.appendChild(cartIMG);
+            let cartDesc: HTMLParagraphElement = document.createElement("p");
+            cartDesc.innerText = cartarticles[i].desc;
+            cartDiv.appendChild(cartDesc);
 
-        let cartDesc: HTMLParagraphElement = document.createElement("p");
-        cartDesc.innerText = cartarticles[i].desc;
-        cartDiv.appendChild(cartDesc);
+            let cartPrice: HTMLParagraphElement = document.createElement("p");
+            cartPrice.innerText = cartarticles[i].price.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
+            cartPrice.setAttribute("article_price", cartPrice.innerText);
+            cartDiv.appendChild(cartPrice);
 
-        let cartPrice: HTMLParagraphElement = document.createElement("p");
-        cartPrice.innerText = cartarticles[i].price.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
-        cartPrice.setAttribute("article_price", cartPrice.innerText);
-        cartDiv.appendChild(cartPrice);
+            let cartButton: HTMLButtonElement = document.createElement("button");
+            cartButton.innerText = "Artikel entfernen";
+            cartDiv.appendChild(cartButton);
+            cartButton.setAttribute("currentindex", i.toString());
+            cartButton.addEventListener("click", handleRemoveArticle);
 
-        let cartButton: HTMLButtonElement = document.createElement("button");
-        cartButton.innerText = "Artikel entfernen";
-        cartDiv.appendChild(cartButton);
-        cartButton.setAttribute("currentindex", i.toString());
-        cartButton.addEventListener("click", handleRemoveArticle);
+            cartPriceSum += cartarticles[i].price;
+            totalPrice.innerText = "Summe: " + cartPriceSum.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
+            document.getElementById("cartsum")?.appendChild(totalPrice);
+            console.log(cartarticles);
 
-        cartPriceSum += cartarticles[i].price;
-        totalPrice.innerText = "Summe: " + cartPriceSum.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
-        document.getElementById("cartsum")?.appendChild(totalPrice);
-        console.log(cartarticles);
-
+        }
     }
 
     let clearCartButton: HTMLButtonElement = document.createElement("button");
@@ -54,9 +56,9 @@ namespace Aufgabe07 {
         totalPrice.innerText = "Summe: " + cartPriceSum.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
         ((<HTMLDivElement>_event.target).parentElement!).remove();
         cartarticles.splice(indexToSubtract, 1);
-        console.log(cartarticles);
+        localStorage.setItem("cart", JSON.stringify(cartarticles));
+        console.log(localStorage);
 
-        
     }
 
     function handleClearCart(_event: Event): void {

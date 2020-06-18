@@ -5,32 +5,35 @@ var Aufgabe07;
     console.log(cartarticles);
     let cartPriceSum = 0;
     let totalPrice = document.createElement("h2");
-    for (let i = 0; i < cartarticles.length; i++) {
-        let cartDiv = document.createElement("div");
-        document.getElementById("cartcontent").appendChild(cartDiv);
-        cartDiv.setAttribute("id", "div" + i);
-        let cartName = document.createElement("p");
-        cartName.innerText = cartarticles[i].name;
-        cartDiv.appendChild(cartName);
-        let cartIMG = document.createElement("img");
-        cartIMG.setAttribute("src", cartarticles[i].image);
-        cartDiv.appendChild(cartIMG);
-        let cartDesc = document.createElement("p");
-        cartDesc.innerText = cartarticles[i].desc;
-        cartDiv.appendChild(cartDesc);
-        let cartPrice = document.createElement("p");
-        cartPrice.innerText = cartarticles[i].price.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
-        cartPrice.setAttribute("article_price", cartPrice.innerText);
-        cartDiv.appendChild(cartPrice);
-        let cartButton = document.createElement("button");
-        cartButton.innerText = "Artikel entfernen";
-        cartDiv.appendChild(cartButton);
-        cartButton.setAttribute("currentindex", i.toString());
-        cartButton.addEventListener("click", handleRemoveArticle);
-        cartPriceSum += cartarticles[i].price;
-        totalPrice.innerText = "Summe: " + cartPriceSum.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
-        document.getElementById("cartsum")?.appendChild(totalPrice);
-        console.log(cartarticles);
+    createCartArticles();
+    function createCartArticles() {
+        for (let i = 0; i < cartarticles.length; i++) {
+            let cartDiv = document.createElement("div");
+            document.getElementById("cartcontent").appendChild(cartDiv);
+            cartDiv.setAttribute("id", "div" + i);
+            let cartName = document.createElement("p");
+            cartName.innerText = cartarticles[i].name;
+            cartDiv.appendChild(cartName);
+            let cartIMG = document.createElement("img");
+            cartIMG.setAttribute("src", cartarticles[i].image);
+            cartDiv.appendChild(cartIMG);
+            let cartDesc = document.createElement("p");
+            cartDesc.innerText = cartarticles[i].desc;
+            cartDiv.appendChild(cartDesc);
+            let cartPrice = document.createElement("p");
+            cartPrice.innerText = cartarticles[i].price.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
+            cartPrice.setAttribute("article_price", cartPrice.innerText);
+            cartDiv.appendChild(cartPrice);
+            let cartButton = document.createElement("button");
+            cartButton.innerText = "Artikel entfernen";
+            cartDiv.appendChild(cartButton);
+            cartButton.setAttribute("currentindex", i.toString());
+            cartButton.addEventListener("click", handleRemoveArticle);
+            cartPriceSum += cartarticles[i].price;
+            totalPrice.innerText = "Summe: " + cartPriceSum.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
+            document.getElementById("cartsum")?.appendChild(totalPrice);
+            console.log(cartarticles);
+        }
     }
     let clearCartButton = document.createElement("button");
     document.getElementById("clearcart").appendChild(clearCartButton);
@@ -44,7 +47,8 @@ var Aufgabe07;
         totalPrice.innerText = "Summe: " + cartPriceSum.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
         (_event.target.parentElement).remove();
         cartarticles.splice(indexToSubtract, 1);
-        console.log(cartarticles);
+        localStorage.setItem("cart", JSON.stringify(cartarticles));
+        console.log(localStorage);
     }
     function handleClearCart(_event) {
         for (let i = 0; i < cartarticles.length; i++) {
