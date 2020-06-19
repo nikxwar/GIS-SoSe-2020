@@ -1,8 +1,10 @@
 namespace Aufgabe07 {
 
-    export let cartarticles: ArtikelBouldern[] = JSON.parse(localStorage.getItem("cart")!);
+    let cartarticles: ArtikelBouldern[] = JSON.parse(localStorage.getItem("cart")!);
     let cartPriceSum: number = 0;
     let totalPrice: HTMLHeadingElement = document.createElement("h2");
+    totalPrice.innerText = "Summe: " + cartPriceSum.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
+    document.getElementById("cartsum")?.appendChild(totalPrice);
     if (cartarticles[0] !== undefined) {
         createCartArticles();
     }
@@ -28,7 +30,6 @@ namespace Aufgabe07 {
 
             let cartPrice: HTMLParagraphElement = document.createElement("p");
             cartPrice.innerText = cartarticles[i].price.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
-            cartPrice.setAttribute("article_price", cartPrice.innerText);
             cartDiv.appendChild(cartPrice);
 
             let cartButton: HTMLButtonElement = document.createElement("button");
@@ -39,9 +40,7 @@ namespace Aufgabe07 {
 
             cartPriceSum += cartarticles[i].price;
             totalPrice.innerText = "Summe: " + cartPriceSum.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
-            document.getElementById("cartsum")?.appendChild(totalPrice);
-            console.log(cartarticles);
-
+           
         }
     }
 
@@ -51,12 +50,13 @@ namespace Aufgabe07 {
     clearCartButton.addEventListener("click", handleClearCart);
 
     function handleRemoveArticle(_event: Event): void {
-        let currentIndex: string = (<string>(<HTMLElement>_event.target).getAttribute("currentindex"))!;
-        let indexToSubtract: number = parseInt(currentIndex);
-        cartPriceSum = cartPriceSum - cartarticles[indexToSubtract].price;
+        let currentIndex: number = parseInt(<string>(<HTMLElement>_event.target).getAttribute("currentindex")!);
+        cartPriceSum -= cartarticles[currentIndex].price;
         totalPrice.innerText = "Summe: " + cartPriceSum.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
+
         ((<HTMLDivElement>_event.target).parentElement!).remove();
-        cartarticles.splice(indexToSubtract, 1);
+        
+        cartarticles.splice(currentIndex, 1);
         localStorage.setItem("cart", JSON.stringify(cartarticles));
         location.reload();
         createCartArticles();
