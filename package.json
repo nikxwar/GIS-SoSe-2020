@@ -1,0 +1,26 @@
+{
+  "name": "gis-sose-2020",
+  "version": "1.0.0",
+  "description": "Bearbeitung der Aufgaben im Fach Grundlagen interaktiver Systeme Im Sommersemester 2020",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "start": "node Aufgaben/Aufgabe08/server.js"
+    },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikxwar/GIS-SoSe-2020.git"
+  },
+  "keywords": [
+    "gis",
+    "sose2020",
+    "typescript"
+  ],
+  "author": "Niklas Krieg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nikxwar/GIS-SoSe-2020/issues"
+  },
+  "homepage": "https://github.com/nikxwar/GIS-SoSe-2020#readme"
+}
