@@ -4,10 +4,7 @@ namespace Aufgabe08 {
     let submit: HTMLButtonElement = <HTMLButtonElement>document.getElementById("send");
     submit.addEventListener("click", handleClickSubmit);
 
-    function handleClickSubmit(_event: Event): void {
-        communicate("https://nikxwargissose2020.herokuapp.com/");
-        
-    }
+
 
     async function communicate(_url: RequestInfo): Promise<void> {
         formData = new FormData(document.forms[0]);
@@ -19,13 +16,18 @@ namespace Aufgabe08 {
 
 
 
-        for (let entry of formData) {
+        for (let entry of query) {
             console.log(entry);
             console.log("name: " + entry[0]);
             console.log("value: " + entry[1]);
         }
 
 
+
+    }
+    function handleClickSubmit(_event: Event): void {
+        communicate("https://nikxwargissose2020.herokuapp.com/");
+        //communicate("http://localhost:8100");
 
     }
 }
