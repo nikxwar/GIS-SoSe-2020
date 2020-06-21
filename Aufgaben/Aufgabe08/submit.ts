@@ -10,7 +10,7 @@ namespace Aufgabe08 {
         formData = new FormData(document.forms[0]);
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         _url = _url + "?" + query.toString();
-        let response: Response = await fetch(_url);
+        let response: Response = await fetch(_url, { method: "get" });
         let responseString: string = await response.text();
         console.log(responseString);
 
