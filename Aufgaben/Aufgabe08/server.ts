@@ -19,13 +19,14 @@ namespace Aufgabe08 {
         console.log("Listening");
     }
 
-
+//bei Anfrage an den Server wird diese Funktion ausgeführt
     function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
         console.log("I hear voices!");
 
         _response.setHeader("content-type", "text/html; charset=utf-8");
-        _response.setHeader("Access-Control-Allow-Origin", "*");
 
+        _response.setHeader("Access-Control-Allow-Origin", "*");
+// response wird in die URL übertragen
         _response.write(_request.url);
 
         _response.end();
