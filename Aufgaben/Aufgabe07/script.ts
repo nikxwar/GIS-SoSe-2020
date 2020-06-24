@@ -48,7 +48,7 @@ namespace Aufgabe07 {
         }
     }
 
-    console.log(articles[12]);
+   
     //#endregion
 
     //#region Eventhandling für "in den Einkaufswagen" Button

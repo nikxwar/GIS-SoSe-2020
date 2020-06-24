@@ -8,13 +8,12 @@ namespace Aufgabe08 {
 
     async function communicate(_url: RequestInfo): Promise<void> {
         formData = new FormData(document.forms[0]);
+         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         _url = _url + "?" + query.toString();
         let response: Response = await fetch(_url, { method: "get" });
         let responseString: string = await response.text();
         console.log(responseString);
-
-
 
         for (let entry of query) {
             console.log(entry);
@@ -22,12 +21,10 @@ namespace Aufgabe08 {
             console.log("value: " + entry[1]);
         }
 
-
-
     }
     function handleClickSubmit(_event: Event): void {
-        communicate("https://nikxwargissose2020.herokuapp.com/");
-        //communicate("http://localhost:8100");
+        //communicate("https://nikxwargissose2020.herokuapp.com/");
+        communicate("http://localhost:8100");
 
     }
 }

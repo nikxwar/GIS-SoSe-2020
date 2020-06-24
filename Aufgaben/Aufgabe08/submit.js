@@ -6,6 +6,7 @@ var Aufgabe08;
     submit.addEventListener("click", handleClickSubmit);
     async function communicate(_url) {
         formData = new FormData(document.forms[0]);
+        // tslint:disable-next-line: no-any
         let query = new URLSearchParams(formData);
         _url = _url + "?" + query.toString();
         let response = await fetch(_url, { method: "get" });
@@ -18,8 +19,8 @@ var Aufgabe08;
         }
     }
     function handleClickSubmit(_event) {
-        communicate("https://nikxwargissose2020.herokuapp.com/");
-        //communicate("http://localhost:8100");
+        //communicate("https://nikxwargissose2020.herokuapp.com/");
+        communicate("http://localhost:8100");
     }
 })(Aufgabe08 || (Aufgabe08 = {}));
 //# sourceMappingURL=submit.js.map
