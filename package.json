@@ -4,10 +4,12 @@
   "description": "Bearbeitung der Aufgaben im Fach Grundlagen interaktiver Systeme Im Sommersemester 2020",
   "main": "index.js",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/node": "^14.0.14"
+  },
   "scripts": {
-    "start": "node Aufgaben/Aufgabe08/server.js"
-    },
+    "start": "node Aufgaben/Aufgabe09/server.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nikxwar/GIS-SoSe-2020.git"
