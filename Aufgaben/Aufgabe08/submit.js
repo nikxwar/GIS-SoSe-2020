@@ -19,8 +19,8 @@ var Aufgabe08;
         }
     }
     function handleClickSubmit(_event) {
-        //communicate("https://nikxwargissose2020.herokuapp.com/");
-        communicate("http://localhost:8100");
+        communicate("https://nikxwargissose2020.herokuapp.com/");
+        //communicate("http://localhost:8100");
     }
 })(Aufgabe08 || (Aufgabe08 = {}));
 //# sourceMappingURL=submit.js.map

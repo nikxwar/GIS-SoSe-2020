@@ -23,8 +23,8 @@ namespace Aufgabe08 {
 
     }
     function handleClickSubmit(_event: Event): void {
-        //communicate("https://nikxwargissose2020.herokuapp.com/");
-        communicate("http://localhost:8100");
+        communicate("https://nikxwargissose2020.herokuapp.com/");
+        //communicate("http://localhost:8100");
 
     }
 }
