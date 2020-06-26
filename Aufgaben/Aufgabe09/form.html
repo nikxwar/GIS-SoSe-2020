@@ -23,7 +23,7 @@
             <h4>Wie geht's denn so?</h4>
             <p>
                 <label for="range">sehr gut</label>
-                <input type="range" name="Stimmung " id="range" min="0" max="100" step="1">
+                <input type="range" name="Stimmung" id="range" min="0" max="100" step="1">
                 <label for="range">sehr schlecht</label>
             </p>
             <p>
@@ -33,7 +33,9 @@
             <button type="button" id="sendhtml">Als HTML senden</button>
             <button type="button" id="sendjson">Als JSON senden</button>
         </form>
-        <div id="serverresponse"></div>
+        <div id="serverresponse">
+            <p id="responseparagraph"></p>
+        </div>
 
     </main>
 
