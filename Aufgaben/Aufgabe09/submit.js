@@ -5,8 +5,8 @@ var Aufgabe09;
     document.querySelector("#sendhtml").addEventListener("click", handleClickHTML);
     document.querySelector("#sendjson").addEventListener("click", handleClickJSON);
     let url;
-    //url = "https://nikxwargissose2020.herokuapp.com/";
-    url = "http://localhost:8100";
+    url = "https://nikxwargissose2020.herokuapp.com/";
+    //url = "http://localhost:8100";
     async function handleClickHTML() {
         formData = new FormData(document.forms[0]);
         //tslint:disable-next-line

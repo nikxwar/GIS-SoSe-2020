@@ -5,8 +5,8 @@ namespace Aufgabe09 {
     (<HTMLButtonElement>document.querySelector("#sendjson")).addEventListener("click", handleClickJSON);
 
     let url: string;
-    //url = "https://nikxwargissose2020.herokuapp.com/";
-    url = "http://localhost:8100";
+    url = "https://nikxwargissose2020.herokuapp.com/";
+    //url = "http://localhost:8100";
 
     async function handleClickHTML(): Promise<void> {
         formData = new FormData(document.forms[0]);
