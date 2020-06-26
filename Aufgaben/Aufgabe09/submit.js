@@ -6,8 +6,8 @@ var Aufgabe09;
     document.querySelector("#sendhtml").addEventListener("click", handleClickHTML);
     document.querySelector("#sendjson").addEventListener("click", handleClickJSON);
     function setURL() {
-        //url = "https://nikxwargissose2020.herokuapp.com";
-        url = "http://localhost:8100";
+        url = "https://nikxwargissose2020.herokuapp.com";
+        //url = "http://localhost:8100";
     }
     async function handleClickHTML() {
         setURL();
