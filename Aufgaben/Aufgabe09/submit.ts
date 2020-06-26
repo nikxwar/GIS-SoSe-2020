@@ -14,8 +14,7 @@ namespace Aufgabe09 {
         formData = new FormData(document.forms[0]);
         //tslint:disable-next-line
         let query: URLSearchParams = new URLSearchParams(<any>formData);
-        url += "/html";
-        url = url + "?" + query.toString();
+        url += "/html" + "?" + query.toString();
         let response: Response = await fetch(url);
         let responseString: string = await response.text();
         console.log(responseString);
@@ -29,57 +28,14 @@ namespace Aufgabe09 {
         formData = new FormData(document.forms[0]);
         //tslint:disable-next-line
         let query: URLSearchParams = new URLSearchParams(<any>formData);
-        url += "/json";
-        url = url + "?" + query.toString();
+        url += "/json" + "?" + query.toString();
         let response: Response = await fetch(url);
         let responseJSON: string = await response.json();
 
         console.log(responseJSON);
         setURL();
 
-        interface Answers {
-            fname: string;
-            lname: string;
-            message: string;
-            mood: number;
-            sellsoul: string;
-        }
-
-        let responseArray: Answers[];
-        responseArray = JSON.parse(JSON.stringify(responseJSON));
-        console.log(responseArray.length);
-
-        for (let i: number = 0; i < responseArray.length; i++) {
-
-            let responseDiv: HTMLDivElement = document.createElement("div");
-            document.getElementById("serverresponse")?.appendChild(responseDiv);
-
-           /* let firstName: HTMLParagraphElement = document.createElement("p");
-            firstName.innerText = "Vorname: " + responseArray[i].fname;
-            responseDiv.appendChild(firstName);
-
-            let lastName: HTMLParagraphElement = document.createElement("p");
-            lastName.innerText = "Nachname: " + responseArray[i].lname;
-            responseDiv.appendChild(lastName);
-
-            let message: HTMLParagraphElement = document.createElement("p");
-            message.innerText = "Nachrricht: " + responseArray[i].message;
-            responseDiv.appendChild(message);
-
-            let mood: HTMLParagraphElement = document.createElement("p");
-            mood.innerText = "Stimmung: " + responseArray[i].mood.toString() + "%";
-            responseDiv.appendChild(mood);
-
-            if (responseArray[i].sellsoul == "on") {
-                let soulsold: HTMLParagraphElement = document.createElement("p");
-                soulsold.innerText = "Seele wurde verkauft!";
-                responseDiv.appendChild(soulsold);
-
-*/
-            }
-            
-
-
+       
         }
 
 
