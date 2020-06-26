@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mein erster Testserver</title>
+    <script src="submit.js" defer></script>
+    <style>
+        body {
+            font-family: arial;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <form>
+            <input type="text" name="Vorname" placeholder="Vorname"><br>
+            <input type="text" name="Nachname" placeholder="Nachname"><br>
+            <input type="text" name="E-Mail" placeholder="Mail"><br>
+            <textarea name="Nachricht" cols="30" rows="10" placeholder="Gib deine Nachricht ein"></textarea>
+            <h4>Wie geht's denn so?</h4>
+            <p>
+                <label for="range">sehr gut</label>
+                <input type="range" name="Stimmung " id="range" min="0" max="100" step="1">
+                <label for="range">sehr schlecht</label>
+            </p>
+            <p>
+                <input type="radio" name="Seeleverkaufen" id="sellsoul"><label for="sellsoul">Hiermit verkaufe ich meine
+                    Seele</label>
+            </p>
+            <button type="button" id="sendhtml">Als HTML senden</button>
+            <button type="button" id="sendjson">Als JSON senden</button>
+        </form>
+        <div id="serverresponse"></div>
+
+    </main>
+
+</body>
+
+</html>
