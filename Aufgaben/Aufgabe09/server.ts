@@ -42,10 +42,8 @@ namespace Aufgabe09 {
                 _response.write(jsonString);
             }
 
-
             _response.end();
-            console.log("I responded!");
-
+            
         }
     }
 }

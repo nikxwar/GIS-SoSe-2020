@@ -35,7 +35,6 @@ var Aufgabe09;
                 _response.write(jsonString);
             }
             _response.end();
-            console.log("I responded!");
         }
     }
 })(Aufgabe09 || (Aufgabe09 = {}));
