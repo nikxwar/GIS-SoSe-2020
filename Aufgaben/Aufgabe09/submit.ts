@@ -5,7 +5,7 @@ namespace Aufgabe09 {
     (<HTMLButtonElement>document.querySelector("#sendjson")).addEventListener("click", handleClickJSON);
 
     let url: string;
-    url = "https://nikxwargissose2020.herokuapp.com/";
+    url = "https://nikxwargissose2020.herokuapp.com";
     //url = "http://localhost:8100";
 
     async function handleClickHTML(): Promise<void> {
@@ -45,7 +45,7 @@ namespace Aufgabe09 {
 
         let responseArray: Answers[] = [];
 
-        responseArray = JSON.parse(responseJSON);
+        //responseArray = JSON.parse(responseJSON);
         console.log("Array" + responseArray);
 
         for (let i: number = 0; i < responseArray.length; i++) {

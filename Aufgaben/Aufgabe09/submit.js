@@ -5,7 +5,7 @@ var Aufgabe09;
     document.querySelector("#sendhtml").addEventListener("click", handleClickHTML);
     document.querySelector("#sendjson").addEventListener("click", handleClickJSON);
     let url;
-    url = "https://nikxwargissose2020.herokuapp.com/";
+    url = "https://nikxwargissose2020.herokuapp.com";
     //url = "http://localhost:8100";
     async function handleClickHTML() {
         formData = new FormData(document.forms[0]);
@@ -30,7 +30,7 @@ var Aufgabe09;
         let responseJSON = await response.json();
         console.log(responseJSON);
         let responseArray = [];
-        responseArray = JSON.parse(responseJSON);
+        //responseArray = JSON.parse(responseJSON);
         console.log("Array" + responseArray);
         for (let i = 0; i < responseArray.length; i++) {
             let responseDiv = document.createElement("div");
