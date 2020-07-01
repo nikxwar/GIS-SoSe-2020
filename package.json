@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Bearbeitung der Aufgaben im Fach Grundlagen interaktiver Systeme Im Sommersemester 2020",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "mongodb": "^3.5.9"
+  },
   "devDependencies": {
     "@types/node": "^14.0.14"
   },
