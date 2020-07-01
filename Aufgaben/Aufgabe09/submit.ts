@@ -33,11 +33,7 @@ namespace Aufgabe09 {
         let responseJSON: string = await response.json();
 
         console.log(responseJSON);
-        setURL();
-
-       
-        }
-
-
-
+        setURL(); 
+    
     }
+}
