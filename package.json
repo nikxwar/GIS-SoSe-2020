@@ -4,6 +4,7 @@
   "description": "Bearbeitung der Aufgaben im Fach Grundlagen interaktiver Systeme Im Sommersemester 2020",
   "main": "index.js",
   "dependencies": {
+    "@types/mongodb": "^3.5.25",
     "mongodb": "^3.5.9"
   },
   "devDependencies": {
