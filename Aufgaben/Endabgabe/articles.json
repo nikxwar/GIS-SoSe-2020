@@ -103,7 +103,7 @@
     },
     {
         "image": "Bilder/erdbeeren.jpg",
-        "info" : "Frische Erdbeeren",
+        "info": "Frische Erdbeeren",
         "price": 1,
         "category": "toppings"
     },
@@ -112,19 +112,18 @@
         "info": "Frische Banananenscheiben",
         "price": 1,
         "category": "toppings"
-    },{
-        "image":"Bilder/schokososse.jpg",
-        "info":"Hausgemachte Schokosoße",
+    },
+    {
+        "image": "Bilder/schokososse.jpg",
+        "info": "Hausgemachte Schokosoße",
         "price": 0.5,
-        "category":"toppings"
-
+        "category": "toppings"
     },
     {
         "image": "Bilder/vanillesosse.jpg",
         "info": "Vanillesoße",
         "price": 0.5,
-        "category":"toppings"
-
+        "category": "toppings"
     },
     {
         "image": "Bilder/karamellsosse.jpg",
@@ -144,7 +143,6 @@
         "price": 0.5,
         "category": "toppings"
     },
-    
     {
         "image": "Bilder/cone.jpg",
         "info": "In einer Waffel",
@@ -153,7 +151,7 @@
     },
     {
         "image": "Bilder/cup.jpg",
-        "info": "Im Becher",
+        "info": "Im Papierbecher",
         "price": 0,
         "category": "containers"
     },
@@ -164,9 +162,21 @@
         "category": "containers"
     },
     {
+        "image": "Bilder/chococup.jpg",
+        "info": "Im schokolierten Waffelbecher",
+        "price": 1,
+        "category": "containers"
+    },
+    {
         "image": "Bilder/bigcone.jpg",
         "info": "In einer großen Waffel (empfehlenswert ab 3 Kugeln)",
         "price": 0.5,
+        "category": "containers"
+    },
+    {
+        "image": "Bilder/glass.jpg",
+        "info": "Im Glasbecher (gegen Pfand)",
+        "price": 5,
         "category": "containers"
     }
 ]
