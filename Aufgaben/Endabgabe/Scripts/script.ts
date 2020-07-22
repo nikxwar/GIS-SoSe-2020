@@ -14,11 +14,6 @@ namespace Endabgabe {
             articleDiv.setAttribute("id", "article" + i);
             articleDiv.setAttribute("currentindex", i.toString());
 
-            /* let articleName: HTMLHeadingElement = document.createElement("h2");
-             articleName.innerText = articles[i].name;
-             articleName.classList.add("article-name");
-             articleDiv.appendChild(articleName);*/
-
             let articleIMG: HTMLImageElement = document.createElement("img");
             articleIMG.setAttribute("alt", articles[i].info);
             articleIMG.setAttribute("src", articles[i].image);
@@ -39,7 +34,7 @@ namespace Endabgabe {
             articleButton.innerText = "In den Einkaufswagen";
             articleButton.classList.add("article-button");
             articleButton.setAttribute("currentindex", i.toString());
-            //articleButton.addEventListener("click",);
+            articleButton.addEventListener("click", handleAddToCartClick);
             articleDiv.appendChild(articleButton);
 
             document.getElementById(articles[i].category + "-cat")?.appendChild(articleDiv);
@@ -118,5 +113,12 @@ namespace Endabgabe {
     }
     //#endregion
 
+    let cartContent: Articles[] = [];
+    export function handleAddToCartClick(_event: Event): void {
+
+        let indexCart: number = parseInt((<HTMLDivElement>(<HTMLElement>_event.target).parentElement).getAttribute("currentindex")!);
+        cartContent.push(articles[indexCart]);
+        localStorage.setItem("cart", JSON.stringify(cartContent));
+    }
 
 }

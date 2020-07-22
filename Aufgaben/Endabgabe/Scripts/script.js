@@ -11,10 +11,6 @@ var Endabgabe;
             articleDiv.classList.add("article");
             articleDiv.setAttribute("id", "article" + i);
             articleDiv.setAttribute("currentindex", i.toString());
-            /* let articleName: HTMLHeadingElement = document.createElement("h2");
-             articleName.innerText = articles[i].name;
-             articleName.classList.add("article-name");
-             articleDiv.appendChild(articleName);*/
             let articleIMG = document.createElement("img");
             articleIMG.setAttribute("alt", Endabgabe.articles[i].info);
             articleIMG.setAttribute("src", Endabgabe.articles[i].image);
@@ -32,7 +28,7 @@ var Endabgabe;
             articleButton.innerText = "In den Einkaufswagen";
             articleButton.classList.add("article-button");
             articleButton.setAttribute("currentindex", i.toString());
-            //articleButton.addEventListener("click",);
+            articleButton.addEventListener("click", handleAddToCartClick);
             articleDiv.appendChild(articleButton);
             document.getElementById(Endabgabe.articles[i].category + "-cat")?.appendChild(articleDiv);
         }
@@ -98,5 +94,12 @@ var Endabgabe;
         }
     }
     //#endregion
+    let cartContent = [];
+    function handleAddToCartClick(_event) {
+        let indexCart = parseInt(_event.target.parentElement.getAttribute("currentindex"));
+        cartContent.push(Endabgabe.articles[indexCart]);
+        localStorage.setItem("cart", JSON.stringify(cartContent));
+    }
+    Endabgabe.handleAddToCartClick = handleAddToCartClick;
 })(Endabgabe || (Endabgabe = {}));
 //# sourceMappingURL=script.js.map
