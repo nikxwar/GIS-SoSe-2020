@@ -53,6 +53,13 @@ ul.topnav {
 
 
 /*main elemente*/
+h1{
+    font-family: 'Permanent Marker', cursive;
+    font-size: 63px;
+    line-height: 0.4;
+    font-style: normal;
+    font-weight: 900;
+}
 
 
 .sortiment{
