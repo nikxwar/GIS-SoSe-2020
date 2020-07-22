@@ -1,0 +1,11 @@
+benötigte Dokumente:
+-shop.html
+-cart.html
+-style.css für shop
+-style.css für cart?
+-script.ts für shop
+-cartscript für cart
+-interface für artikel -> json dateien
+-server.ts
+
+-evtl noch mongoDB datenbank falls genug zeit

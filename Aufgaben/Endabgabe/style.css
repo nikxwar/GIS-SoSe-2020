@@ -1,0 +1,138 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    text-align: center;
+}
+
+#shopbody{
+    background: linear-gradient(to bottom right, white, #A5F2F3);
+   
+}
+/*header/navbar Elemente*/
+
+header *{
+    text-align: center;
+}
+
+img[alt="Warenkorb"]{
+    height: 25px;
+   
+}
+
+ul.topnav {
+    position: relative;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: linear-gradient(to right, white,#cbf8f8);
+    background-color: #A9FFFF;
+  }
+  
+  ul.topnav li {
+     
+      float: left;
+}
+
+  ul.topnav li a {
+    display: block;
+    color: black;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+.topnav a:hover {
+    background: linear-gradient(to left, white,#cbf8f8);
+    
+    cursor: pointer;
+}
+
+.navtext:hover{
+    padding-bottom: 1.535em;
+    cursor: pointer;
+}
+
+
+/*main elemente*/
+
+
+.sortiment{
+    margin: 25px;
+    display: grid;
+    padding: 10px;
+    gap: 10px;
+    text-align: center;
+    grid-template-columns: repeat(3, 33.3%);
+}
+
+.sortiment > div{  
+    margin: 10px;
+    background-color: white;
+    padding: 10px;
+    border: 2px;
+    border-style: solid ;
+    border-color: cornflowerblue;
+    border-radius: 5px;
+}
+
+.sortiment + p{
+    margin: 50px;
+}
+
+div button{
+    color: whitesmoke;
+    background-color: #2a2a2e;
+    margin: auto;
+    margin-bottom: 25px;
+}
+
+div > button:hover{
+    opacity: 0.75;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+img[src$=".jpg"]{
+    height: 250px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.article img[src$=".png"]{
+    height: 250px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+
+@media screen and (max-width: 1024px){
+    .sortiment{
+        grid-template-columns: repeat(2, 50%);
+    }
+
+    img[src$=".jpg"]{
+        height: 200px;
+    }
+    .article img[src$=".png"]{
+        height: 200px;
+    }
+    
+}
+
+@media screen and (max-width: 600px){
+    .sortiment{
+        grid-template-columns: 100%;
+    }
+
+    img[src$=".jpg"]{
+        height: 150px;
+    }
+
+    .article img[src$=".png"]{
+        height: 150px;
+    }
+
+    ul.topnav li {
+        float: none;
+    }
+}

@@ -1,0 +1,135 @@
+[
+    {
+        "image": "Bilder/banane.png",
+        "info": "Banane",
+        "price": 1,
+        "category": "ice"
+    },
+    {
+        "image": "Bilder/karamell.png",
+        "info": "Karamell",
+        "price": 1,
+        "category": "ice"
+    },
+    {
+        "image": "Bilder/erdbeere.png",
+        "info": "Erdbeere",
+        "price": 1,
+        "category": "ice"
+    },
+    {
+        "image": "Bilder/green_smoothie.png",
+        "info": "Grüner Smoothie",
+        "price": 1,
+        "category": "ice"
+    },
+    {
+        "image": "Bilder/kirsche.png",
+        "info": "Kirsche",
+        "price": 1,
+        "category": "ice"
+    },
+    {
+        "image": "Bilder/kokos.png",
+        "info": "Kokos",
+        "price": 1,
+        "category": "ice"
+    },
+    {
+        "image": "Bilder/mango.png",
+        "info": "Mango",
+        "price": 1,
+        "category": "ice"
+    },
+    {
+        "image": "Bilder/schoko.png",
+        "info": "Schoko",
+        "price": 1,
+        "category": "ice"
+    },
+    {
+        "image": "Bilder/himbeere.png",
+        "info": "Himbeere",
+        "price": 1,
+        "category": "ice"
+    },
+    {
+        "image": "Bilder/stracciatella.png",
+        "info": "Straciatella",
+        "price": 1,
+        "category": "ice"
+    },
+    {
+        "image": "Bilder/brombeere.png",
+        "info": "Brombeere",
+        "price": 1,
+        "category": "ice"
+    },
+    {
+        "image": "Bilder/heidelbeer.png",
+        "info": "Heidelbeer Sahne",
+        "price": 1,
+        "category": "ice"
+    },
+    {
+        "image": "Bilder/sahne.jpg",
+        "info": "Hausgemachte Sahne",
+        "price": 0.5,
+        "category": "toppings"
+    },
+    {
+        "image": "Bilder/streusel.jpg",
+        "info": "Zuckerstreusel",
+        "price": 0.5,
+        "category": "toppings"
+    },
+    {
+        "image": "Bilder/erdbeeren.jpg",
+        "info" : "Frische Erdbeeren",
+        "price": 1,
+        "category": "toppings"
+    },
+    {
+        "image": "Bilder/bananen.jpg",
+        "info": "Frische Banananenscheiben",
+        "price": 1,
+        "category": "toppings"
+    },{
+        "image":"Bilder/schokososse.jpg",
+        "info":"Hausgemachte Schokosoße",
+        "price": 0.5,
+        "category":"toppings"
+
+    },
+    {
+        "image": "Bilder/vanillesosse.jpg",
+        "info": "Vanillesoße",
+        "price": 0.5,
+        "category":"toppings"
+
+    },
+    {
+        "image": "Bilder/cone.jpg",
+        "info": "In einer Waffel",
+        "price": 0,
+        "category": "containers"
+    },
+    {
+        "image": "Bilder/cup.jpg",
+        "info": "Im Becher",
+        "price": 0,
+        "category": "containers"
+    },
+    {
+        "image": "Bilder/wafflecup.jpg",
+        "info": "Im Waffelbecher",
+        "price": 0.5,
+        "category": "containers"
+    },
+    {
+        "image": "Bilder/bigcone.jpg",
+        "info": "In einer großen Waffel (empfehlenswert ab 3 Kugeln)",
+        "price": 0.5,
+        "category": "containers"
+    }
+]
