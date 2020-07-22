@@ -1,5 +1,5 @@
 body{
-    font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     text-align: center;
 }
@@ -55,10 +55,15 @@ ul.topnav {
 /*main elemente*/
 h1{
     font-family: 'Permanent Marker', cursive;
-    font-size: 63px;
     line-height: 0.4;
     font-style: normal;
     font-weight: 900;
+    font-size: 72px;
+    letter-spacing: 0.3em;
+}
+
+h2{
+    font-size: 25px;
 }
 
 
@@ -142,5 +147,14 @@ img[src$=".jpg"]{
 
     ul.topnav li {
         float: none;
+    }
+
+    h1{
+        font-size: 52px;
+        letter-spacing: 0em;
+    }
+
+    h2{
+        font-size: 1.35em;
     }
 }
