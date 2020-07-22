@@ -78,8 +78,26 @@
         "category": "toppings"
     },
     {
-        "image": "Bilder/streusel.jpg",
+        "image": "Bilder/zuckerstreusel.jpg",
         "info": "Zuckerstreusel",
+        "price": 0.5,
+        "category": "toppings"
+    },
+    {
+        "image": "Bilder/schokostreusel.jpg",
+        "info": "Schokostreusel",
+        "price": 0.5,
+        "category": "toppings"
+    },
+    {
+        "image": "Bilder/oreostreusel.jpg",
+        "info": "Oreo Streusel",
+        "price": 1,
+        "category": "toppings"
+    },
+    {
+        "image": "Bilder/linsen.jpg",
+        "info": "Schokolinsen",
         "price": 0.5,
         "category": "toppings"
     },
@@ -108,6 +126,25 @@
         "category":"toppings"
 
     },
+    {
+        "image": "Bilder/karamellsosse.jpg",
+        "info": "Karamellsoße",
+        "price": 0.5,
+        "category": "toppings"
+    },
+    {
+        "image": "Bilder/erdnuesse.jpg",
+        "info": "Erdnüsse",
+        "price": 0.5,
+        "category": "toppings"
+    },
+    {
+        "image": "Bilder/walnuesse.jpg",
+        "info": "Walnüsse",
+        "price": 0.5,
+        "category": "toppings"
+    },
+    
     {
         "image": "Bilder/cone.jpg",
         "info": "In einer Waffel",
