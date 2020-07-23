@@ -4,6 +4,7 @@ namespace Endabgabe {
 
     function init(): void {
         getArticlesFromJSON("articles.json");
+        showAddedArticles()
     }
 
     export function createArticles(): void {
@@ -20,10 +21,10 @@ namespace Endabgabe {
             articleIMG.classList.add("article-img");
             articleDiv.appendChild(articleIMG);
 
-            let articleDesc: HTMLParagraphElement = document.createElement("p");
-            articleDesc.innerText = articles[i].info;
-            articleDesc.classList.add("article-desc");
-            articleDiv.appendChild(articleDesc);
+            let articleInfo: HTMLParagraphElement = document.createElement("p");
+            articleInfo.innerText = articles[i].info;
+            articleInfo.classList.add("article-info");
+            articleDiv.appendChild(articleInfo);
 
             let articlePrice: HTMLParagraphElement = document.createElement("p");
             articlePrice.innerText = articles[i].price.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
@@ -114,11 +115,31 @@ namespace Endabgabe {
     //#endregion
 
     let cartContent: Articles[] = [];
+    let selectedArticles: Articles[] = [];
     export function handleAddToCartClick(_event: Event): void {
 
         let indexCart: number = parseInt((<HTMLDivElement>(<HTMLElement>_event.target).parentElement).getAttribute("currentindex")!);
         cartContent.push(articles[indexCart]);
         localStorage.setItem("cart", JSON.stringify(cartContent));
+        
+            /*let addedArticleInfo: HTMLParagraphElement = document.createElement("p");
+            addedArticleInfo.innerText = cartContent[indexCart].info;
+            addedArticleInfo.classList.add("article-info");
+            (<HTMLDivElement>document.querySelector("#selection")).appendChild(addedArticleInfo);*/
+       
     }
 
+    function showAddedArticles(): void {
+        selectedArticles = JSON.parse(localStorage.getItem("cart")!);
+        console.log(selectedArticles);
+        for (let i: number = 0; i < selectedArticles.length; i++) {
+            let addedArticleInfo: HTMLParagraphElement = document.createElement("p");
+            addedArticleInfo.innerText = selectedArticles[i].info;
+            addedArticleInfo.classList.add("article-info");
+            (<HTMLDivElement>document.querySelector("#selection")).appendChild(addedArticleInfo);
+
+
+        }
+
+    }
 }

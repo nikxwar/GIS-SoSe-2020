@@ -4,6 +4,7 @@ var Endabgabe;
     window.addEventListener("load", init);
     function init() {
         Endabgabe.getArticlesFromJSON("articles.json");
+        showAddedArticles();
     }
     function createArticles() {
         for (let i = 0; i < Endabgabe.articles.length; i++) {
@@ -16,10 +17,10 @@ var Endabgabe;
             articleIMG.setAttribute("src", Endabgabe.articles[i].image);
             articleIMG.classList.add("article-img");
             articleDiv.appendChild(articleIMG);
-            let articleDesc = document.createElement("p");
-            articleDesc.innerText = Endabgabe.articles[i].info;
-            articleDesc.classList.add("article-desc");
-            articleDiv.appendChild(articleDesc);
+            let articleInfo = document.createElement("p");
+            articleInfo.innerText = Endabgabe.articles[i].info;
+            articleInfo.classList.add("article-info");
+            articleDiv.appendChild(articleInfo);
             let articlePrice = document.createElement("p");
             articlePrice.innerText = Endabgabe.articles[i].price.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
             articlePrice.classList.add("article-price");
@@ -95,11 +96,26 @@ var Endabgabe;
     }
     //#endregion
     let cartContent = [];
+    let selectedArticles = [];
     function handleAddToCartClick(_event) {
         let indexCart = parseInt(_event.target.parentElement.getAttribute("currentindex"));
         cartContent.push(Endabgabe.articles[indexCart]);
         localStorage.setItem("cart", JSON.stringify(cartContent));
+        /*let addedArticleInfo: HTMLParagraphElement = document.createElement("p");
+        addedArticleInfo.innerText = cartContent[indexCart].info;
+        addedArticleInfo.classList.add("article-info");
+        (<HTMLDivElement>document.querySelector("#selection")).appendChild(addedArticleInfo);*/
     }
     Endabgabe.handleAddToCartClick = handleAddToCartClick;
+    function showAddedArticles() {
+        selectedArticles = JSON.parse(localStorage.getItem("cart"));
+        console.log(selectedArticles);
+        for (let i = 0; i < selectedArticles.length; i++) {
+            let addedArticleInfo = document.createElement("p");
+            addedArticleInfo.innerText = selectedArticles[i].info;
+            addedArticleInfo.classList.add("article-info");
+            document.querySelector("#selection").appendChild(addedArticleInfo);
+        }
+    }
 })(Endabgabe || (Endabgabe = {}));
 //# sourceMappingURL=script.js.map

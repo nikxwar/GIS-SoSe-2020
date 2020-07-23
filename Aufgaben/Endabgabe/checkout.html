@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stay cold</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/png" href="Bilder/icon.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="Scripts/checkout.js" defer></script>
+    <script src="Scripts/interface.js" defer></script>
+</head>
+
+<body id="checkoutbody">
+    <header>
+        <nav>
+            <ul class="topnav">
+                <li> <a href="shop.html">Mehr Eis kaufen</a></li>
+                <li><a href="cart.html">Zum Warenkorb</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Zusammenfassung deines Einkaufs:</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Artikel</th>
+                    <th>Preis</th>
+                </tr>
+
+            </thead>
+            <tbody id="cartcontent">
+
+            </tbody>
+        </table>
+        <div id="cartsum"></div>
+        <div id="checkout">
+            <form>
+                <p>Lieferadresse:</p>
+                <input type="text" name="fname" placeholder="Vorname"><br>
+                <input type="text" name="lname" placeholder="Nachname"><br>
+                <input type="text" name="email" placeholder="E-Mail"><br>
+                <input type="text" name="address1" placeholder="Straße und Hausnr."><br>
+                <input type="text" name="address2" placeholder="Ort und PLZ"><br>
+                <textarea name="message" cols="30" rows="10" placeholder="Anmerkungen zur Bestellung"></textarea>
+                <p>Zahlungsart:</p>
+                <button type="button" id="send"> Bestellung senden</button>
+
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>

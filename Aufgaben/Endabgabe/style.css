@@ -8,6 +8,10 @@ body{
     background: linear-gradient(to bottom right, white, #A5F2F3);
    
 }
+
+#cartbody, #checkoutbody{
+    background: linear-gradient(to right, white,#cbf8f8);
+}
 /*header/navbar Elemente*/
 
 header *{
@@ -98,12 +102,29 @@ div button{
     border-radius: 2rem;
     border-style: none;
 }
-
 div > button:hover{
     opacity: 0.75;
     cursor: pointer;
     transform: scale(1.1);
 }
+
+#send{
+    color: white;
+    background-color: #800020;
+    margin: .5em auto 2em;
+    padding: .6rem 1rem;
+    border-radius: 2rem;
+    border-style: none;
+}
+#send:hover{
+    opacity: 0.75;
+    cursor: pointer;
+ 
+}
+
+
+
+
 
 img[src$=".jpg"]{
     height: 250px;

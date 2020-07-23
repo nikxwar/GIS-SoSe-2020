@@ -7,7 +7,6 @@ namespace Endabgabe {
     document.getElementById("cartsum")?.appendChild(totalPrice);
     if (cartarticles[0] !== undefined) {
         createCartArticles();
-        totalPrice.innerText = "Summe: " + cartPriceSum.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
     }
 
 
