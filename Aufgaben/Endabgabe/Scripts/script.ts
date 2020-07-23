@@ -4,7 +4,7 @@ namespace Endabgabe {
 
     function init(): void {
         getArticlesFromJSON("articles.json");
-        showAddedArticles()
+        //showAddedArticles()
     }
 
     export function createArticles(): void {
@@ -32,7 +32,7 @@ namespace Endabgabe {
             articleDiv.appendChild(articlePrice);
 
             let articleButton: HTMLButtonElement = document.createElement("button");
-            articleButton.innerText = "In den Einkaufswagen";
+            articleButton.innerText = "Hinzufügen";
             articleButton.classList.add("article-button");
             articleButton.setAttribute("currentindex", i.toString());
             articleButton.addEventListener("click", handleAddToCartClick);
@@ -83,6 +83,10 @@ namespace Endabgabe {
             (<HTMLHeadingElement>document.getElementById("h2ice")).style.display = "block";
             (<HTMLHeadingElement>document.getElementById("h2toppings")).style.display = "block";
             (<HTMLHeadingElement>document.getElementById("h2containers")).style.display = "block";
+            (<HTMLParagraphElement>document.getElementById("icejumpto")).style.display = "block";
+            (<HTMLParagraphElement>document.getElementById("toppingsjumpto")).style.display = "block";
+            (<HTMLParagraphElement>document.getElementById("containersjumpto")).style.display = "block";
+
 
         }
         else if ((<HTMLDivElement>_event.target).getAttribute("id") == "showice") {
@@ -92,6 +96,10 @@ namespace Endabgabe {
             (<HTMLHeadingElement>document.getElementById("h2ice")).style.display = "block";
             (<HTMLHeadingElement>document.getElementById("h2toppings")).style.display = "none";
             (<HTMLHeadingElement>document.getElementById("h2containers")).style.display = "none";
+            (<HTMLParagraphElement>document.getElementById("icejumpto")).style.display = "none";
+            (<HTMLParagraphElement>document.getElementById("toppingsjumpto")).style.display = "none";
+            (<HTMLParagraphElement>document.getElementById("containersjumpto")).style.display = "none";
+
 
         }
         else if ((<HTMLDivElement>_event.target).getAttribute("id") == "showtoppings") {
@@ -101,6 +109,9 @@ namespace Endabgabe {
             (<HTMLHeadingElement>document.getElementById("h2ice")).style.display = "none";
             (<HTMLHeadingElement>document.getElementById("h2toppings")).style.display = "block";
             (<HTMLHeadingElement>document.getElementById("h2containers")).style.display = "none";
+            (<HTMLParagraphElement>document.getElementById("icejumpto")).style.display = "none";
+            (<HTMLParagraphElement>document.getElementById("toppingsjumpto")).style.display = "none";
+            (<HTMLParagraphElement>document.getElementById("containersjumpto")).style.display = "none";
 
         } else if ((<HTMLDivElement>_event.target).getAttribute("id") == "showcontainers") {
             (<HTMLDivElement>document.getElementById("ice-cat")).style.display = "none";
@@ -109,37 +120,91 @@ namespace Endabgabe {
             (<HTMLHeadingElement>document.getElementById("h2ice")).style.display = "none";
             (<HTMLHeadingElement>document.getElementById("h2toppings")).style.display = "none";
             (<HTMLHeadingElement>document.getElementById("h2containers")).style.display = "block";
-
+            (<HTMLParagraphElement>document.getElementById("icejumpto")).style.display = "none";
+            (<HTMLParagraphElement>document.getElementById("toppingsjumpto")).style.display = "none";
+            (<HTMLParagraphElement>document.getElementById("containersjumpto")).style.display = "none";
         }
     }
     //#endregion
 
     let cartContent: Articles[] = [];
+
     let selectedArticles: Articles[] = [];
     export function handleAddToCartClick(_event: Event): void {
 
         let indexCart: number = parseInt((<HTMLDivElement>(<HTMLElement>_event.target).parentElement).getAttribute("currentindex")!);
+
         cartContent.push(articles[indexCart]);
         localStorage.setItem("cart", JSON.stringify(cartContent));
-        
-            /*let addedArticleInfo: HTMLParagraphElement = document.createElement("p");
-            addedArticleInfo.innerText = cartContent[indexCart].info;
-            addedArticleInfo.classList.add("article-info");
-            (<HTMLDivElement>document.querySelector("#selection")).appendChild(addedArticleInfo);*/
-       
+
+        showAddedArticles();
+        /*let addedArticleInfo: HTMLParagraphElement = document.createElement("p");
+        addedArticleInfo.innerText = cartContent[indexCart].info;
+        addedArticleInfo.classList.add("article-info");
+        (<HTMLDivElement>document.querySelector("#selection")).appendChild(addedArticleInfo);*/
+
     }
 
     function showAddedArticles(): void {
-        selectedArticles = JSON.parse(localStorage.getItem("cart")!);
-        console.log(selectedArticles);
-        for (let i: number = 0; i < selectedArticles.length; i++) {
-            let addedArticleInfo: HTMLParagraphElement = document.createElement("p");
-            addedArticleInfo.innerText = selectedArticles[i].info;
-            addedArticleInfo.classList.add("article-info");
-            (<HTMLDivElement>document.querySelector("#selection")).appendChild(addedArticleInfo);
+        if (selectedArticles[0] == undefined) {
+
+            let addedArticleTable: HTMLTableElement = document.createElement("table");
+            addedArticleTable.setAttribute("id", "selectiontable");
+            (<HTMLElement>document.querySelector("#selection")).appendChild(addedArticleTable);
+
+            let addedArticleTableHead: HTMLElement = document.createElement("thead");
+            addedArticleTableHead.setAttribute("id", "selectionthead");
+            (<HTMLElement>document.querySelector("#selectiontable")).appendChild(addedArticleTableHead);
+
+            let addedArticleTableHeadRow: HTMLTableRowElement = document.createElement("tr");
+            addedArticleTableHeadRow.setAttribute("id", "selectiontrow");
+            (<HTMLElement>document.querySelector("#selectionthead")).appendChild(addedArticleTableHeadRow);
+
+            let addedArticleTableHeadArticle: HTMLElement = document.createElement("th");
+            addedArticleTableHeadArticle.innerText = "Artikel";
+            (<HTMLElement>document.querySelector("#selectiontrow")).appendChild(addedArticleTableHeadArticle);
+
+            let addedArticleTableHeadPrice: HTMLElement = document.createElement("th");
+            addedArticleTableHeadPrice.innerText = "Preis";
+            (<HTMLElement>document.querySelector("#selectiontrow")).appendChild(addedArticleTableHeadPrice);
+
+            let addedArticleTableBody: HTMLElement = document.createElement("tbody");
+            addedArticleTableBody.setAttribute("id", "selectiontbody");
+            (<HTMLElement>document.querySelector("#selectiontable")).appendChild(addedArticleTableBody);
+            console.log("hi");
 
 
         }
+        //let addedArticleInfo: HTMLDivElement = document.createElement("div");
+        selectedArticles = JSON.parse(localStorage.getItem("cart")!);
+        console.log(selectedArticles);
+        while ((<HTMLElement>document.getElementById("selectiontbody")).firstChild) {
+            (<HTMLElement>document.getElementById("selectiontbody")).firstChild?.remove();
+        }
+        for (let i: number = 0; i < selectedArticles.length; i++) {
+
+
+            let checkoutTableRow: HTMLTableRowElement = document.createElement("tr");
+            (<HTMLElement>document.getElementById("selectiontbody")).appendChild(checkoutTableRow);
+            checkoutTableRow.classList.add("article");
+            checkoutTableRow.setAttribute("id", "tr" + i);
+
+            let checkoutInfo: HTMLTableCellElement = document.createElement("td");
+            checkoutInfo.innerText = selectedArticles[i].info;
+            checkoutTableRow.appendChild(checkoutInfo);
+
+            let checkoutPrice: HTMLTableCellElement = document.createElement("td");
+            checkoutPrice.innerText = selectedArticles[i].price.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
+            checkoutTableRow.appendChild(checkoutPrice);
+        }
+
+        /*  for (let i: number = 0; i < selectedArticles.length; i++) {
+              addedArticleInfo.innerText = selectedArticles[i].info;
+              addedArticleInfo.classList.add("article-info");
+              (<HTMLDivElement>document.querySelector("#selection")).appendChild(addedArticleInfo);
+  
+  
+          }*/
 
     }
 }

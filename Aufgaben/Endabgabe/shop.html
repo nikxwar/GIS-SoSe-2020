@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="icon" type="image/png" href="Bilder/icon.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script src="Scripts/script.js" defer></script>
     <script src="Scripts/interface.js" defer></script>
     <title>cold world.</title>
@@ -21,23 +21,33 @@
                 <li id="navice"></li>
                 <li id="navtoppings"></li>
                 <li id="navcontainers"></li>
-                <li><a href="cart.html"><img src="Bilder/shoppingcart.png" alt="Warenkorb"></a></li>
-
+                <li><a href="cart.html"><img src="Bilder/cart.svg" alt="Warenkorb"></a></li>
+                <li id="vieworders"><a href="orders.html">Bestellungen einsehen</a></li>
             </ul>
         </nav>
-
-        <h1>Stay Cold!</h1>
-
-        <div id="selection"></div>
+         <div id="selection"></div>
 
     </header>
     <main>
-        
+        <h1 id="staycoldlogo">Stay<span><img src="Bilder/ice_icon.png" alt="Logo"></span>Cold!</h1>
+
         <h2 id="h2ice">Welche Eissorten willst du?</h2>
+        <p id=icejumpto>Direkt zu
+            <a href="#h2toppings" class="bodynav">Toppings</a>
+            <a href="#h2containers" class="bodynav">Waffeln/Becher</a>
+        </p>
         <div id="ice-cat" class="sortiment"></div>
         <h2 id="h2toppings">Welche Toppings willst du hinzufügen?</h2>
+        <p id="toppingsjumpto">Direkt zu
+            <a href="#staycoldlogo" class="bodynav">Eis</a>
+            <a href="#h2containers" class="bodynav">Waffeln/Becher</a>
+        </p>
         <div id="toppings-cat" class="sortiment"></div>
         <h2 id="h2containers">In welchem Behälter willst du dein Eis?</h2>
+        <p id="containersjumpto">Direkt zu
+            <a href="#staycoldlogo" class="bodynav">Eis</a>
+            <a href="#h2toppings" class="bodynav">Toppings</a>
+        </p>
         <div id="containers-cat" class="sortiment"></div>
 
     </main>

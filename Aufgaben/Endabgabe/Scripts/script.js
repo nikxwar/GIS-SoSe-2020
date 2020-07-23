@@ -4,7 +4,7 @@ var Endabgabe;
     window.addEventListener("load", init);
     function init() {
         Endabgabe.getArticlesFromJSON("articles.json");
-        showAddedArticles();
+        //showAddedArticles()
     }
     function createArticles() {
         for (let i = 0; i < Endabgabe.articles.length; i++) {
@@ -26,7 +26,7 @@ var Endabgabe;
             articlePrice.classList.add("article-price");
             articleDiv.appendChild(articlePrice);
             let articleButton = document.createElement("button");
-            articleButton.innerText = "In den Einkaufswagen";
+            articleButton.innerText = "Hinzufügen";
             articleButton.classList.add("article-button");
             articleButton.setAttribute("currentindex", i.toString());
             articleButton.addEventListener("click", handleAddToCartClick);
@@ -68,6 +68,9 @@ var Endabgabe;
             document.getElementById("h2ice").style.display = "block";
             document.getElementById("h2toppings").style.display = "block";
             document.getElementById("h2containers").style.display = "block";
+            document.getElementById("icejumpto").style.display = "block";
+            document.getElementById("toppingsjumpto").style.display = "block";
+            document.getElementById("containersjumpto").style.display = "block";
         }
         else if (_event.target.getAttribute("id") == "showice") {
             document.getElementById("ice-cat").style.display = "grid";
@@ -76,6 +79,9 @@ var Endabgabe;
             document.getElementById("h2ice").style.display = "block";
             document.getElementById("h2toppings").style.display = "none";
             document.getElementById("h2containers").style.display = "none";
+            document.getElementById("icejumpto").style.display = "none";
+            document.getElementById("toppingsjumpto").style.display = "none";
+            document.getElementById("containersjumpto").style.display = "none";
         }
         else if (_event.target.getAttribute("id") == "showtoppings") {
             document.getElementById("ice-cat").style.display = "none";
@@ -84,6 +90,9 @@ var Endabgabe;
             document.getElementById("h2ice").style.display = "none";
             document.getElementById("h2toppings").style.display = "block";
             document.getElementById("h2containers").style.display = "none";
+            document.getElementById("icejumpto").style.display = "none";
+            document.getElementById("toppingsjumpto").style.display = "none";
+            document.getElementById("containersjumpto").style.display = "none";
         }
         else if (_event.target.getAttribute("id") == "showcontainers") {
             document.getElementById("ice-cat").style.display = "none";
@@ -92,6 +101,9 @@ var Endabgabe;
             document.getElementById("h2ice").style.display = "none";
             document.getElementById("h2toppings").style.display = "none";
             document.getElementById("h2containers").style.display = "block";
+            document.getElementById("icejumpto").style.display = "none";
+            document.getElementById("toppingsjumpto").style.display = "none";
+            document.getElementById("containersjumpto").style.display = "none";
         }
     }
     //#endregion
@@ -101,6 +113,7 @@ var Endabgabe;
         let indexCart = parseInt(_event.target.parentElement.getAttribute("currentindex"));
         cartContent.push(Endabgabe.articles[indexCart]);
         localStorage.setItem("cart", JSON.stringify(cartContent));
+        showAddedArticles();
         /*let addedArticleInfo: HTMLParagraphElement = document.createElement("p");
         addedArticleInfo.innerText = cartContent[indexCart].info;
         addedArticleInfo.classList.add("article-info");
@@ -108,14 +121,52 @@ var Endabgabe;
     }
     Endabgabe.handleAddToCartClick = handleAddToCartClick;
     function showAddedArticles() {
+        if (selectedArticles[0] == undefined) {
+            let addedArticleTable = document.createElement("table");
+            addedArticleTable.setAttribute("id", "selectiontable");
+            document.querySelector("#selection").appendChild(addedArticleTable);
+            let addedArticleTableHead = document.createElement("thead");
+            addedArticleTableHead.setAttribute("id", "selectionthead");
+            document.querySelector("#selectiontable").appendChild(addedArticleTableHead);
+            let addedArticleTableHeadRow = document.createElement("tr");
+            addedArticleTableHeadRow.setAttribute("id", "selectiontrow");
+            document.querySelector("#selectionthead").appendChild(addedArticleTableHeadRow);
+            let addedArticleTableHeadArticle = document.createElement("th");
+            addedArticleTableHeadArticle.innerText = "Artikel";
+            document.querySelector("#selectiontrow").appendChild(addedArticleTableHeadArticle);
+            let addedArticleTableHeadPrice = document.createElement("th");
+            addedArticleTableHeadPrice.innerText = "Preis";
+            document.querySelector("#selectiontrow").appendChild(addedArticleTableHeadPrice);
+            let addedArticleTableBody = document.createElement("tbody");
+            addedArticleTableBody.setAttribute("id", "selectiontbody");
+            document.querySelector("#selectiontable").appendChild(addedArticleTableBody);
+            console.log("hi");
+        }
+        //let addedArticleInfo: HTMLDivElement = document.createElement("div");
         selectedArticles = JSON.parse(localStorage.getItem("cart"));
         console.log(selectedArticles);
-        for (let i = 0; i < selectedArticles.length; i++) {
-            let addedArticleInfo = document.createElement("p");
-            addedArticleInfo.innerText = selectedArticles[i].info;
-            addedArticleInfo.classList.add("article-info");
-            document.querySelector("#selection").appendChild(addedArticleInfo);
+        while (document.getElementById("selectiontbody").firstChild) {
+            document.getElementById("selectiontbody").firstChild?.remove();
         }
+        for (let i = 0; i < selectedArticles.length; i++) {
+            let checkoutTableRow = document.createElement("tr");
+            document.getElementById("selectiontbody").appendChild(checkoutTableRow);
+            checkoutTableRow.classList.add("article");
+            checkoutTableRow.setAttribute("id", "tr" + i);
+            let checkoutInfo = document.createElement("td");
+            checkoutInfo.innerText = selectedArticles[i].info;
+            checkoutTableRow.appendChild(checkoutInfo);
+            let checkoutPrice = document.createElement("td");
+            checkoutPrice.innerText = selectedArticles[i].price.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
+            checkoutTableRow.appendChild(checkoutPrice);
+        }
+        /*  for (let i: number = 0; i < selectedArticles.length; i++) {
+              addedArticleInfo.innerText = selectedArticles[i].info;
+              addedArticleInfo.classList.add("article-info");
+              (<HTMLDivElement>document.querySelector("#selection")).appendChild(addedArticleInfo);
+  
+  
+          }*/
     }
 })(Endabgabe || (Endabgabe = {}));
 //# sourceMappingURL=script.js.map

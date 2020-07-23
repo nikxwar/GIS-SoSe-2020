@@ -1,16 +1,13 @@
 body{
     font-family: 'Roboto', sans-serif;
-    margin: 0;
+    margin: 0 auto;
     text-align: center;
+    background: linear-gradient(to right, white,#cbf8f8);
 }
 
 #shopbody{
     background: linear-gradient(to bottom right, white, #A5F2F3);
    
-}
-
-#cartbody, #checkoutbody{
-    background: linear-gradient(to right, white,#cbf8f8);
 }
 /*header/navbar Elemente*/
 
@@ -18,7 +15,7 @@ header *{
     text-align: center;
 }
 
-img[alt="Warenkorb"]{
+img[src$=".svg"]{
     height: 25px;
    
 }
@@ -55,6 +52,16 @@ ul.topnav {
     cursor: pointer;
 }
 
+ul.topnav #vieworders{
+    float: right;
+}
+
+#selection{
+    position: relative;
+ 
+}
+
+
 
 /*main elemente*/
 h1{
@@ -65,7 +72,10 @@ h1{
     font-size: 72px;
     letter-spacing: 0.3em;
 }
+ img[alt="Logo"]{
+    height: 60px;
 
+ }
 h2{
     font-size: 25px;
 }
@@ -108,23 +118,6 @@ div > button:hover{
     transform: scale(1.1);
 }
 
-#send{
-    color: white;
-    background-color: #800020;
-    margin: .5em auto 2em;
-    padding: .6rem 1rem;
-    border-radius: 2rem;
-    border-style: none;
-}
-#send:hover{
-    opacity: 0.75;
-    cursor: pointer;
- 
-}
-
-
-
-
 
 img[src$=".jpg"]{
     height: 250px;
@@ -138,7 +131,58 @@ img[src$=".jpg"]{
     margin-top: 20px;
 }
 
+.bodynav {
+    color: black;
+    text-decoration: underline;
+  }
+/* spezifisch für checkout.html*/
+table{
+     margin: auto;
+     
+     border-collapse: collapse;
+     border: 2px solid rgb(200, 200, 200);
+     letter-spacing: 1px;
+     font-family: sans-serif;
+     font-size: .8rem;
+}
+td, th {
+    border: 1px solid rgb(190, 190, 190);
+    padding: 10px;
+}
 
+input{
+    margin-bottom: 5px;
+    padding: 5px;
+   
+    
+}
+
+td  > img:hover{
+    opacity: 0.75;
+    cursor: pointer;
+
+}
+
+select{
+    margin-bottom: 10px;
+}
+#send{
+    color: white;
+    background-color: #800020;
+    margin: .5em auto 2em;
+    padding: .6rem 1rem;
+    border-radius: 2rem;
+    border-style: none;
+}
+#send:hover{
+    opacity: 0.75;
+    cursor: pointer;
+ 
+}
+/*media queries*/
+
+
+/*tablet*/
 @media screen and (max-width: 1024px){
     .sortiment{
         grid-template-columns: repeat(2, 50%);
@@ -150,9 +194,10 @@ img[src$=".jpg"]{
     .article img[src$=".png"]{
         height: 200px;
     }
-    
+   
 }
 
+/*smartphone*/
 @media screen and (max-width: 600px){
     .sortiment{
         grid-template-columns: 100%;
@@ -170,10 +215,20 @@ img[src$=".jpg"]{
         float: none;
     }
 
+    ul.topnav #vieworders{
+        float: none;
+    }
+
     h1{
         font-size: 52px;
         letter-spacing: 0em;
     }
+
+    img[alt="Logo"]{
+        height: 50px;
+    
+     }
+    
 
     h2{
         font-size: 1.35em;

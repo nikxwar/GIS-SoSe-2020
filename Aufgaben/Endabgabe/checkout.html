@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script src="Scripts/checkout.js" defer></script>
     <script src="Scripts/interface.js" defer></script>
+   
 </head>
 
 <body id="checkoutbody">
@@ -17,7 +18,7 @@
         <nav>
             <ul class="topnav">
                 <li> <a href="shop.html">Mehr Eis kaufen</a></li>
-                <li><a href="cart.html">Zum Warenkorb</a></li>
+                <li><a href="cart.html"><img src="Bilder/cart.svg" alt="Entfernen"></a></li>
             </ul>
         </nav>
     </header>
@@ -44,8 +45,12 @@
                 <input type="text" name="email" placeholder="E-Mail"><br>
                 <input type="text" name="address1" placeholder="Straße und Hausnr."><br>
                 <input type="text" name="address2" placeholder="Ort und PLZ"><br>
-                <textarea name="message" cols="30" rows="10" placeholder="Anmerkungen zur Bestellung"></textarea>
                 <p>Zahlungsart:</p>
+                <select id="payment" name="payment">
+                    <option value="creditcard">Kreditkarte</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="bill">Rechnung</option>
+                </select><br>
                 <button type="button" id="send"> Bestellung senden</button>
 
             </form>
