@@ -140,7 +140,6 @@ var Endabgabe;
             let addedArticleTableBody = document.createElement("tbody");
             addedArticleTableBody.setAttribute("id", "selectiontbody");
             document.querySelector("#selectiontable").appendChild(addedArticleTableBody);
-            console.log("hi");
         }
         //let addedArticleInfo: HTMLDivElement = document.createElement("div");
         selectedArticles = JSON.parse(localStorage.getItem("cart"));

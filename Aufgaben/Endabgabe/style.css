@@ -61,8 +61,6 @@ ul.topnav #vieworders{
  
 }
 
-
-
 /*main elemente*/
 h1{
     font-family: 'Permanent Marker', cursive;
@@ -79,7 +77,6 @@ h1{
 h2{
     font-size: 25px;
 }
-
 
 .sortiment{
     margin: 25px;
@@ -118,7 +115,6 @@ div > button:hover{
     transform: scale(1.1);
 }
 
-
 img[src$=".jpg"]{
     height: 250px;
     margin: auto;
@@ -136,13 +132,11 @@ img[src$=".jpg"]{
     text-decoration: underline;
   }
 /* spezifisch für checkout.html*/
-table{
+div table{
      margin: auto;
-     
      border-collapse: collapse;
      border: 2px solid rgb(200, 200, 200);
      letter-spacing: 1px;
-     font-family: sans-serif;
      font-size: .8rem;
 }
 td, th {
@@ -153,14 +147,11 @@ td, th {
 input{
     margin-bottom: 5px;
     padding: 5px;
-   
-    
 }
 
 td  > img:hover{
     opacity: 0.75;
     cursor: pointer;
-
 }
 
 select{
@@ -177,10 +168,8 @@ select{
 #send:hover{
     opacity: 0.75;
     cursor: pointer;
- 
 }
 /*media queries*/
-
 
 /*tablet*/
 @media screen and (max-width: 1024px){
@@ -226,7 +215,6 @@ select{
 
     img[alt="Logo"]{
         height: 50px;
-    
      }
     
 

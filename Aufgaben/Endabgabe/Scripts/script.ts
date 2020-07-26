@@ -171,7 +171,7 @@ namespace Endabgabe {
             let addedArticleTableBody: HTMLElement = document.createElement("tbody");
             addedArticleTableBody.setAttribute("id", "selectiontbody");
             (<HTMLElement>document.querySelector("#selectiontable")).appendChild(addedArticleTableBody);
-            console.log("hi");
+
 
 
         }

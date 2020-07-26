@@ -10,34 +10,54 @@ var Endabgabe;
         createCheckoutArticles();
     }
     function createCheckoutArticles() {
-        if (checkoutarticles[0])
-            for (let i = 0; i < checkoutarticles.length; i++) {
-                let checkoutTableRow = document.createElement("tr");
-                document.getElementById("cartcontent").appendChild(checkoutTableRow);
-                checkoutTableRow.classList.add("article");
-                checkoutTableRow.setAttribute("id", "tr" + i);
-                let checkoutInfo = document.createElement("td");
-                checkoutInfo.innerText = checkoutarticles[i].info;
-                checkoutTableRow.appendChild(checkoutInfo);
-                let checkoutPrice = document.createElement("td");
-                checkoutPrice.innerText = checkoutarticles[i].price.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
-                checkoutTableRow.appendChild(checkoutPrice);
-                let checkoutRemove = document.createElement("td");
-                checkoutTableRow.appendChild(checkoutRemove);
-                let checkoutRemoveIcon = document.createElement("img");
-                checkoutRemoveIcon.setAttribute("src", "Bilder/trash.svg");
-                checkoutRemoveIcon.setAttribute("alt", "Warenkorb");
-                checkoutRemoveIcon.setAttribute("currentindex", i.toString());
-                checkoutRemoveIcon.addEventListener("click", handleRemoveArticle);
-                checkoutRemove.appendChild(checkoutRemoveIcon);
-                /* let cartButton: HTMLButtonElement = document.createElement("button");
-                 cartButton.innerText = "Artikel entfernen";
-                 checkoutTableRow.appendChild(cartButton);
-                 cartButton.setAttribute("currentindex", i.toString());
-                 cartButton.addEventListener("click", handleRemoveArticle);*/
-                checkoutPriceSum += checkoutarticles[i].price;
-                totalPrice.innerText = "Summe: " + checkoutPriceSum.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
-            }
+        let cartContentTable = document.createElement("table");
+        cartContentTable.setAttribute("id", "carttable");
+        document.querySelector("#carttablediv").appendChild(cartContentTable);
+        let cartContentTableHead = document.createElement("thead");
+        cartContentTableHead.setAttribute("id", "cartthead");
+        document.querySelector("#carttable").appendChild(cartContentTableHead);
+        let cartContentTableHeadRow = document.createElement("tr");
+        cartContentTableHeadRow.setAttribute("id", "carttrow");
+        document.querySelector("#cartthead").appendChild(cartContentTableHeadRow);
+        let cartContentTableHeadArticle = document.createElement("th");
+        cartContentTableHeadArticle.innerText = "Artikel";
+        document.querySelector("#carttrow").appendChild(cartContentTableHeadArticle);
+        let cartContentTableHeadPrice = document.createElement("th");
+        cartContentTableHeadPrice.innerText = "Preis";
+        document.querySelector("#carttrow").appendChild(cartContentTableHeadPrice);
+        let cartContentTableHeadRemove = document.createElement("th");
+        cartContentTableHeadRemove.innerText = "";
+        document.querySelector("#carttrow").appendChild(cartContentTableHeadRemove);
+        let cartContentTableBody = document.createElement("tbody");
+        cartContentTableBody.setAttribute("id", "carttbody");
+        document.querySelector("#carttable").appendChild(cartContentTableBody);
+        for (let i = 0; i < checkoutarticles.length; i++) {
+            let checkoutTableRow = document.createElement("tr");
+            document.getElementById("carttbody").appendChild(checkoutTableRow);
+            checkoutTableRow.classList.add("article");
+            checkoutTableRow.setAttribute("id", "tr" + i);
+            let checkoutInfo = document.createElement("td");
+            checkoutInfo.innerText = checkoutarticles[i].info;
+            checkoutTableRow.appendChild(checkoutInfo);
+            let checkoutPrice = document.createElement("td");
+            checkoutPrice.innerText = checkoutarticles[i].price.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
+            checkoutTableRow.appendChild(checkoutPrice);
+            let checkoutRemove = document.createElement("td");
+            checkoutTableRow.appendChild(checkoutRemove);
+            let checkoutRemoveIcon = document.createElement("img");
+            checkoutRemoveIcon.setAttribute("src", "Bilder/trash.svg");
+            checkoutRemoveIcon.setAttribute("alt", "Warenkorb");
+            checkoutRemoveIcon.setAttribute("currentindex", i.toString());
+            checkoutRemoveIcon.addEventListener("click", handleRemoveArticle);
+            checkoutRemove.appendChild(checkoutRemoveIcon);
+            /* let cartButton: HTMLButtonElement = document.createElement("button");
+             cartButton.innerText = "Artikel entfernen";
+             checkoutTableRow.appendChild(cartButton);
+             cartButton.setAttribute("currentindex", i.toString());
+             cartButton.addEventListener("click", handleRemoveArticle);*/
+            checkoutPriceSum += checkoutarticles[i].price;
+            totalPrice.innerText = "Summe: " + checkoutPriceSum.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
+        }
         function handleRemoveArticle(_event) {
             let currentIndex = parseInt(_event.target.getAttribute("currentindex"));
             checkoutPriceSum -= checkoutarticles[currentIndex].price;

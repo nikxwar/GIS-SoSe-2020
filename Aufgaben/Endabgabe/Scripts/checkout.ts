@@ -10,11 +10,39 @@ namespace Endabgabe {
 
 
     function createCheckoutArticles(): void {
-        if(checkoutarticles[0])
+       
+        let cartContentTable: HTMLTableElement = document.createElement("table");
+        cartContentTable.setAttribute("id", "carttable");
+        (<HTMLElement>document.querySelector("#carttablediv")).appendChild(cartContentTable);
+
+        let cartContentTableHead: HTMLElement = document.createElement("thead");
+        cartContentTableHead.setAttribute("id", "cartthead");
+        (<HTMLElement>document.querySelector("#carttable")).appendChild(cartContentTableHead);
+
+        let cartContentTableHeadRow: HTMLTableRowElement = document.createElement("tr");
+        cartContentTableHeadRow.setAttribute("id", "carttrow");
+        (<HTMLElement>document.querySelector("#cartthead")).appendChild(cartContentTableHeadRow);
+
+        let cartContentTableHeadArticle: HTMLElement = document.createElement("th");
+        cartContentTableHeadArticle.innerText = "Artikel";
+        (<HTMLElement>document.querySelector("#carttrow")).appendChild(cartContentTableHeadArticle);
+
+        let cartContentTableHeadPrice: HTMLElement = document.createElement("th");
+        cartContentTableHeadPrice.innerText = "Preis";
+        (<HTMLElement>document.querySelector("#carttrow")).appendChild(cartContentTableHeadPrice);
+
+        let cartContentTableHeadRemove: HTMLElement = document.createElement("th");
+        cartContentTableHeadRemove.innerText = "";
+        (<HTMLElement>document.querySelector("#carttrow")).appendChild(cartContentTableHeadRemove);
+
+        let cartContentTableBody: HTMLElement = document.createElement("tbody");
+        cartContentTableBody.setAttribute("id", "carttbody");
+        (<HTMLElement>document.querySelector("#carttable")).appendChild(cartContentTableBody);
+
         for (let i: number = 0; i < checkoutarticles.length; i++) {
 
             let checkoutTableRow: HTMLTableRowElement = document.createElement("tr");
-            (<HTMLElement>document.getElementById("cartcontent")).appendChild(checkoutTableRow);
+            (<HTMLElement>document.getElementById("carttbody")).appendChild(checkoutTableRow);
             checkoutTableRow.classList.add("article");
             checkoutTableRow.setAttribute("id", "tr" + i);
 
