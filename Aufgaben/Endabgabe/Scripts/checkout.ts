@@ -88,8 +88,8 @@ namespace Endabgabe {
 
     let url: string;
     export function setURL(): void {
-        //url = "https://nikxwargissose2020.herokuapp.com";
-        url = "http://localhost:8100";
+        url = "https://nikxwargissose2020.herokuapp.com";
+        //url = "http://localhost:8100";
     }
     async function sendOrder(): Promise<void> {
         setURL();

@@ -18,8 +18,8 @@ export namespace Endabgabe {
         port = 8100;
 
     let databaseUrl: string;
-    databaseUrl = "mongodb://localhost:27017";
-    //databaseUrl= "mongodb+srv://xXMLG69qUicKsCoPeGoD420Xx:hunter2@nikxwar-gis.xciiw.mongodb.net/StayCold?retryWrites=true&w=majority"
+    //databaseUrl = "mongodb://localhost:27017";
+    databaseUrl= "mongodb+srv://xXMLG69qUicKsCoPeGoD420Xx:hunter2@nikxwar-gis.xciiw.mongodb.net/StayCold?retryWrites=true&w=majority"
 
     function startServer(_port: number | string): void {
 

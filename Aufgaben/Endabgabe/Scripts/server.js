@@ -13,8 +13,8 @@ var Endabgabe;
     if (!port)
         port = 8100;
     let databaseUrl;
-    databaseUrl = "mongodb://localhost:27017";
-    //databaseUrl= "mongodb+srv://xXMLG69qUicKsCoPeGoD420Xx:hunter2@nikxwar-gis.xciiw.mongodb.net/StayCold?retryWrites=true&w=majority"
+    //databaseUrl = "mongodb://localhost:27017";
+    databaseUrl = "mongodb+srv://xXMLG69qUicKsCoPeGoD420Xx:hunter2@nikxwar-gis.xciiw.mongodb.net/StayCold?retryWrites=true&w=majority";
     function startServer(_port) {
         console.log("Starting server on port: " + _port);
         let server = Http.createServer();

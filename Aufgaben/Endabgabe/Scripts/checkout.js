@@ -67,8 +67,8 @@ var Endabgabe;
     document.getElementById("sendorder")?.addEventListener("click", sendOrder);
     let url;
     function setURL() {
-        //url = "https://nikxwargissose2020.herokuapp.com";
-        url = "http://localhost:8100";
+        url = "https://nikxwargissose2020.herokuapp.com";
+        //url = "http://localhost:8100";
     }
     Endabgabe.setURL = setURL;
     async function sendOrder() {
