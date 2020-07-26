@@ -169,6 +169,10 @@ select{
     opacity: 0.75;
     cursor: pointer;
 }
+
+#meme{
+ height: 300px;
+}
 /*media queries*/
 
 /*tablet*/
