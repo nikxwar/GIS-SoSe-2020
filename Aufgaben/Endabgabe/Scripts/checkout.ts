@@ -72,15 +72,32 @@ namespace Endabgabe {
         }
     }
 
-        function handleRemoveArticle(_event: Event): void {
-            let currentIndex: number = parseInt(<string>(<HTMLElement>_event.target).getAttribute("currentindex")!);
-            checkoutPriceSum -= checkoutarticles[currentIndex].price;
-            totalPrice.innerText = "Summe: " + checkoutPriceSum.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
+    function handleRemoveArticle(_event: Event): void {
+        let currentIndex: number = parseInt(<string>(<HTMLElement>_event.target).getAttribute("currentindex")!);
+        checkoutPriceSum -= checkoutarticles[currentIndex].price;
+        totalPrice.innerText = "Summe: " + checkoutPriceSum.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
 
-            ((<HTMLDivElement>_event.target).parentElement!).remove();
+        ((<HTMLDivElement>_event.target).parentElement!).remove();
 
-            checkoutarticles.splice(currentIndex, 1);
-            localStorage.setItem("cart", JSON.stringify(checkoutarticles));
-            location.reload();
-        }
+        checkoutarticles.splice(currentIndex, 1);
+        localStorage.setItem("cart", JSON.stringify(checkoutarticles));
+        location.reload();
     }
+
+    document.getElementById("sendorder")?.addEventListener("click", sendOrder);
+
+    let url: string;
+    export function setURL(): void {
+        //url = "https://nikxwargissose2020.herokuapp.com";
+        url = "http://localhost:8100";
+    }
+    async function sendOrder(): Promise<void> {
+        setURL();
+        let formData: FormData = new FormData(document.forms[0]);
+        //tslint:disable-next-line
+        let query: URLSearchParams = new URLSearchParams(<any>formData);
+        url += "/send" + "?" + query.toString();
+        await fetch(url);
+        
+    }
+}

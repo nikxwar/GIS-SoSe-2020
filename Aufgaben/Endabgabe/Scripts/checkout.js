@@ -64,5 +64,20 @@ var Endabgabe;
         localStorage.setItem("cart", JSON.stringify(checkoutarticles));
         location.reload();
     }
+    document.getElementById("sendorder")?.addEventListener("click", sendOrder);
+    let url;
+    function setURL() {
+        //url = "https://nikxwargissose2020.herokuapp.com";
+        url = "http://localhost:8100";
+    }
+    Endabgabe.setURL = setURL;
+    async function sendOrder() {
+        setURL();
+        let formData = new FormData(document.forms[0]);
+        //tslint:disable-next-line
+        let query = new URLSearchParams(formData);
+        url += "/send" + "?" + query.toString();
+        await fetch(url);
+    }
 })(Endabgabe || (Endabgabe = {}));
 //# sourceMappingURL=checkout.js.map
