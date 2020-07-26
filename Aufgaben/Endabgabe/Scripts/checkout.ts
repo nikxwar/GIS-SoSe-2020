@@ -1,16 +1,18 @@
 namespace Endabgabe {
-    let checkoutarticles: Articles[] = JSON.parse(localStorage.getItem("cart")!);
+    let checkoutarticles: Articles[] = [];
     let checkoutPriceSum: number = 0;
     let totalPrice: HTMLHeadingElement = document.createElement("h2");
     totalPrice.innerText = "Warenkorb ist leer"
     document.getElementById("cartsum")?.appendChild(totalPrice);
-    if (checkoutarticles[0] !== undefined) {
+
+    if (localStorage.getItem("cart") !== null) {
+        checkoutarticles = JSON.parse(localStorage.getItem("cart")!);
         createCheckoutArticles();
     }
 
 
     function createCheckoutArticles(): void {
-       
+
         let cartContentTable: HTMLTableElement = document.createElement("table");
         cartContentTable.setAttribute("id", "carttable");
         (<HTMLElement>document.querySelector("#carttablediv")).appendChild(cartContentTable);
@@ -58,35 +60,27 @@ namespace Endabgabe {
             checkoutTableRow.appendChild(checkoutRemove);
 
             let checkoutRemoveIcon: HTMLImageElement = document.createElement("img");
-            checkoutRemoveIcon.setAttribute("src","Bilder/trash.svg" );
-            checkoutRemoveIcon.setAttribute("alt","Warenkorb" );
+            checkoutRemoveIcon.setAttribute("src", "Bilder/trash.svg");
+            checkoutRemoveIcon.setAttribute("alt", "Warenkorb");
             checkoutRemoveIcon.setAttribute("currentindex", i.toString());
             checkoutRemoveIcon.addEventListener("click", handleRemoveArticle);
             checkoutRemove.appendChild(checkoutRemoveIcon);
-            
 
-
-                /* let cartButton: HTMLButtonElement = document.createElement("button");
-                 cartButton.innerText = "Artikel entfernen";
-                 checkoutTableRow.appendChild(cartButton);
-                 cartButton.setAttribute("currentindex", i.toString());
-                 cartButton.addEventListener("click", handleRemoveArticle);*/
-
-                checkoutPriceSum += checkoutarticles[i].price;
+            checkoutPriceSum += checkoutarticles[i].price;
             totalPrice.innerText = "Summe: " + checkoutPriceSum.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
 
         }
+    }
 
         function handleRemoveArticle(_event: Event): void {
             let currentIndex: number = parseInt(<string>(<HTMLElement>_event.target).getAttribute("currentindex")!);
             checkoutPriceSum -= checkoutarticles[currentIndex].price;
             totalPrice.innerText = "Summe: " + checkoutPriceSum.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
-    
+
             ((<HTMLDivElement>_event.target).parentElement!).remove();
-    
+
             checkoutarticles.splice(currentIndex, 1);
             localStorage.setItem("cart", JSON.stringify(checkoutarticles));
             location.reload();
         }
     }
-}

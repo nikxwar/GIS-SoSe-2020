@@ -1,12 +1,13 @@
 "use strict";
 var Endabgabe;
 (function (Endabgabe) {
-    let cartarticles = JSON.parse(localStorage.getItem("cart"));
+    let cartarticles = [];
     let cartPriceSum = 0;
     let totalPrice = document.createElement("h2");
     totalPrice.innerText = "Warenkorb ist leer";
     document.getElementById("cartsum")?.appendChild(totalPrice);
-    if (cartarticles[0] !== undefined) {
+    if (localStorage.getItem("cart") !== null) {
+        cartarticles = JSON.parse(localStorage.getItem("cart"));
         createCartArticles();
     }
     function createCartArticles() {
@@ -37,10 +38,6 @@ var Endabgabe;
     document.getElementById("clearcart").appendChild(clearCartButton);
     clearCartButton.innerText = "Warenkorb leeren";
     clearCartButton.addEventListener("click", handleClearCart);
-    let toCheckout = document.createElement("a");
-    document.getElementById("checkout").appendChild(toCheckout);
-    toCheckout.setAttribute("href", "checkout.html");
-    toCheckout.innerText = "Zur Kasse";
     function handleRemoveArticle(_event) {
         let currentIndex = parseInt(_event.target.getAttribute("currentindex"));
         cartPriceSum -= cartarticles[currentIndex].price;

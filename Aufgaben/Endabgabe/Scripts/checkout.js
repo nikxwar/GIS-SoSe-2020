@@ -1,12 +1,13 @@
 "use strict";
 var Endabgabe;
 (function (Endabgabe) {
-    let checkoutarticles = JSON.parse(localStorage.getItem("cart"));
+    let checkoutarticles = [];
     let checkoutPriceSum = 0;
     let totalPrice = document.createElement("h2");
     totalPrice.innerText = "Warenkorb ist leer";
     document.getElementById("cartsum")?.appendChild(totalPrice);
-    if (checkoutarticles[0] !== undefined) {
+    if (localStorage.getItem("cart") !== null) {
+        checkoutarticles = JSON.parse(localStorage.getItem("cart"));
         createCheckoutArticles();
     }
     function createCheckoutArticles() {
@@ -50,23 +51,18 @@ var Endabgabe;
             checkoutRemoveIcon.setAttribute("currentindex", i.toString());
             checkoutRemoveIcon.addEventListener("click", handleRemoveArticle);
             checkoutRemove.appendChild(checkoutRemoveIcon);
-            /* let cartButton: HTMLButtonElement = document.createElement("button");
-             cartButton.innerText = "Artikel entfernen";
-             checkoutTableRow.appendChild(cartButton);
-             cartButton.setAttribute("currentindex", i.toString());
-             cartButton.addEventListener("click", handleRemoveArticle);*/
             checkoutPriceSum += checkoutarticles[i].price;
             totalPrice.innerText = "Summe: " + checkoutPriceSum.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
         }
-        function handleRemoveArticle(_event) {
-            let currentIndex = parseInt(_event.target.getAttribute("currentindex"));
-            checkoutPriceSum -= checkoutarticles[currentIndex].price;
-            totalPrice.innerText = "Summe: " + checkoutPriceSum.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
-            (_event.target.parentElement).remove();
-            checkoutarticles.splice(currentIndex, 1);
-            localStorage.setItem("cart", JSON.stringify(checkoutarticles));
-            location.reload();
-        }
+    }
+    function handleRemoveArticle(_event) {
+        let currentIndex = parseInt(_event.target.getAttribute("currentindex"));
+        checkoutPriceSum -= checkoutarticles[currentIndex].price;
+        totalPrice.innerText = "Summe: " + checkoutPriceSum.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
+        (_event.target.parentElement).remove();
+        checkoutarticles.splice(currentIndex, 1);
+        localStorage.setItem("cart", JSON.stringify(checkoutarticles));
+        location.reload();
     }
 })(Endabgabe || (Endabgabe = {}));
 //# sourceMappingURL=checkout.js.map

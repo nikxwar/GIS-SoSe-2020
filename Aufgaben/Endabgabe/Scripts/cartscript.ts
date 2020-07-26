@@ -1,13 +1,17 @@
 namespace Endabgabe {
-
-    let cartarticles: Articles[] = JSON.parse(localStorage.getItem("cart")!);
+    let cartarticles: Articles[] = [];
     let cartPriceSum: number = 0;
+
     let totalPrice: HTMLHeadingElement = document.createElement("h2");
     totalPrice.innerText = "Warenkorb ist leer"
     document.getElementById("cartsum")?.appendChild(totalPrice);
-    if (cartarticles[0] !== undefined) {
+
+    if (localStorage.getItem("cart") !== null) {
+        cartarticles = JSON.parse(localStorage.getItem("cart")!);
         createCartArticles();
-    }
+    } 
+
+
 
 
     function createCartArticles(): void {
@@ -44,15 +48,9 @@ namespace Endabgabe {
     }
 
     let clearCartButton: HTMLButtonElement = document.createElement("button");
-    (<HTMLButtonElement>document.getElementById("clearcart")).appendChild(clearCartButton);
+    (<HTMLDivElement>document.getElementById("clearcart")).appendChild(clearCartButton);
     clearCartButton.innerText = "Warenkorb leeren";
     clearCartButton.addEventListener("click", handleClearCart);
-
-    let toCheckout: HTMLAnchorElement = document.createElement("a");
-    (<HTMLButtonElement>document.getElementById("checkout")).appendChild(toCheckout);
-    toCheckout.setAttribute("href", "checkout.html");
-    toCheckout.innerText = "Zur Kasse";
-
 
     function handleRemoveArticle(_event: Event): void {
         let currentIndex: number = parseInt(<string>(<HTMLElement>_event.target).getAttribute("currentindex")!);
