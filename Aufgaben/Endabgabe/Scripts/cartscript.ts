@@ -1,9 +1,9 @@
 namespace Endabgabe {
     let cartarticles: Articles[] = [];
     let cartPriceSum: number = 0;
-
+    
     let totalPrice: HTMLHeadingElement = document.createElement("h2");
-    totalPrice.innerText = "Warenkorb ist leer"
+    totalPrice.innerText = "Warenkorb ist leer";
     document.getElementById("cartsum")?.appendChild(totalPrice);
 
     if (localStorage.getItem("cart") !== null) {
